@@ -1,12 +1,15 @@
 "use client";
-import { Button, Calendar } from "@nextui-org/react";
+import { FloatingDockDemo } from "@/components/FloatingDockDemo";
+import WindowsTaskBar from "@/components/WindowsTaskBar";
 import React from "react";
 
 export default function Page() {
   return (
-    <div className="h-screen w-full">
-      <div className="flex-center h-full">
-        <Button>NextUi Button</Button>
+    <div className="relative h-screen w-full">
+      {/* <FloatingDockDemo /> */}
+
+      <div className="absolute bottom-0 z-[0] w-full">
+        <WindowsTaskBar />
       </div>
     </div>
   );

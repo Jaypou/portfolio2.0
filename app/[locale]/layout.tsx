@@ -33,7 +33,7 @@ export default function RootLayout({
         className={`relative ${geistSans.variable} ${geistMono.variable} text-black antialiased dark:text-white`}
       >
         <Providers>
-          <div className="absolute left-5 top-5">
+          <div className="absolute left-5 top-5 z-[5]">
             <ThemeSwitcher />
           </div>
           <ToastContainer />

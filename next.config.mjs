@@ -8,6 +8,7 @@ const nextConfig = {
       "unsplash.com",
       "source.unsplash.com",
       "assets.aceternity.com",
+      "imgur.com",
     ],
   },
 };
