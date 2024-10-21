@@ -1,0 +1,42 @@
+{
+  "name": "boilerplate",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@gsap/react": "^2.1.1",
+    "@headlessui/react": "^2.1.2",
+    "@headlessui/tailwindcss": "^0.2.1",
+    "@next/third-parties": "^14.1.4",
+    "@nextui-org/framer-utils": "^2.0.21",
+    "@nextui-org/react": "^2.4.6",
+    "autoprefixer": "^10.4.20",
+    "framer-motion": "^11.3.18",
+    "next": "14.2.15",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-toastify": "^10.0.5",
+    "simplex-noise": "^4.0.3",
+    "tailwind-merge": "^2.2.2",
+    "usehooks-ts": "^3.1.0"
+  },
+  "devDependencies": {
+    "@iconify/react": "^4.1.1",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.15",
+    "postcss": "^8",
+    "prettier": "^3.2.5",
+    "prettier-plugin-tailwindcss": "^0.5.13",
+    "tailwindcss": "^3.4.1",
+    "tailwindcss-animate": "^1.0.7",
+    "typescript": "^5"
+  }
+}

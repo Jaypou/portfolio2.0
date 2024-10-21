@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* background color for light theme */
+:root {
+  --top-color: 255, 255, 255; /* White */
+  --bottom-color: 0, 0, 0; /* Black */
+  --overlay-color: 210, 210, 210; /* Lighter gray */
+
+  /* Gradient going from white at the top to black at the bottom */
+  --background-gradient: linear-gradient(
+    to bottom,
+    rgba(var(--top-color), 1) 0%,
+    rgba(var(--bottom-color), 1) 100%
+  );
+}
+
+/* background color for dark theme */
+:root.dark {
+  --top-color: 0, 0, 0; /* Black */
+  --bottom-color: 255, 255, 255; /* White */
+  --overlay-color: 45, 45, 45; /* Darker gray */
+
+  /* Gradient going from black at the top to white at the bottom */
+  --background-gradient: linear-gradient(
+    to bottom,
+    rgba(var(--top-color), 1) 0%,
+    rgba(var(--bottom-color), 1) 100%
+  );
+}
+
+body {
+  background: var(--background-gradient);
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .flex-center {
+    @apply flex items-center justify-center;
+  }
+  .flex-between {
+    @apply flex items-center justify-between;
+  }
+  .flex-start {
+    @apply flex items-center justify-start;
+  }
+}
