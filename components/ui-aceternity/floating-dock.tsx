@@ -65,7 +65,7 @@ const FloatingDockMobile = ({
     direction === "left" || direction === "top" ? [...items].reverse() : items;
 
   return (
-    <div className={cn("relative block md:hidden", className)}>
+    <div className={cn("relative block sm:hidden", className)}>
       <AnimatePresence>
         {open && (
           <motion.div
@@ -145,7 +145,7 @@ const FloatingDockDesktop = ({
       onMouseMove={(e) => mouseX.set(e.pageX)}
       onMouseLeave={() => mouseX.set(Infinity)}
       className={cn(
-        "mx-auto hidden h-16 items-end gap-4 rounded-2xl bg-gray-50 px-4 pb-3 dark:bg-neutral-900 md:flex",
+        "mx-auto hidden h-[8vh] items-center justify-evenly gap-4 rounded-2xl bg-gray-50 px-4 transition-transform ease-in-out dark:bg-neutral-900 sm:flex sm:w-[70vw] md:w-[60vw] lg:w-[50vw] xl:w-[40vw] 2xl:w-[30vw]",
         className
       )}
     >
@@ -171,18 +171,18 @@ function IconContainer({
 
   let distance = useTransform(mouseX, (val) => {
     let bounds = ref.current?.getBoundingClientRect() ?? { x: 0, width: 0 };
-
     return val - bounds.x - bounds.width / 2;
   });
 
-  let widthTransform = useTransform(distance, [-150, 0, 150], [40, 80, 40]);
-  let heightTransform = useTransform(distance, [-150, 0, 150], [40, 80, 40]);
+  // Larger transformations for md and up
+  let widthTransform = useTransform(distance, [-150, 0, 150], [50, 100, 50]);
+  let heightTransform = useTransform(distance, [-150, 0, 150], [50, 100, 50]);
 
-  let widthTransformIcon = useTransform(distance, [-150, 0, 150], [20, 40, 20]);
+  let widthTransformIcon = useTransform(distance, [-150, 0, 150], [32, 50, 32]);
   let heightTransformIcon = useTransform(
     distance,
     [-150, 0, 150],
-    [20, 40, 20]
+    [32, 50, 32]
   );
 
   let width = useSpring(widthTransform, {
@@ -216,7 +216,7 @@ function IconContainer({
         style={{ width, height }}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
-        className="relative flex aspect-square items-center justify-center rounded-full bg-gray-200 dark:bg-neutral-800"
+        className="relative flex aspect-square items-center justify-center" // Even larger for md screens
       >
         <AnimatePresence>
           {hovered && (
@@ -232,7 +232,8 @@ function IconContainer({
         </AnimatePresence>
         <motion.div
           style={{ width: widthIcon, height: heightIcon }}
-          className="flex items-center justify-center"
+          className="flex items-center justify-center
+                    sm:h-8 sm:w-8 md:h-12 md:w-12" // Larger icon for md screens
         >
           {icon}
         </motion.div>

@@ -1,21 +1,23 @@
 // services/userPreferences.ts
-export const saveUserPreferences = async (mode: string, uiMode: string) => {
+export async function saveUserPreferences(theme: string, os: string) {
+  // console.log("Sending preferences to the API:", { theme, os }); // Debugging log
+
   try {
-    const response = await fetch("/api/savePreferences", {
+    const res = await fetch("/api/savePreferences", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ mode, uiMode }),
+      body: JSON.stringify({ mode: theme, os }), // Make sure the keys match with the API route
     });
 
-    if (!response.ok) {
-      throw new Error("Failed to save preferences");
+    if (!res.ok) {
+      throw new Error(`Error saving preferences: ${res.statusText}`);
     }
 
-    return { success: true };
+    const data = await res.json();
+    return data;
   } catch (error) {
-    console.error("Error saving preferences:", error);
-    return { success: false };
+    console.error("Failed to save user preferences:", error);
   }
-};
+}

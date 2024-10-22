@@ -1,19 +1,20 @@
 "use client";
 import React, { useEffect } from "react";
 import { Icon } from "@iconify/react";
-import { useTheme } from "@/context/ThemeProvider";
+import { useTheme } from "@/context/ThemeProvider"; // Assuming you're still using the context for toggle functionality
 
 const ThemeSwitcher = () => {
   const themeContext = useTheme();
   if (!themeContext) {
     throw new Error("ThemeContext is null");
   }
-  const { mode, uiMode, toggleTheme, toggleUIMode } = themeContext;
 
-  useEffect(() => {
-    console.log("Theme changed to: ", mode);
-    console.log("UI Mode changed to: ", uiMode);
-  }, [mode, uiMode]);
+  const { theme, os, toggleTheme, toggleOS } = themeContext;
+
+  // useEffect(() => {
+  //   console.log("Theme changed to: ", theme);
+  //   console.log("OS changed to: ", os);
+  // }, [theme, os]);
 
   return (
     <div style={{ display: "flex", gap: "1rem", cursor: "pointer" }}>
@@ -21,25 +22,21 @@ const ThemeSwitcher = () => {
       <div
         onClick={toggleTheme}
         aria-label={
-          mode === "light" ? "Switch to dark mode" : "Switch to light mode"
+          theme === "light" ? "Switch to dark mode" : "Switch to light mode"
         }
       >
-        <div key={mode}>
-          {mode === "light" ? (
+        <div key={theme}>
+          {theme === "light" ? (
             <Icon
               icon="line-md:sunny-outline-to-moon-transition"
               className="h-8 w-8 text-yellow-500"
-              style={{
-                animation: "1s ease-in-out",
-              }}
+              style={{ animation: "1s ease-in-out" }}
             />
           ) : (
             <Icon
               icon="line-md:moon-filled-to-sunny-filled-transition"
               className="h-8 w-8 text-yellow-500"
-              style={{
-                animation: "1s ease-in-out",
-              }}
+              style={{ animation: "1s ease-in-out" }}
             />
           )}
         </div>
@@ -47,27 +44,24 @@ const ThemeSwitcher = () => {
 
       {/* Mac/Windows mode toggle */}
       <div
-        onClick={toggleUIMode}
+        onClick={toggleOS}
         aria-label={
-          uiMode === "mac" ? "Switch to Windows mode" : "Switch to Mac mode"
+          os === "mac" ? "Switch to Windows mode" : "Switch to Mac mode"
         }
       >
-        <div key={uiMode}>
-          {uiMode === "mac" ? (
-            <Icon
-              icon="tabler:brand-apple"
-              className="h-8 w-8 text-gray-700"
-              style={{
-                animation: "1s ease-in-out",
-              }}
-            />
-          ) : (
+        <div key={os}>
+          {/* Display opposite OS icon */}
+          {os === "mac" ? (
             <Icon
               icon="tabler:brand-windows"
               className="h-8 w-8 text-blue-500"
-              style={{
-                animation: "1s ease-in-out",
-              }}
+              style={{ animation: "1s ease-in-out" }}
+            />
+          ) : (
+            <Icon
+              icon="tabler:brand-apple"
+              className="h-8 w-8 text-gray-700"
+              style={{ animation: "1s ease-in-out" }}
             />
           )}
         </div>

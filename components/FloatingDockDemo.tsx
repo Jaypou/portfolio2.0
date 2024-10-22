@@ -52,8 +52,8 @@ export function FloatingDockDemo() {
       icon: (
         <Image
           src="https://assets.aceternity.com/logo-dark.png"
-          width={20}
-          height={20}
+          width={32}
+          height={32}
           alt="Aceternity Logo"
         />
       ),
@@ -95,7 +95,7 @@ export function FloatingDockDemo() {
     },
   ];
   return (
-    <div className="flex h-[35rem] w-full flex-col items-center justify-center">
+    <div className="flex h-fit w-full flex-col items-center justify-center">
       <FloatingDock
         mobileClassName="" // only for demo, remove for production
         items={links}
