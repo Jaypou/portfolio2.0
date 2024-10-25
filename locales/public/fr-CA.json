@@ -1,10 +1,15 @@
 {
-  "Welcome": "Bienvenue dans votre nouveau projet passe partout",
-  "GetStarted": "Commencez par éditer ",
-  "SaveAndSee": "Enregistrez et voyez vos modifications instantanément.",
-  "DeployNow": "Déployez maintenant",
-  "ReadOurDocs": "Lisez notre documentation",
-  "Learn": "Apprendre",
-  "Examples": "Exemples",
-  "GoTo": "Aller à"
+  "Landing": {
+    "Hello": "Bonjour, je suis Jérémie, ",
+    "JuniorWebDev": "un développeur web créant des expériences engageantes"
+  },
+
+  "Navbar": {
+    "Home": "Accueil",
+    "About": "À Propos",
+    "Contact": "Contact",
+    "Homepage": "HomePage",
+    "Projects": "Projets",
+    "Skills": "Compétances"
+  }
 }

@@ -1,108 +1,38 @@
-import Image from "next/image";
-import { getDictionary } from "./(public)/public-dictionaries";
+import { getDictionary } from "@/app/[locale]/(public)/public-dictionaries";
+import { Presentation, VideoHero } from "@/components";
 
 export default async function Page({ params }: { params: { locale: string } }) {
   const locale: string = params.locale;
   const dictionary = await getDictionary(locale);
 
-  return (
-    <div className="flex min-h-screen flex-col items-center justify-center gap-16 p-8 pb-20 font-[family-name:var(--font-geist-sans)] sm:p-20">
-      <h1 className="flex h-full w-full items-center justify-center text-5xl font-semibold">
-        {dictionary.Welcome}
-      </h1>
-      <main className="row-start-2 flex flex-col items-center gap-8 sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-center font-[family-name:var(--font-geist-mono)] text-sm sm:text-left">
-          <li className="mb-2">
-            {dictionary.GetStarted}
-            <code className="rounded bg-gray-200 px-1 py-0.5 font-semibold dark:bg-gray-600">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>{dictionary.SaveAndSee}</li>
-        </ol>
+  const presentationData = {
+    fullName: "Jérémie Pouliot",
+    experience: "5 years in web development",
+    location: "Montreal, Canada",
+    languages: ["English", "French"],
+    age: "30 years old",
+    imageUrl: "/placeholder-image.jpg",
+  };
 
-        <div className="flex flex-col items-center gap-4 sm:flex-row">
-          <a
-            className="flex h-10 items-center justify-center gap-2 rounded-full border border-solid border-transparent bg-foreground px-4 text-sm text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] sm:h-12 sm:px-5 sm:text-base"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            {dictionary.DeployNow}
-          </a>
-          <a
-            className="flex h-10 items-center justify-center rounded-full border border-solid border-black/[.08] px-4 text-sm transition-colors hover:border-transparent hover:bg-[#f2f2f2] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] sm:h-12 sm:min-w-44 sm:px-5 sm:text-base"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {dictionary.ReadOurDocs}
-          </a>
+  return (
+    <div className="flex min-h-screen w-full flex-col">
+      <div className="h-full w-full">
+        <VideoHero
+          HeroTitle={dictionary.Landing.Hello}
+          HeroSubtitle={dictionary.Landing.JuniorWebDev}
+          videoSource="/assets/videos/code_background_loop.mov"
+          fadeOutDuration={1}
+          easeOptions="power3.inOut"
+        />
+      </div>
+
+      <div className="flex-center flex-col">
+        <div className="h-[600px] w-full">
+          <Presentation {...presentationData} />
         </div>
-      </main>
-      <footer className="row-start-3 flex flex-wrap items-center justify-center gap-6">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          {dictionary.Learn}
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          {dictionary.Examples}
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          {dictionary.GoTo} nextjs.org →
-        </a>
-      </footer>
+        <div className="h-[600px]">Studies</div>
+        <div className="h-[600px]">CTA to project</div>
+      </div>
     </div>
   );
 }

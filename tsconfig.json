@@ -27,6 +27,7 @@
       "@pages/*": ["./pages/*"],
       "@styles/*": ["./styles/*"],
       "@utils/*": ["./utils/*"],
+      "@Types/*": ["./types/*"],
       "@locales/*": ["./locales/*"]
     }
   },

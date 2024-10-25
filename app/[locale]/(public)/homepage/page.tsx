@@ -1,7 +1,5 @@
-import { FloatingDockDemo } from "@/components/FloatingDockDemo";
-import WindowsTaskBar from "@/components/WindowsTaskBar";
 import React from "react";
-import DisplayOS from "@/components/DisplayOS";
+import { DisplayOS } from "@/components";
 
 export default function Page() {
   return (

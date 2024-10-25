@@ -1,10 +1,15 @@
 {
-  "Welcome": "Welcome to your new boilerplate project",
-  "GetStarted": "Get started by editing ",
-  "SaveAndSee": "Save and see your changes instantly.",
-  "DeployNow": "Deploy now",
-  "ReadOurDocs": "Read our docs",
-  "Learn": "Learn",
-  "Examples": "Examples",
-  "GoTo": "Go to"
+  "Landing": {
+    "Hello": "Hello, I'm Jérémie, ",
+    "JuniorWebDev": "a Web Developer Creating Engaging Experiences"
+  },
+
+  "Navbar": {
+    "Home": "Home",
+    "About": "About",
+    "Contact": "Contact",
+    "Homepage": "Homepage",
+    "Projects": "Projects",
+    "Skills": "Skills"
+  }
 }

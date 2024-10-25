@@ -1,12 +1,7 @@
-/**
- * Note: Use position fixed according to your needs
- * Desktop navbar is better positioned at the bottom
- * Mobile navbar is better positioned at bottom right.
- **/
-
+"use client";
 import { cn } from "@/lib/utils/cn";
 // import { IconLayoutNavbarCollapse } from "@tabler/icons-react";
-import IconComp from "@/components/shared/IconComp";
+import { IconComp } from "@/components";
 import {
   AnimatePresence,
   MotionValue,
@@ -18,7 +13,7 @@ import {
 import Link from "next/link";
 import { useRef, useState } from "react";
 
-export const FloatingDock = ({
+export default function FloatingDock({
   items,
   desktopClassName,
   mobileClassName,
@@ -26,14 +21,14 @@ export const FloatingDock = ({
   items: { title: string; icon: React.ReactNode; href: string }[];
   desktopClassName?: string;
   mobileClassName?: string;
-}) => {
+}) {
   return (
     <>
       <FloatingDockDesktop items={items} className={desktopClassName} />
       <FloatingDockMobile items={items} className={mobileClassName} />
     </>
   );
-};
+}
 
 const FloatingDockMobile = ({
   items,

@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("../styles/theme.css");
+@import url("../styles/shadcnThemes.css");
+
 /* background color for light theme */
 :root {
   --top-color: 255, 255, 255; /* White */
@@ -30,9 +33,9 @@
   );
 }
 
-body {
+/* body {
   background: var(--background-gradient);
-}
+} */
 
 @layer utilities {
   .text-balance {
