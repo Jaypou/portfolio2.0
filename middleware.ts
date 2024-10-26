@@ -2,10 +2,6 @@ import { match } from "@formatjs/intl-localematcher";
 import Negotiator from "negotiator";
 import { NextRequest, NextResponse } from "next/server";
 
-// import { i18n } from "./i18n-config";
-// const locales = i18n.locales;
-// const defaultLocale = i18n.defaultLocale;
-
 let locales = ["en-CA", "fr-CA", "en-US", "fr-FR"];
 let defaultLocale = "en-CA";
 
@@ -29,52 +25,31 @@ function getLocale(request: NextRequest) {
 
 const middleware = (request: NextRequest) => {
   const { pathname } = request.nextUrl;
-  const isProduction = process.env.NODE_ENV === "production";
-  if (
-    isProduction &&
-    pathname !== "/en" &&
-    pathname !== "/fr" &&
-    pathname !== "/"
-  ) {
-    return NextResponse.redirect(
-      new URL("/" + getLocale(request), request.nextUrl)
-    );
+
+  // Skip middleware for api routes and static files
+  if (pathname.startsWith("/api") || pathname.match(/\.[\w]+$/)) {
+    return;
   }
 
-  //   if (
-  //     pathname.includes("reset-password-confirm") ||
-  //     pathname.includes("confirm-email")
-  //   ) {
-  //     const searchParams = request.nextUrl.searchParams;
-  //     const uid = searchParams.get("uid");
-  //     const token = searchParams.get("token");
-  //     const email = searchParams.get("email");
+  // If the pathname already starts with a valid locale, let it pass through
+  if (
+    pathname.startsWith("/en/") ||
+    pathname.startsWith("/fr/") ||
+    pathname === "/en" ||
+    pathname === "/fr"
+  ) {
+    return;
+  }
 
-  //     if (!uid || !token || !email) {
-  //       return NextResponse.redirect(new URL("/sign-in", request.nextUrl));
-  //     }
-  //     return;
-  //   }
-
-  // if pathname includes :locale then we remove it and the new url will be /{locale}/...
+  // Handle :locale in pathname
   if (pathname.includes(":locale")) {
-    console.log("pathname includes :locale", pathname);
-
     request.nextUrl.pathname = pathname.replace("/:locale", "");
     return NextResponse.redirect(request.nextUrl);
   }
 
-  if (pathname.startsWith("/en") || pathname.startsWith("/fr")) {
-    return;
-  }
-
-  if (pathname.startsWith("/api")) {
-    return;
-  }
-
+  // For the root path or paths without locale prefix, add the locale
   const locale = getLocale(request);
-  console.log("locale", locale);
-  request.nextUrl.pathname = `/${locale}${pathname}`;
+  request.nextUrl.pathname = `/${locale}${pathname === "/" ? "" : pathname}`;
 
   return NextResponse.redirect(request.nextUrl);
 };
@@ -85,39 +60,10 @@ const handleRequest = (request: NextRequest) => {
 
 export default handleRequest;
 
-// Uncomment and use this if you want to include authMiddleware in the future
-// export default authMiddleware({
-//   beforeAuth: (req) => {
-//     return middleware(req);
-//   },
-
-//   publicRoutes: [
-//     "/",
-//     "/:locale/sign-in",
-//     "/:locale/sign-up",
-//     "/:locale/about-us",
-//     "/:locale/blogs",
-//     "/:locale/blogs/:slug",
-//     "/:locale/contact",
-//     "/:locale/overview",
-//     "/:locale/overview/:slug",
-//     "/:locale/pricing",
-//     "/:locale/cases-studies",
-//     "/:locale/cases-studies/:slug",
-//     "/:locale",
-//     "/home",
-//     "/:locale/home",
-//     "/:locale/sentry-example-page",
-//     "/:locale/error-page",
-//     "/:locale/404",
-//   ],
-// });
-
 export const config = {
   matcher: [
     "/((?!.+\\.[\\w]+$|_next).*)",
     "/",
     "/((?!api|_next|_vercel|.*\\..*).*)",
-    // "/(api|trpc)(.*)"
   ],
 };
