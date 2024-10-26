@@ -1,5 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  logging: {
+    fetches: {
+      fullUrl: true,
+    },
+  },
   i18n: {
     locales: ["en", "fr"], // Replace with your supported locales, e.g., 'en' for English, 'fr' for French
     defaultLocale: "en", // Set the default locale here
