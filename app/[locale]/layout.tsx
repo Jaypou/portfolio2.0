@@ -38,7 +38,7 @@ export default async function RootLayout({
         className={`relative ${geistSans.variable} ${geistMono.variable} text-black antialiased dark:text-white`}
       >
         <Providers>
-          <Navbar navItems={navItems} />
+          {/* <Navbar navItems={navItems} /> */}
           <div className="absolute left-5 top-5 z-[5]">
             <ThemeSwitcher />
           </div>

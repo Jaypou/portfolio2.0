@@ -1,9 +1,14 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { AnimatePresence, motion, Variants } from "framer-motion";
-
+import { motion, Variants } from "framer-motion";
+import { Rock_Salt } from "next/font/google";
 import { cn } from "@/lib/utils";
+
+const rockSalt = Rock_Salt({
+  weight: ["400"],
+  subsets: ["latin"],
+});
 
 interface HyperTextProps {
   text: string;
@@ -11,6 +16,8 @@ interface HyperTextProps {
   framerProps?: Variants;
   className?: string;
   animateOnLoad?: boolean;
+  font?: "default" | "rockSalt";
+  triggerOnHover?: boolean;
 }
 
 const alphabets = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
@@ -27,6 +34,8 @@ export default function HyperText({
   },
   className,
   animateOnLoad = true,
+  font = "default",
+  triggerOnHover = false,
 }: HyperTextProps) {
   const [displayText, setDisplayText] = useState(text.split(""));
   const [trigger, setTrigger] = useState(false);
@@ -70,20 +79,30 @@ export default function HyperText({
 
   return (
     <div
-      className="flex scale-100 cursor-default overflow-hidden py-2"
-      onMouseEnter={triggerAnimation}
+      className={cn(
+        "flex scale-100 cursor-default py-2",
+        font === "rockSalt" ? "gap-1 px-1" : "overflow-hidden"
+      )}
+      onMouseEnter={() => triggerOnHover && triggerAnimation()}
     >
-      <AnimatePresence mode="wait">
+      <div className="flex">
         {displayText.map((letter, i) => (
           <motion.h1
-            key={i}
-            className={cn("font-mono", letter === " " ? "w-3" : "", className)}
-            {...framerProps}
+            key={`${letter}-${i}-${trigger}`}
+            initial={{ opacity: 0.75, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 3 }}
+            className={cn(
+              "font-mono",
+              letter === " " ? "w-3" : "",
+              font === "rockSalt" ? rockSalt.className : "",
+              className
+            )}
           >
             {letter.toUpperCase()}
           </motion.h1>
         ))}
-      </AnimatePresence>
+      </div>
     </div>
   );
 }

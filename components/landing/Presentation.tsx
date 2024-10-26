@@ -1,100 +1,113 @@
 "use client";
-import React, { useState, useEffect } from "react";
-import Image from "next/image";
-import HyperText from "../shared/hyper-text";
+import React, { useEffect, useRef } from "react";
+import Link from "next/link";
+import gsap from "gsap";
+import { HyperText, VideoBackground } from "@/components/";
 
 export interface PresentationProps {
   fullName: string;
+  title: string;
   experience: string;
   location: string;
   languages: string[];
   age: string;
   imageUrl: string;
+  navItems?: Array<{ name: string; href: string }>;
 }
 
 export default function Presentation({
   fullName,
+  title,
   experience,
   location,
   languages,
   age,
   imageUrl,
+  navItems = [],
 }: PresentationProps) {
-  const [fileNumber, setFileNumber] = useState("000000");
+  const containerRef = useRef<HTMLDivElement>(null);
+  const placeholderItems = [
+    { name: "PROJECTS", href: "#" },
+    { name: "SKILLS", href: "#" },
+    { name: "CONTACT", href: "#" },
+  ];
+
+  const filteredNavItems = navItems.filter(
+    (item) => !["HOME", "ACCUEIL"].includes(item.name.toUpperCase())
+  );
+
+  const items =
+    filteredNavItems.length > 0 ? filteredNavItems : placeholderItems;
 
   useEffect(() => {
-    setFileNumber(
-      Math.floor(Math.random() * 1000000)
-        .toString()
-        .padStart(6, "0")
-    );
+    const elements = containerRef.current?.querySelectorAll(".nav-item");
+    elements?.forEach((element, index) => {
+      gsap.set(element, {
+        rotationX: -15,
+        rotationZ: -8,
+        transformPerspective: 1500,
+        transformOrigin: "center center",
+        y: index + 20, // Consistent vertical spacing
+        z: -50 * (elements.length - index), // Progressive depth
+      });
+    });
   }, []);
 
+  const handleMouseEnter = (element: HTMLElement) => {
+    gsap.to(element, {
+      rotationX: 0,
+      rotationZ: -3,
+      scale: 1.05,
+      y: 0,
+      z: 100,
+      duration: 0.4,
+      ease: "power2.out",
+    });
+  };
+
+  const handleMouseLeave = (element: HTMLElement, index: number) => {
+    gsap.to(element, {
+      rotationX: -15,
+      rotationZ: -8,
+      scale: 1,
+      y: index * 20,
+      z: -50 * (items.length - index),
+      duration: 0.4,
+      ease: "power2.in",
+    });
+  };
+
   return (
-    <div className="bg-black p-8 font-mono text-green-500">
-      <div className="relative border-2 border-green-500 p-6">
-        <h1 className="mb-4 text-2xl">TOP SECRET</h1>
-        <div className="flex">
-          <div className="mr-4 w-1/3">
-            <Image
-              src={imageUrl || "/placeholder-image.jpg"}
-              alt="Agent"
-              width={200}
-              height={200}
-              className="border-2 border-green-500"
-            />
-          </div>
-          <div className="w-2/3 space-y-2">
-            <div className="flex items-center">
-              <span className="mr-2 font-bold">Name: </span>
+    <div className="relative min-h-screen w-full overflow-hidden">
+      <div className="absolute inset-0">
+        <VideoBackground
+          videoSource="/assets/videos/code_background_loop.mov"
+          videoClassnames="opacity-20"
+          fadeOutDuration={1.5}
+          easeOptions="power1.inOut"
+        />
+      </div>
+      <div
+        ref={containerRef}
+        className="relative z-10 flex h-full w-full flex-col items-start justify-center px-8 pb-32 pt-16 md:px-16 md:pb-16"
+      >
+        {items.map((item, index) => (
+          <Link href={item.href} key={index} className="w-fit">
+            <div
+              className="nav-item group relative my-4 transform cursor-pointer md:my-6"
+              onMouseEnter={(e) => handleMouseEnter(e.currentTarget)}
+              onMouseLeave={(e) => handleMouseLeave(e.currentTarget, index)}
+            >
               <HyperText
-                text={fullName || "fullName"}
-                className="text-green-500"
-                // duration={10000}
+                text={item.name}
+                className="text-[8vw] leading-none tracking-tighter text-foreground/90 text-white group-hover:cursor-pointer md:text-[5vw]"
+                font="rockSalt"
+                duration={800}
               />
+              <div className="absolute bottom-0 left-0 h-1.5 w-0 transition-all duration-500 ease-out group-hover:w-full" />
             </div>
-            <div className="flex items-center">
-              <span className="mr-2 font-bold">Experience: </span>
-              <HyperText
-                text={experience || "experience"}
-                className="text-green-500"
-                duration={5}
-              />
-            </div>
-            <div className="flex items-center">
-              <span className="mr-2 font-bold">Location: </span>
-              <HyperText
-                text={location || "location"}
-                className="text-green-500"
-                duration={5}
-              />
-            </div>
-            <div className="flex items-center">
-              <span className="mr-2 font-bold">Languages: </span>
-              <HyperText
-                text={languages ? languages.join(", ") : ""}
-                className="text-green-500"
-                duration={5}
-              />
-            </div>
-            <div className="flex items-center">
-              <span className="mr-2 font-bold">Age: </span>
-              <HyperText
-                text={age ? age.toString() : ""}
-                className="text-green-500"
-                duration={5}
-              />
-            </div>
-          </div>
-        </div>
-        <div className="absolute right-2 top-2 flex items-center justify-center gap-x-2 text-xs">
-          <p>Filenumber :</p>
-          <HyperText
-            text={"POUJ-2024"}
-            className="text-green-500"
-            duration={10}
-          />
-        </div>
+          </Link>
+        ))}
       </div>
     </div>
   );
