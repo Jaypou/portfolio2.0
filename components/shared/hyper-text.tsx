@@ -87,7 +87,7 @@ export default function HyperText({
     >
       <div className="flex">
         {displayText.map((letter, i) => (
-          <motion.h1
+          <motion.div
             key={`${letter}-${i}-${trigger}`}
             initial={{ opacity: 0.75, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -100,7 +100,7 @@ export default function HyperText({
             )}
           >
             {letter.toUpperCase()}
-          </motion.h1>
+          </motion.div>
         ))}
       </div>
     </div>

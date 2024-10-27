@@ -8,6 +8,12 @@ export default async function Page({ params }: { params: { locale: string } }) {
   return (
     <div className="flex-center flex min-h-screen flex-col">
       <div>Hero</div>
+
+      <div className="perspective-400">
+        Composant flex-grow comme sur messenger avec toutes les options
+        suivantes
+      </div>
+
       <div>More about me</div>
       <div>Timeline</div>
       <div>Short tech stack</div>

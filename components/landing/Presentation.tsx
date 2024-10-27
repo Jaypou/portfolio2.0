@@ -5,26 +5,10 @@ import gsap from "gsap";
 import { HyperText, VideoBackground } from "@/components/";
 
 export interface PresentationProps {
-  fullName: string;
-  title: string;
-  experience: string;
-  location: string;
-  languages: string[];
-  age: string;
-  imageUrl: string;
   navItems?: Array<{ name: string; href: string }>;
 }
 
-export default function Presentation({
-  fullName,
-  title,
-  experience,
-  location,
-  languages,
-  age,
-  imageUrl,
-  navItems = [],
-}: PresentationProps) {
+export default function Presentation({ navItems = [] }: PresentationProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const placeholderItems = [
     { name: "PROJECTS", href: "#" },
