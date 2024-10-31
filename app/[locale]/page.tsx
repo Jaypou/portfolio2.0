@@ -15,7 +15,7 @@ export default async function Page({ params }: { params: { locale: string } }) {
   const navItems = await GetNavItems(locale);
 
   return (
-    <div className="relative flex h-screen min-h-screen w-full flex-col gap-y-16">
+    <div className="relative flex h-full min-h-screen w-full flex-col gap-y-16">
       {/* <div className="h-full w-full">
         <VideoHero
           HeroTitle={dictionary.Landing.Hello}

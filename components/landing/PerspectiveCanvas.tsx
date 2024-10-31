@@ -144,8 +144,10 @@ export default function PerspectiveCanvas({
   const items =
     filteredNavItems.length > 0 ? filteredNavItems : placeholderItems;
 
+  console.log("items", items);
+
   return (
-    <div className="relative z-[2] h-full w-full">
+    <div className="relative z-[2] h-screen w-full">
       <Canvas
         camera={{
           position: [-2, 0, 10],

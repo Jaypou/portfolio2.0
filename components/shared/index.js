@@ -3,5 +3,6 @@ import ThemeSwitcher from "./ThemeSwitcher.tsx";
 import Navbar from "./navbar";
 import HyperText from "./hyper-text";
 import Social from "./Social";
+import HeroCard from "./HeroCard";
 
-export { HyperText, IconComp, Navbar, Social, ThemeSwitcher };
+export { HeroCard, HyperText, IconComp, Navbar, Social, ThemeSwitcher };

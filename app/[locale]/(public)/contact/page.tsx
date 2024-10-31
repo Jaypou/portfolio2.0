@@ -6,7 +6,7 @@ export default async function Page({ params }: { params: { locale: string } }) {
   const dictionary = await getDictionary(locale);
 
   return (
-    <div className="flex h-screen min-h-screen flex-col">
+    <div className="flex min-h-screen flex-col">
       <div className="h-full w-full">
         <VideoHero
           HeroTitle={dictionary.Landing.Hello}

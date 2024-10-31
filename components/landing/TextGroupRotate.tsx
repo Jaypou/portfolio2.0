@@ -48,7 +48,7 @@ export default function TextGroupRotate({
         text={item.name}
         fontSize={fontSize}
         color={hovered ? "#ff0000" : "#ffffff"}
-        triggerOnHover={true}
+        triggerOnHover={false}
         duration={0.2}
         href={item.href}
         anchorX="left"
