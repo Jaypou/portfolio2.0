@@ -14,7 +14,7 @@ interface DynamicSectionProps {
 }
 
 export default function DynamicSection({ items }: DynamicSectionProps) {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(3);
   const [isLargeScreen, setIsLargeScreen] = useState<boolean>(true);
   const titleRefs = useRef<(HTMLHeadingElement | null)[]>(
     Array(items.length).fill(null)
@@ -70,7 +70,7 @@ export default function DynamicSection({ items }: DynamicSectionProps) {
 
       // Define scaling and positioning based on screen size
       const scaleValue = isLargeScreen ? 1.5 : 1.2;
-      const yValue = isLargeScreen ? -350 : -150;
+      const yValue = isLargeScreen ? -350 : -200;
       const enterRotation = isLargeScreen ? 0 : 0;
       const exitRotation = isLargeScreen ? 90 : 0;
 
@@ -88,40 +88,59 @@ export default function DynamicSection({ items }: DynamicSectionProps) {
         contentRefs.current[hoveredIndex],
         {
           opacity: 1,
-          duration: 0.2,
-          ease: "power4.out",
+          duration: 3,
+          ease: "expoScale",
           overwrite: true,
         },
         "<"
       );
 
-      return () => {
-        if (timelineRef.current) {
-          timelineRef.current.kill();
-        }
+      // Add scroll event listener to the active content
+      const contentRef = contentRefs.current[hoveredIndex];
+      const titleRef = titleRefs.current[hoveredIndex];
 
-        if (titleRefs.current[hoveredIndex]) {
-          gsap.to(titleRefs.current[hoveredIndex], {
-            y: 0,
-            scale: 1,
-            rotation: exitRotation,
-            duration: 1,
-            ease: "power2.out",
-            overwrite: true,
+      if (contentRef && titleRef) {
+        const handleScroll = () => {
+          const scrollTop = contentRef.scrollTop;
+          const opacity = Math.max(0, 1 - scrollTop / 50); // Fade out over first 100px of scroll
+          gsap.to(titleRef, {
+            opacity: opacity,
+            duration: 0.2,
           });
-        }
+        };
 
-        if (contentRefs.current[hoveredIndex]) {
-          gsap.to(contentRefs.current[hoveredIndex], {
-            opacity: 0,
-            duration: 1,
-            ease: "power2.out",
-            overwrite: true,
-          });
-        }
-      };
+        contentRef.addEventListener("scroll", handleScroll);
+        return () => {
+          contentRef.removeEventListener("scroll", handleScroll);
+          if (timelineRef.current) {
+            timelineRef.current.kill();
+          }
+
+          if (titleRef) {
+            gsap.to(titleRef, {
+              y: 0,
+              scale: 1,
+              rotation: exitRotation,
+              opacity: 1,
+              duration: 1,
+              ease: "power2.out",
+              overwrite: true,
+            });
+          }
+
+          if (contentRef) {
+            gsap.to(contentRef, {
+              opacity: 0,
+              duration: 1,
+              ease: "power2.out",
+              overwrite: true,
+            });
+          }
+        };
+      }
     }
   }, [hoveredIndex, isLargeScreen]);
+
   const handleMouseEnter = (index: number) => {
     setHoveredIndex(index);
   };
@@ -175,7 +194,7 @@ export default function DynamicSection({ items }: DynamicSectionProps) {
                 priority
               />
               <div
-                className={`absolute inset-0 duration-500 ease-in-out transition-background ${hoveredIndex === index ? "bg-black/35" : "bg-black/60"}`}
+                className={`absolute inset-0 duration-500 ease-in-out transition-background ${hoveredIndex === index ? "bg-black/35 backdrop-blur-[0.8px]" : "bg-black/60"}`}
               />
             </div>
 
@@ -197,7 +216,7 @@ export default function DynamicSection({ items }: DynamicSectionProps) {
             }}
             className={`absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2 ${
               isLargeScreen ? "rotate-90 text-4xl" : "text-3xl"
-            } whitespace-nowrap font-bold text-white`}
+            } whitespace-nowrap font-bold text-white transition-opacity duration-200`}
           >
             {item.title}
           </h2>

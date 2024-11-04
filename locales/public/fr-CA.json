@@ -4,6 +4,21 @@
     "CreatingExperiences": "et je crée des expériences engageantes"
   },
 
+  "About": {
+    "AboutMe": {
+      "Title": "À propos de moi",
+      "Content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse quis est non urna efficitur sodales. Vivamus aliquet mattis arcu a efficitur. Sed sed congue odio. Aliquam erat volutpat. Aenean ornare sagittis libero, a euismod urna molestie et. Vestibulum pretium diam neque, vel feugiat orci dictum in. Integer quis lacus lorem. Donec vitae sagittis augue, sit amet bibendum turpis."
+    },
+    "MyInterests": {
+      "Title": "Mes intérêts",
+      "Content": {
+        "P1": "Je suis quelqu'un qui s'épanouit dans les défis et l'amélioration de soi. J'adore partir à l'aventure, que ce soit en explorant de nouveaux endroits, en allant à la salle de gym ou en repoussant mes limites en plein air.",
+        "P2": "Je suis aussi passionné par les motos et un grand fan d'univers épiques comme Le Seigneur des Anneaux et l'univers Marvel. Soyons honnêtes, DC n'est pas tout à fait à la hauteur ! Pendant mon temps libre, j'apprécie les jeux vidéo, le café sucré et les sorties au cinéma.",
+        "P3": "Pour moi, chaque jour est une opportunité de me dépasser un peu plus et d'être meilleur qu'hier."
+      }
+    }
+  },
+
   "Navbar": {
     "Home": "Accueil",
     "About": "À Propos",

@@ -9,6 +9,7 @@ import {
 import AboutTimeline from "@/components/about/AboutTimeline";
 import React from "react";
 import AboutMe from "@/components/about/AboutMe";
+import AboutSkill from "@/components/about/AboutSkill";
 
 export default async function Page({ params }: { params: { locale: string } }) {
   const locale: string = params.locale;
@@ -20,11 +21,20 @@ export default async function Page({ params }: { params: { locale: string } }) {
     {
       title: "À propos de moi",
       content: (
-        <div className="h-full w-full">
+        <div className="p h-full w-full">
           <AboutMe />
         </div>
       ),
       image: "/assets/images/spring.jpg",
+    },
+    {
+      title: dictionary.About.MyInterests.Title,
+      content: (
+        <div className="h-full w-full">
+          <AboutInterest />
+        </div>
+      ),
+      image: "/assets/images/winter.jpg",
     },
     {
       title: "Timeline",
@@ -38,27 +48,17 @@ export default async function Page({ params }: { params: { locale: string } }) {
     {
       title: "Skill Badges",
       content: (
-        <div className="text-white">
-          Icônes pour chaque technologie que tu maîtrises: React, TypeScript,
-          Next.js, Tailwind CSS, et plus.
+        <div className="flex h-full w-full items-center justify-center">
+          <AboutSkill />
         </div>
       ),
       image: "/assets/images/autumn.jpg",
-    },
-    {
-      title: "My Interests",
-      content: (
-        <div className="">
-          <AboutInterest />
-        </div>
-      ),
-      image: "/assets/images/winter.jpg",
     },
   ];
 
   return (
     <div className="flex min-h-screen flex-col">
-      <div className="relative h-full w-full">
+      {/* <div className="relative h-full w-full">
         <div className="absolute inset-0 h-[60vh] w-full">
           <VideoBackground
             videoSource="/assets/videos/coffee_loop.mov"
@@ -70,7 +70,7 @@ export default async function Page({ params }: { params: { locale: string } }) {
         <div className="h-full w-full overflow-visible">
           <PerspectiveCanvas navItems={Title} />
         </div>
-      </div>
+      </div> */}
 
       <div className="h-full w-full py-20 lg:px-10">
         <AboutFlex items={items} />

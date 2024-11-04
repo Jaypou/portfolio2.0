@@ -7,6 +7,9 @@ import { ToastContainer } from "react-toastify";
 import { Navbar } from "@/components";
 import { GetNavItems } from "@/constants/GetNavbarConst";
 
+import DictionaryProvider from "./(public)/dictionary-provider";
+import { getDictionary } from "./(public)/public-dictionaries";
+
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -31,6 +34,7 @@ export default async function RootLayout({
   children: React.ReactNode;
   params: { locale: string };
 }>) {
+  const dictionary = await getDictionary(locale);
   const navItems = await GetNavItems(locale);
   return (
     <html lang={locale}>
@@ -43,7 +47,9 @@ export default async function RootLayout({
             <ThemeSwitcher />
           </div>
           <ToastContainer />
-          <>{children}</>
+          <DictionaryProvider dictionary={dictionary}>
+            {children}
+          </DictionaryProvider>
         </Providers>
       </body>
     </html>

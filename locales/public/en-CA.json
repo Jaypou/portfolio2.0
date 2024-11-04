@@ -4,6 +4,21 @@
     "CreatingExperiences": "and I am Creating Engaging Experiences"
   },
 
+  "About": {
+    "AboutMe": {
+      "Title": "About Me",
+      "Content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse quis est non urna efficitur sodales. Vivamus aliquet mattis arcu a efficitur. Sed sed congue odio. Aliquam erat volutpat. Aenean ornare sagittis libero, a euismod urna molestie et. Vestibulum pretium diam neque, vel feugiat orci dictum in. Integer quis lacus lorem. Donec vitae sagittis augue, sit amet bibendum turpis."
+    },
+    "MyInterests": {
+      "Title": "My Interests",
+      "Content": {
+        "P1": "I'm someone who thrives on challenge and self-improvement. I love taking on new adventures, whether it's exploring new places, hitting the gym, or testing my limits outdoors.",
+        "P2": "I'm also passionate about motorcycles and a big fan of epic worlds like The Lord of the Rings and the Marvel Universe. - Let's be honest, DC doesn't quite measure up! In my downtime, I enjoy video games, sweet coffee, and trips to the cinema.",
+        "P3": "For me, every day is an opportunity to push myself a little further and be better than I was yesterday."
+      }
+    }
+  },
+
   "Navbar": {
     "Home": "Home",
     "About": "About",

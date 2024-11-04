@@ -17,10 +17,10 @@ export async function GetNavItems(locale: string) {
       name: dictionary.Navbar.Contact || "Contact",
       href: `/${locale}/contact/`,
     },
-    {
-      name: dictionary.Navbar.Homepage || "Homepage",
-      href: `/${locale}/homepage/`,
-    },
+    // {
+    //   name: dictionary.Navbar.Homepage || "Homepage",
+    //   href: `/${locale}/homepage/`,
+    // },
     {
       name: dictionary.Navbar.Projects || "Projects",
       href: `/${locale}/projects/`,
