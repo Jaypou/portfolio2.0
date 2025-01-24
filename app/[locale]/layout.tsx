@@ -44,7 +44,7 @@ export default async function RootLayout({
         <Providers>
           {/* <Navbar navItems={navItems} /> */}
           <div className="absolute left-5 top-5 z-[5]">
-            <ThemeSwitcher />
+            {/* <ThemeSwitcher /> */}
           </div>
           <ToastContainer />
           <DictionaryProvider dictionary={dictionary}>

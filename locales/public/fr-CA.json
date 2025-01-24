@@ -4,6 +4,29 @@
     "CreatingExperiences": "et je crée des expériences engageantes"
   },
 
+  "Contact": {
+    "ContactName": "Jérémie Pouliot",
+    "ContactPosition": "Votre fidèle développeur du quartier",
+    "FindMe": "Trouvez moi sur",
+    "ContactMe": "Contactez moi ici!",
+    "EmailForm": {
+      "Title": "Envoyez-moi un message",
+      "Name": {
+        "Label": "Nom",
+        "Placeholder": "Votre nom"
+      },
+      "Email": {
+        "Label": "Courriel",
+        "Placeholder": "votre.courriel@exemple.com"
+      },
+      "Message": {
+        "Label": "Message",
+        "Placeholder": "Votre message..."
+      },
+      "Submit": "Envoyer le message"
+    }
+  },
+
   "About": {
     "AboutMe": {
       "Title": "À propos de moi",

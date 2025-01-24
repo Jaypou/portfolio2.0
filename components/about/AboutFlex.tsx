@@ -142,11 +142,11 @@ export default function DynamicSection({ items }: DynamicSectionProps) {
   }, [hoveredIndex, isLargeScreen]);
 
   const handleMouseEnter = (index: number) => {
-    setHoveredIndex(index);
+    // setHoveredIndex(index);
   };
 
   const handleMouseLeave = () => {
-    setHoveredIndex(null);
+    // setHoveredIndex(null);
   };
 
   const getWidth = (index: number) => {

@@ -4,6 +4,29 @@
     "CreatingExperiences": "and I am Creating Engaging Experiences"
   },
 
+  "Contact": {
+    "ContactName": "Jérémie Pouliot",
+    "ContactPosition": "Your friendly Neiborhood Developer",
+    "FindMe": "Find me on",
+    "ContactMe": "Contact me here!",
+    "EmailForm": {
+      "Title": "Send me a message",
+      "Name": {
+        "Label": "Name",
+        "Placeholder": "Your name"
+      },
+      "Email": {
+        "Label": "Email",
+        "Placeholder": "your.email@example.com"
+      },
+      "Message": {
+        "Label": "Message",
+        "Placeholder": "Your message..."
+      },
+      "Submit": "Send Message"
+    }
+  },
+
   "About": {
     "AboutMe": {
       "Title": "About Me",

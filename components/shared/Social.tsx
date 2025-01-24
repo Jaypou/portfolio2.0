@@ -6,6 +6,8 @@ interface SocialProps {
   hrefs: string[];
   className?: string;
   rotate?: boolean;
+  layout?: "row" | "col"; // Determines the layout (flex-row or flex-col)
+  showUsername?: boolean; // Determines if the username should be displayed
 }
 
 type SocialPlatform = {
@@ -88,45 +90,67 @@ const Social: React.FC<SocialProps> = ({
   hrefs,
   className = "",
   rotate = false,
+  layout = "row",
+  showUsername = false,
 }) => {
   const getPlatform = (url: string): SocialPlatform | undefined => {
     return socialPlatforms.find((platform) => platform.regex.test(url));
   };
 
+  const extractUsername = (url: string): string | null => {
+    try {
+      const parts = new URL(url).pathname.split("/").filter(Boolean);
+      return parts.length > 0 ? `@${parts[parts.length - 1]}` : null;
+    } catch (e) {
+      return null;
+    }
+  };
+
   return (
-    <div className="flex gap-4">
+    <div
+      className={`flex gap-4 ${layout === "col" ? "flex-col items-start" : "flex-row"}`}
+    >
       {hrefs.map((href, index) => {
         const platform = getPlatform(href);
         if (!platform) return null;
 
+        const username = extractUsername(href);
         const sizeClass = platform.name === "tiktok" ? "scale-[0.80]" : "";
         const rotationClass =
-          index % 2 === 0 ? "hover:rotate-[30deg]" : "hover:rotate-[-30deg]";
-
+          rotate && index % 2 === 0
+            ? "hover:rotate-[30deg]"
+            : "hover:rotate-[-30deg]";
         const linkClass =
           platform.name === "instagram"
-            ? `group transition-all duration-500 hover:scale-110 scale-[0.85] ${rotationClass} bg-gradient-to-tr from-[#F77737] via-[#FD1D1D] to-[#833AB4] rounded-xl`
-            : `group transition-all duration-500 hover:scale-[1.2] ${rotationClass}`;
+            ? `group flex flex-row gap-1 transition-all duration-500 hover:scale-110 scale-[0.85] ${rotationClass} bg-gradient-to-tr from-[#F77737] via-[#FD1D1D] to-[#833AB4] rounded-xl`
+            : `group flex flex-row gap-1 transition-all duration-500 hover:scale-[1.2] ${rotationClass}`;
 
         return (
-          <Link
+          <div
             key={index}
-            href={href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={linkClass}
+            className={`flex ${layout === "col" ? "flex-col items-start" : "flex-col items-center"}`}
           >
-            <IconComp
-              icon={platform.icon}
-              className={`
-                ${platform.colorClass}
-                ${className}
-                ${sizeClass}
-                transition-all duration-500
-                hover:opacity-80
-              `}
-            />
-          </Link>
+            <Link
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={linkClass}
+            >
+              <IconComp
+                icon={platform.icon}
+                className={`
+                  ${platform.colorClass}
+                  ${className}
+                  ${sizeClass}
+                  transition-all duration-500
+                  hover:opacity-80
+                `}
+              />
+              {showUsername && username && (
+                <span className="mt-2 text-sm text-gray-400">{username}</span>
+              )}
+            </Link>
+          </div>
         );
       })}
     </div>
