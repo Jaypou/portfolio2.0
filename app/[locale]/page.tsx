@@ -1,46 +1,45 @@
 import { getDictionary } from "@/app/[locale]/(public)/public-dictionaries";
-import {
-  Presentation,
-  VideoBackground,
-  VideoHero,
-  LandingFooter,
-} from "@/components";
-import PerspectiveCanvas from "@/components/landing/PerspectiveCanvas";
-import { GetNavItems } from "@/constants/GetNavbarConst";
+import { LandingFooter, ContactMain } from "@/components";
+import ExperiencesMain from "@/components/experiences/ExperiencesMain";
+import SkillMain from "@/components/skills/SkillMain";
 
 export default async function Page({ params }: { params: { locale: string } }) {
   const locale: string = params.locale;
   const dictionary = await getDictionary(locale);
 
-  const navItems = await GetNavItems(locale);
-
   return (
-    <div className="relative flex h-full min-h-screen w-full flex-col gap-y-16">
-      {/* <div className="h-full w-full">
-        <VideoHero
-          HeroTitle={dictionary.Landing.Hello}
-          HeroSubtitle={dictionary.Landing.CreatingExperiences}
-          videoSource="/assets/videos/code_background_loop.mov"
-          fadeOutDuration={1}
-          easeOptions="power3.inOut"
-        />
-      </div> */}
+    <div className="relative w-full">
+      {/* Contact Section */}
+      <section
+        id="contact"
+        className="flex min-h-screen w-full items-start justify-center bg-gradient-to-b from-black to-gray-600 md:pl-24 xl:pl-32"
+      >
+        <ContactMain />
+      </section>
 
-      <div className="absolute inset-0">
-        <VideoBackground
-          videoSource="/assets/videos/code_background_loop.mov"
-          videoClassnames="opacity-20"
-          fadeOutDuration={1.5}
-          easeOptions="power1.inOut"
-        />
-      </div>
+      {/* About Section */}
+      <section
+        id="about"
+        className="flex min-h-screen w-full items-start justify-center bg-gray-400 md:pl-24 xl:pl-32"
+      >
+        <h2 className="text-5xl font-bold text-black">About Me</h2>
+      </section>
 
-      {/* Corriger le focal point de la perspective */}
+      {/* Skills Section */}
+      <section
+        id="skills"
+        className="flex min-h-screen w-full items-start justify-center bg-gray-400 md:pl-24 xl:pl-32"
+      >
+        <SkillMain />
+      </section>
 
-      <div className="h-full w-full overflow-visible">
-        {/* <Presentation navItems={navItems} /> */}
-        <PerspectiveCanvas navItems={navItems} />
-      </div>
+      {/* Projects Section */}
+      <section
+        id="experiences"
+        className="flex min-h-screen w-full items-start justify-center bg-gray-400 md:pl-24 xl:pl-32"
+      >
+        <ExperiencesMain />
+      </section>
 
       <div className="absolute bottom-0 right-0 z-[2] h-fit w-full">
         <LandingFooter />

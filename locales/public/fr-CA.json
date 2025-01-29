@@ -6,7 +6,7 @@
 
   "Contact": {
     "ContactName": "Jérémie Pouliot",
-    "ContactPosition": "Votre fidèle développeur du quartier",
+    "ContactPosition": "Développeur web junior",
     "FindMe": "Trouvez moi sur",
     "ContactMe": "Contactez moi ici!",
     "EmailForm": {
@@ -49,5 +49,31 @@
     "Homepage": "HomePage",
     "Projects": "Projets",
     "Skills": "Compétances"
+  },
+
+  "experiences": {
+    "title": "Expériences",
+    "timeline": {
+      "2015": {
+        "title": "2015 - Début en Menuiserie",
+        "description": "J'ai commencé mon parcours dans la construction à l'école de menuiserie, où j'ai appris les fondamentaux du travail du bois, des outils et des mesures. Plus important encore, j'ai développé la discipline, la ponctualité et une grande attention aux détails—des compétences qui deviendraient plus tard cruciales dans ma carrière."
+      },
+      "2018": {
+        "title": "2018 - Expérience Professionnelle",
+        "description": "Après l'obtention de mon diplôme, j'ai passé cinq ans sur les chantiers, travaillant en étroite collaboration avec des menuisiers expérimentés. Cette expérience pratique a renforcé mes compétences en résolution de problèmes et mon adaptabilité. Le travail d'équipe et une communication claire étaient essentiels au quotidien, assurant le bon déroulement des projets. À travers cela, j'ai appris la patience et la persévérance—des qualités qui façonnent maintenant mon approche du codage et de la résolution de problèmes."
+      },
+      "2022": {
+        "title": "2022 - Transition vers le Développement Web",
+        "description": "J'ai fait la transition vers le développement web grâce à un programme ACS intensif de 8 mois. Le programme accéléré nécessitait du dévouement, et à la fin, seule une douzaine d'étudiants sur 30 sont restés. Cette expérience a solidifié ma base technique et développé davantage ma résilience. Bien que j'aie apprécié la menuiserie, j'ai trouvé la structure de l'industrie limitante et les exigences physiques difficiles. Les incitatifs gouvernementaux pour la reconversion dans la technologie m'ont donné l'impulsion finale dont j'avais besoin pour poursuivre le développement web—un domaine où la créativité, la résolution de problèmes et l'apprentissage continu sont essentiels."
+      },
+      "2023": {
+        "title": "2023 - Développement des Compétences",
+        "description": "Tout au long de 2023, j'ai perfectionné mes compétences en React grâce aux cours Udemy et exploré Java, ce qui m'a aidé à affiner mon focus sur le développement frontend. Malgré les défis rencontrés pour décrocher mon premier poste, j'ai acquis de précieuses perspectives à travers les entretiens et suis resté déterminé à améliorer mon métier."
+      },
+      "2025": {
+        "title": "Présent - Prêt pour l'Impact",
+        "description": "Désireux d'appliquer mes compétences techniques et mon esprit de résolution de problèmes à des projets concrets, contribuant à un travail de développement innovant et impactant."
+      }
+    }
   }
 }

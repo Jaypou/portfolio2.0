@@ -1,0 +1,76 @@
+"use client";
+import { IconComp } from "@/components";
+
+interface TimelineCardProps {
+  title: string;
+  description: string;
+  year: string;
+}
+
+const getIconForYear = (year: string) => {
+  switch (year) {
+    case "2015":
+      return "mdi:hammer-screwdriver";
+    case "2018":
+      return "mdi:account-hard-hat";
+    case "2022":
+      return "mdi:code-braces";
+    case "2023":
+      return "mdi:book-open-page-variant";
+    case "2025":
+      return "mdi:rocket-launch";
+    default:
+      return "mdi:calendar";
+  }
+};
+
+export default function TimelineCard({
+  title,
+  description,
+  year,
+}: TimelineCardProps) {
+  const icon = getIconForYear(year);
+  return (
+    <div className="group relative mb-16 flex w-full items-start">
+      {/* Content */}
+      <div className="w-[85%] pr-12">
+        <div className="rounded-xl bg-white p-8 shadow-lg transition-all duration-300 group-hover:shadow-xl dark:bg-gray-800/50 dark:backdrop-blur-sm">
+          <div className="flex flex-col gap-4">
+            <div className="flex items-center gap-4">
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-500/10 p-2">
+                <IconComp icon={icon} className="h-8 w-8 text-blue-500" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
+                {title.replace(/^\d{4}\s-\s/, "")}
+              </h3>
+            </div>
+            <p className="text-lg leading-relaxed text-gray-600 dark:text-gray-300">
+              {description}
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Timeline marker */}
+      <div
+        className="absolute right-[8.5%] flex cursor-pointer flex-col items-center"
+        onClick={(e) => {
+          e.currentTarget.scrollIntoView({
+            behavior: "smooth",
+            block: "center",
+            inline: "center",
+          });
+        }}
+      >
+        <div className="relative flex h-12 w-12 items-center justify-center">
+          <div className="absolute h-12 w-12 rounded-full bg-blue-500 opacity-20 transition-transform duration-300 group-hover:scale-125" />
+          <div className="absolute h-8 w-8 rounded-full bg-blue-500 transition-transform duration-300 group-hover:scale-110" />
+          <div className="absolute h-4 w-4 rounded-full bg-white" />
+        </div>
+        <span className="mt-4 text-lg font-bold text-blue-500 dark:text-blue-400">
+          {year}
+        </span>
+      </div>
+    </div>
+  );
+}

@@ -1,4 +1,4 @@
-import ContactCard from "./ContactCard.tsx";
-import EmailForm from "./EmailForm.tsx";
+import ContactMain from "./ContactMain";
+import ContactCard2 from "./ContactCard2";
 
-export { ContactCard, EmailForm };
+export { ContactMain, ContactCard2 };

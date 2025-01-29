@@ -6,7 +6,7 @@
 
   "Contact": {
     "ContactName": "Jérémie Pouliot",
-    "ContactPosition": "Your friendly Neiborhood Developer",
+    "ContactPosition": "Junior web developer",
     "FindMe": "Find me on",
     "ContactMe": "Contact me here!",
     "EmailForm": {
@@ -49,5 +49,31 @@
     "Homepage": "Homepage",
     "Projects": "Projects",
     "Skills": "Skills"
+  },
+
+  "experiences": {
+    "title": "Experiences",
+    "timeline": {
+      "2015": {
+        "title": "2015 - Beginning in Carpentry",
+        "description": "I began my journey in construction at carpentry school, where I learned the fundamentals of working with wood, tools, and measurements. More importantly, I developed discipline, punctuality, and a strong attention to detail—skills that would later become crucial in my career."
+      },
+      "2018": {
+        "title": "2018 - Professional Experience",
+        "description": "After graduating, I spent five years on job sites, working closely with experienced carpenters. This hands-on experience strengthened my problem-solving skills and adaptability. Teamwork and clear communication were essential daily, ensuring projects ran smoothly. Through this, I learned patience and perseverance—qualities that now shape my approach to coding and problem-solving."
+      },
+      "2022": {
+        "title": "2022 - Transition to Web Development",
+        "description": "I transitioned into web development through an intensive 8-month ACS program. The fast-paced curriculum required dedication, and by the end, only a dozen students remained out of 30. This experience solidified my technical foundation and further developed my resilience. While I enjoyed carpentry, I found the industry's structure limiting, and the physical demands challenging. Government incentives for retraining in tech provided the final push I needed to pursue web development—a field where creativity, problem-solving, and continuous learning are key."
+      },
+      "2023": {
+        "title": "2023 - Skill Development",
+        "description": "Throughout 2023, I honed my skills in React through Udemy courses and explored Java, which helped me refine my focus on frontend development. Despite facing challenges in landing my first role, I gained valuable insights through interviews and remained committed to improving my craft."
+      },
+      "2025": {
+        "title": "Present - Ready for Impact",
+        "description": "Eager to apply my technical skills and problem-solving mindset to real-world projects, contributing to innovative and impactful development work."
+      }
+    }
   }
 }

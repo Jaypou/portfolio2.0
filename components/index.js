@@ -1,5 +1,8 @@
-export * from "./landing";
 export * from "./ui-aceternity";
-export * from "./skills";
+export * from "./contact";
+export * from "./experiences";
 export * from "./shared";
-export * from "./about";
+
+export * from "./oldLanding";
+export * from "./oldSkills";
+export * from "./oldAbout";

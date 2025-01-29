@@ -6,8 +6,9 @@ export default function LandingFooter() {
       <div className="flex items-center space-x-4">
         <Social
           hrefs={[
+
             "https://discord.com",
-            "https://github.com/username",
+            "https://github.com/jaypou",
             "https://linkedin.com/in/username",
           ]}
           className="h-12 w-12"

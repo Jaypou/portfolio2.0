@@ -21,8 +21,10 @@ interface HyperTextProps {
 }
 
 const alphabets = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+const symbols = "!@#$%^&*()_+-=[]{}|;:,.<>?/~".split("");
+const allCharacters = [...alphabets, ...symbols];
 
-const getRandomInt = (max: number) => Math.floor(Math.random() * max);
+const getRandomChar = () => allCharacters[Math.floor(Math.random() * allCharacters.length)];
 
 export default function HyperText({
   text,
@@ -62,7 +64,7 @@ export default function HyperText({
                 ? l
                 : i <= interations.current
                   ? text[i]
-                  : alphabets[getRandomInt(26)]
+                  : getRandomChar()
             )
           );
           interations.current = interations.current + 0.1;

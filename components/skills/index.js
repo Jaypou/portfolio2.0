@@ -1,5 +1,4 @@
-import DisplayOS from "./DisplayOS";
-import FloatingDockDemo from "./FloatingDockDemo";
-import WindowsTaskBar from "./WindowsTaskBar";
+import SkillMain from "./SkillMain.tsx";
+import SkillCard from "./SkillCard.tsx";
 
-export { DisplayOS, FloatingDockDemo, WindowsTaskBar };
+export { SkillMain, SkillCard };
