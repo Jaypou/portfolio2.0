@@ -1,5 +1,4 @@
-import ExperiencesMain from "./ExperiencesMain";
-import ExperiencesTimeline from "./ExperiencesTimeline";
-import TimelineCard from "./TimelineCard";
+import ExperienceMain from "./ExperienceMain";
+import ExperienceCard from "./ExperienceCard";
 
-export { ExperiencesMain, ExperiencesTimeline, TimelineCard };
+export { ExperienceMain, ExperienceCard };

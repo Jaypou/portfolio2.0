@@ -1,6 +1,11 @@
 import { getDictionary } from "@/app/[locale]/(public)/public-dictionaries";
-import { LandingFooter, ContactMain } from "@/components";
-import ExperiencesMain from "@/components/experiences/ExperiencesMain";
+import {
+  LandingFooter,
+  ContactMain,
+  AboutMain,
+  ExperienceMain,
+} from "@/components";
+// import ExperiencesMain from "@/components/about/ExperiencesMain";
 import SkillMain from "@/components/skills/SkillMain";
 
 export default async function Page({ params }: { params: { locale: string } }) {
@@ -22,7 +27,7 @@ export default async function Page({ params }: { params: { locale: string } }) {
         id="about"
         className="flex min-h-screen w-full items-start justify-center bg-gray-400 md:pl-24 xl:pl-32"
       >
-        <h2 className="text-5xl font-bold text-black">About Me</h2>
+        <AboutMain />
       </section>
 
       {/* Skills Section */}
@@ -38,7 +43,7 @@ export default async function Page({ params }: { params: { locale: string } }) {
         id="experiences"
         className="flex min-h-screen w-full items-start justify-center bg-gray-400 md:pl-24 xl:pl-32"
       >
-        <ExperiencesMain />
+        <ExperienceMain />
       </section>
 
       <div className="absolute bottom-0 right-0 z-[2] h-fit w-full">

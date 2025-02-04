@@ -31,18 +31,21 @@ export default function TimelineCard({
 }: TimelineCardProps) {
   const icon = getIconForYear(year);
   return (
-    <div className="group relative mb-16 flex w-full items-start">
+    <div className="group relative mb-16 grid w-full items-start gap-6 sm:grid-cols-[1fr,auto]">
       {/* Content */}
-      <div className="w-[85%] pr-12">
-        <div className="rounded-xl bg-white p-8 shadow-lg transition-all duration-300 group-hover:shadow-xl dark:bg-gray-800/50 dark:backdrop-blur-sm">
+      <div className="w-full">
+        <div className="rounded-xl bg-white p-8 shadow-lg shadow-gray-700 transition-all duration-300 group-hover:shadow-xl group-hover:shadow-gray-800 dark:bg-gray-800/50 dark:backdrop-blur-sm">
           <div className="flex flex-col gap-4">
             <div className="flex items-center gap-4">
               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-500/10 p-2">
                 <IconComp icon={icon} className="h-8 w-8 text-blue-500" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
-                {title.replace(/^\d{4}\s-\s/, "")}
-              </h3>
+              <div className="flex flex-col">
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
+                  {title}
+                </h3>
+                <h4 className="text-gray-500">{year}</h4>
+              </div>
             </div>
             <p className="text-lg leading-relaxed text-gray-600 dark:text-gray-300">
               {description}
@@ -53,7 +56,7 @@ export default function TimelineCard({
 
       {/* Timeline marker */}
       <div
-        className="absolute right-[8.5%] flex cursor-pointer flex-col items-center"
+        className="hidden cursor-pointer flex-col items-center sm:flex"
         onClick={(e) => {
           e.currentTarget.scrollIntoView({
             behavior: "smooth",

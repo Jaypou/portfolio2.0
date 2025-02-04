@@ -27,21 +27,6 @@
     }
   },
 
-  "About": {
-    "AboutMe": {
-      "Title": "À propos de moi",
-      "Content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse quis est non urna efficitur sodales. Vivamus aliquet mattis arcu a efficitur. Sed sed congue odio. Aliquam erat volutpat. Aenean ornare sagittis libero, a euismod urna molestie et. Vestibulum pretium diam neque, vel feugiat orci dictum in. Integer quis lacus lorem. Donec vitae sagittis augue, sit amet bibendum turpis."
-    },
-    "MyInterests": {
-      "Title": "Mes intérêts",
-      "Content": {
-        "P1": "Je suis quelqu'un qui s'épanouit dans les défis et l'amélioration de soi. J'adore partir à l'aventure, que ce soit en explorant de nouveaux endroits, en allant à la salle de gym ou en repoussant mes limites en plein air.",
-        "P2": "Je suis aussi passionné par les motos et un grand fan d'univers épiques comme Le Seigneur des Anneaux et l'univers Marvel. Soyons honnêtes, DC n'est pas tout à fait à la hauteur ! Pendant mon temps libre, j'apprécie les jeux vidéo, le café sucré et les sorties au cinéma.",
-        "P3": "Pour moi, chaque jour est une opportunité de me dépasser un peu plus et d'être meilleur qu'hier."
-      }
-    }
-  },
-
   "Navbar": {
     "Home": "Accueil",
     "About": "À Propos",
@@ -51,29 +36,36 @@
     "Skills": "Compétances"
   },
 
-  "experiences": {
-    "title": "Expériences",
-    "timeline": {
-      "2015": {
-        "title": "2015 - Début en Menuiserie",
-        "description": "J'ai commencé mon parcours dans la construction à l'école de menuiserie, où j'ai appris les fondamentaux du travail du bois, des outils et des mesures. Plus important encore, j'ai développé la discipline, la ponctualité et une grande attention aux détails—des compétences qui deviendraient plus tard cruciales dans ma carrière."
-      },
-      "2018": {
-        "title": "2018 - Expérience Professionnelle",
-        "description": "Après l'obtention de mon diplôme, j'ai passé cinq ans sur les chantiers, travaillant en étroite collaboration avec des menuisiers expérimentés. Cette expérience pratique a renforcé mes compétences en résolution de problèmes et mon adaptabilité. Le travail d'équipe et une communication claire étaient essentiels au quotidien, assurant le bon déroulement des projets. À travers cela, j'ai appris la patience et la persévérance—des qualités qui façonnent maintenant mon approche du codage et de la résolution de problèmes."
-      },
-      "2022": {
-        "title": "2022 - Transition vers le Développement Web",
-        "description": "J'ai fait la transition vers le développement web grâce à un programme ACS intensif de 8 mois. Le programme accéléré nécessitait du dévouement, et à la fin, seule une douzaine d'étudiants sur 30 sont restés. Cette expérience a solidifié ma base technique et développé davantage ma résilience. Bien que j'aie apprécié la menuiserie, j'ai trouvé la structure de l'industrie limitante et les exigences physiques difficiles. Les incitatifs gouvernementaux pour la reconversion dans la technologie m'ont donné l'impulsion finale dont j'avais besoin pour poursuivre le développement web—un domaine où la créativité, la résolution de problèmes et l'apprentissage continu sont essentiels."
-      },
-      "2023": {
-        "title": "2023 - Développement des Compétences",
-        "description": "Tout au long de 2023, j'ai perfectionné mes compétences en React grâce aux cours Udemy et exploré Java, ce qui m'a aidé à affiner mon focus sur le développement frontend. Malgré les défis rencontrés pour décrocher mon premier poste, j'ai acquis de précieuses perspectives à travers les entretiens et suis resté déterminé à améliorer mon métier."
-      },
-      "2025": {
-        "title": "Présent - Prêt pour l'Impact",
-        "description": "Désireux d'appliquer mes compétences techniques et mon esprit de résolution de problèmes à des projets concrets, contribuant à un travail de développement innovant et impactant."
-      }
-    }
+  "About": {
+    "title": "Mon parcous",
+    "BeginningCarpentry": "Début profesionnels",
+    "BeginningCarpentryDesc": "J'ai commencé mon parcours dans la construction à l'école de menuiserie, où j'ai appris les fondamentaux du travail du bois, des outils et des mesures. Plus important encore, j'ai développé la discipline, la ponctualité et une grande attention aux détails—des compétences qui deviendraient plus tard cruciales dans ma carrière.",
+    "ProfessionalExperience": "Expérience en chantier",
+    "ProfessionalExperienceDesc": "Après l'obtention de mon diplôme, j'ai passé cinq ans sur les chantiers, travaillant en étroite collaboration avec des menuisiers expérimentés. Cette expérience pratique a renforcé mes compétences en résolution de problèmes et mon adaptabilité. Le travail d'équipe et une communication claire étaient essentiels au quotidien, assurant le bon déroulement des projets. À travers cela, j'ai appris la patience et la persévérance—des qualités qui façonnent maintenant mon approche du codage et de la résolution de problèmes.",
+    "TransitionWebDev": "Transition vers le Développement Web",
+    "TransitionWebDevDesc": "J'ai fait la transition vers le développement web grâce à un programme ACS intensif de 8 mois. Le programme accéléré nécessitait du dévouement, et à la fin, seule une douzaine d'étudiants sur 30 sont restés. Cette expérience a solidifié ma base technique et développé davantage ma résilience. Bien que j'aie apprécié la menuiserie, j'ai trouvé la structure de l'industrie limitante et les exigences physiques difficiles. Les incitatifs gouvernementaux pour la reconversion dans la technologie m'ont donné l'impulsion finale dont j'avais besoin pour poursuivre le développement web—un domaine où la créativité, la résolution de problèmes et l'apprentissage continu sont essentiels.",
+    "SkillDevelopment": "Développement des Compétences",
+    "SkillDevelopmentDesc": "Tout au long de 2023, j'ai perfectionné mes compétences en React grâce aux cours Udemy et exploré Java, ce qui m'a aidé à affiner mon focus sur le développement frontend. Malgré les défis rencontrés pour décrocher mon premier poste, j'ai acquis de précieuses perspectives à travers les entretiens et suis resté déterminé à améliorer mon métier.",
+    "ReadyForImpact": "Prêt pour l'Impact",
+    "ReadyForImpactDesc": "Désireux d'appliquer mes compétences techniques et mon esprit de résolution de problèmes à des projets concrets, contribuant à un travail de développement innovant et impactant."
+  },
+
+  "Experience": {
+    "AECTitle": "AEC en Développement Web",
+    "AECDesc": "Programme intensif de 8 mois en développement web au Cégep de Sherbrooke",
+    "AECTasks": [
+      "Développement front-end avec HTML, CSS, JavaScript, PHP et introduction à WordPress, Laravel et Bootstrap.",
+      "Développement back-end avec PHP et gestion de bases de données avec SQL.",
+      "Gestion de projet web, contrôle de version avec Git & GitHub, et déploiement sur le cloud (Azure).",
+      "Intégration full-stack, optimisation des performances, meilleures pratiques en accessibilité et sécurité."
+    ],
+    "WebDevTitle": "Développeur Web Junior",
+    "WebDevDesc": "Développeur web junior chez Innovation Kapital-K, spécialisé dans le développement frontend",
+    "WebDevTasks": [
+      "Développement et maintenance d'interfaces utilisateur réactives et dynamiques avec Next.js, React, Tailwind CSS et TypeScript.",
+      "Intégration d'API et de services tiers pour améliorer les fonctionnalités et le traitement des données.",
+      "Mise en place de composants modulaires et réutilisables pour une structure de code efficace et évolutive.",
+      "Optimisation des performances, débogage et application des meilleures pratiques en accessibilité et sécurité."
+    ]
   }
 }

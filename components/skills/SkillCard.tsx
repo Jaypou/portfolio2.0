@@ -16,7 +16,7 @@ export default function SkillCard({
   skills,
 }: SkillCardProps) {
   return (
-    <div className="w-full p-6 md:min-h-[250px] md:rounded-lg md:bg-white/90 md:shadow-xl md:shadow-gray-700 md:backdrop-blur-sm md:transition-all md:duration-300 md:hover:scale-105 lg:min-h-[300px]">
+    <div className="w-full p-6 ease-in-out md:min-h-[250px] md:rounded-lg md:bg-white/90 md:shadow-xl md:shadow-gray-700 md:transition-all md:hover:scale-105 md:hover:shadow-gray-800 lg:min-h-[300px]">
       <div className="flex flex-col gap-4">
         <div className="flex flex-col items-start gap-3 md:items-center md:justify-center">
           <IconComp
