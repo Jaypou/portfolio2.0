@@ -30,8 +30,8 @@ export default function ExperiencesMain() {
   ];
 
   return (
-    <div className="max-w-7xl py-20">
-      <div className="container mx-auto flex flex-col items-center px-8 md:px-0">
+    <div className="w-full py-20">
+      <div className="container mx-auto flex flex-col items-center px-4 sm:px-8">
         <h1 className="mb-16 text-center text-5xl font-bold">
           Experience Professionnelle
         </h1>

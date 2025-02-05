@@ -65,13 +65,13 @@ export default function ExperienceCard({
             </div>
 
             {/* Description */}
-            <p className="ml-8 text-lg font-medium leading-relaxed text-gray-800 dark:text-gray-300">
+            <p className="ml-0 md:ml-8 text-lg font-medium leading-relaxed text-gray-800 dark:text-gray-300">
               {description}
             </p>
 
             {/* Tasks */}
             {tasks && (
-              <ul className="ml-16 list-inside list-disc space-y-2 text-base text-gray-600 dark:text-gray-300">
+              <ul className="ml-4 md:ml-16 list-inside list-disc space-y-2 text-base text-gray-600 dark:text-gray-300">
                 {tasks.map((task, index) => (
                   <li key={index} className="">
                     {task}
