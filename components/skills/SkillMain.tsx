@@ -18,7 +18,7 @@ export default function SkillMain() {
       ],
     },
     {
-      icon: "mingcute:code-fill",
+      icon: "icomoon-free:database",
       iconColor: "blue-500",
       title: "Base de Données & Ingénierie des Données",
       skills: [
@@ -28,7 +28,7 @@ export default function SkillMain() {
       ],
     },
     {
-      icon: "mingcute:code-fill",
+      icon: "zondicons:cloud",
       iconColor: "orange-500",
       title: "Cloud & DevOps",
       skills: [
@@ -38,7 +38,7 @@ export default function SkillMain() {
       ],
     },
     {
-      icon: "mingcute:code-fill",
+      icon: "rivet-icons:gears",
       iconColor: "yellow-500",
       title: "Ingénierie Systèmes",
       skills: [
@@ -48,7 +48,7 @@ export default function SkillMain() {
       ],
     },
     {
-      icon: "mingcute:code-fill",
+      icon: "flowbite:brain-solid",
       iconColor: "green-500",
       title: "Inteligence Artificielle",
       skills: [
@@ -59,7 +59,7 @@ export default function SkillMain() {
       ],
     },
     {
-      icon: "mingcute:code-fill",
+      icon: "mdi:toolbox",
       iconColor: "purple-500",
       title: "Compétences Professionnelles",
       skills: ["Stratégie & Innovation Technique"],

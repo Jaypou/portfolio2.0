@@ -16,20 +16,23 @@ export default function SkillCard({
   skills,
 }: SkillCardProps) {
   return (
-    <div className="w-full p-6 ease-in-out md:min-h-[250px] md:rounded-lg md:bg-white/90 md:shadow-xl md:shadow-gray-700 md:transition-all md:hover:scale-105 md:hover:shadow-gray-800 lg:min-h-[300px]">
+    <div className="relative w-full ease-in-out md:min-h-[310px] md:rounded-lg md:bg-white/90 md:p-6 md:shadow-xl md:shadow-gray-700 md:transition-all md:hover:scale-105 md:hover:shadow-gray-800 lg:min-h-[300px]">
       <div className="flex flex-col gap-4">
-        <div className="flex flex-col items-start gap-3 md:items-center md:justify-center">
+        <div className="flex items-center gap-3">
           <IconComp
-            className={cn("h-12 w-12 rounded-lg p-2", `bg-${iconColor}`)}
+            className={cn(
+              "-top-3 left-2 h-12 w-12 min-w-[48px] rounded-lg p-2 text-white shadow-xl shadow-gray-500 md:absolute md:h-16 md:w-16 md:min-w-[64px]",
+              `bg-${iconColor}`
+            )}
             icon={icon}
           />
 
-          <h3 className="text-xl font-semibold md:text-center">{title}</h3>
+          <h3 className="text-xl font-semibold md:ml-4 md:mt-10">{title}</h3>
         </div>
 
         <ul
           className={cn(
-            "ml-8 flex list-disc flex-col items-start justify-center gap-4 marker:text-xs md:ml-0",
+            "ml-20 flex list-disc flex-col items-start justify-center gap-4 marker:text-xs md:ml-8",
             iconColor ? `marker:text-${iconColor}` : "marker:text-primary"
           )}
         >

@@ -1,38 +1,21 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import IconComp from "../shared/IconComp";
-
-const navItems = [
-  {
-    icon: "mdi:account",
-    href: "#contact",
-    label: "Contact",
-  },
-  {
-    icon: "mdi:rocket-launch",
-    href: "#about",
-    label: "About",
-  },
-  {
-    icon: "mdi:lightbulb",
-    href: "#skills",
-    label: "Skills",
-  },
-  {
-    icon: "mdi:briefcase",
-    href: "#experiences",
-    label: "Experiences",
-  },
-];
+import { IconComp } from "@/components";
+import { useMediaQuery } from "usehooks-ts";
+import { GetProgressNavItems } from "@/constants/GetProgressNavConst";
 
 export default function ProgressNav() {
   const [activeSection, setActiveSection] = useState("");
   const [scrollProgress, setScrollProgress] = useState(0);
-  const [mounted, setMounted] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const isDesktop = useMediaQuery("(min-width: 768px)");
+
+  // Constants for the progressNav are stored elsewhere for easier management
+  const navItems = GetProgressNavItems();
 
   useEffect(() => {
-    setMounted(true);
-    return () => setMounted(false);
+    setIsLoading(false);
+    return () => setIsLoading(true);
   }, []);
 
   useEffect(() => {
@@ -67,17 +50,16 @@ export default function ProgressNav() {
 
   return (
     <nav
-      className={`fixed bottom-8 left-1/2 z-50 -translate-x-1/2 rounded-2xl bg-white/80 opacity-0 transition-all duration-500 md:bottom-auto md:left-5 md:top-1/2 md:-translate-y-1/2 md:translate-x-0 md:rounded-none md:bg-transparent ${mounted ? "opacity-100" : ""}`}
+      className={`fixed bottom-4 left-1/2 z-50 -translate-x-1/2 rounded-2xl bg-white opacity-0 transition-all duration-500 md:bottom-auto md:left-5 md:top-1/2 md:-translate-y-1/2 md:translate-x-0 md:rounded-none md:bg-transparent ${!isLoading ? "opacity-100" : ""}`}
     >
       <div className="relative flex items-center gap-4 p-4 md:flex-col md:gap-12 md:px-0 md:py-12">
         {/* Progress bar container - only visible on desktop */}
         <div className="absolute inset-y-0 hidden w-[2px] bg-white/20 md:block">
           {/* Progress bar fill */}
           <div
-            className="w-full bg-white transition-all duration-300"
+            className="w-full bg-red-600 transition-all duration-300"
             style={{
               height: `${scrollProgress}%`,
-              opacity: 0.8,
             }}
           />
         </div>
@@ -93,24 +75,44 @@ export default function ProgressNav() {
               element?.scrollIntoView({ behavior: "smooth" });
             }}
           >
-            <div className="relative">
+            {/* Custom tooltip element */}
+            <div className="group relative">
               <div
-                className={`flex h-10 w-10 items-center justify-center rounded-lg transition-all duration-300 group-hover:scale-110 group-hover:bg-gray-900 sm:h-12 sm:w-12 md:h-10 md:w-10 xl:h-14 xl:w-14
-                  ${
-                    activeSection === item.href.substring(1)
-                      ? "bg-gray-800 shadow-lg shadow-gray-700"
-                      : "bg-white shadow-lg shadow-gray-500"
-                  }`}
+                className={`absolute whitespace-nowrap ${
+                  isDesktop
+                    ? "left-[calc(100%+12px)] top-1/2 -translate-y-1/2"
+                    : "left-1/2 top-0 -translate-x-1/2 -translate-y-[calc(100%+12px)]"
+                } hidden rounded-md bg-white/90 px-3 py-1.5 text-sm capitalize text-black shadow-lg group-hover:block`}
               >
-                <IconComp
-                  icon={item.icon}
-                  className={`h-6 w-6 transition-all duration-300
+                {item.label}
+                <div
+                  className={`absolute ${
+                    isDesktop
+                      ? "left-[-6px] top-1/2 -translate-y-1/2 border-[6px] border-transparent border-r-white/90"
+                      : "bottom-[-6px] left-1/2 -translate-x-1/2 border-[6px] border-transparent border-t-white/90"
+                  }`}
+                />
+              </div>
+
+              <div className="relative">
+                <div
+                  className={`flex h-10 w-10 items-center justify-center rounded-lg transition-all duration-300 group-hover:scale-110 group-hover:bg-gray-900 sm:h-12 sm:w-12 md:h-10 md:w-10 xl:h-14 xl:w-14
                     ${
                       activeSection === item.href.substring(1)
-                        ? "text-white"
-                        : "text-black group-hover:text-white"
+                        ? "bg-gray-800 shadow-lg shadow-gray-700"
+                        : "bg-white shadow-lg shadow-gray-500"
                     }`}
-                />
+                >
+                  <IconComp
+                    icon={item.icon}
+                    className={`relative h-6 w-6 transition-all duration-300
+                      ${
+                        activeSection === item.href.substring(1)
+                          ? "text-white"
+                          : "text-black group-hover:text-white"
+                      }`}
+                  />
+                </div>
               </div>
             </div>
           </a>

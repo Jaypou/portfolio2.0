@@ -1,4 +1,11 @@
 {
+  "ProgressNav": {
+    "Contact": "Contact",
+    "About": "About",
+    "Skills": "Skills",
+    "Experiences": "Experiences"
+  },
+
   "Landing": {
     "Hello": "Hello, I'm Jérémie, ",
     "CreatingExperiences": "and I am Creating Engaging Experiences"

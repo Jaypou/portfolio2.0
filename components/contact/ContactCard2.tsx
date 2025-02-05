@@ -20,16 +20,12 @@ export default function ContactCard({ ContactData }: any) {
 
       {/* Name and Title */}
       <div className="text-center">
-        <h1 className="text-5xl font-bold text-white">
+        <h1 className="text-4xl font-bold text-white md:text-6xl">
           {ContactData.ContactName}
         </h1>
-        <div className="mt-3 flex items-center justify-center text-white/80">
-          {/* {ContactData.ContactPosition} */}{" "}
-          <HyperText
-            text={ContactData.ContactPosition}
-            duration={1000}
-            className="flex items-center justify-center text-2xl"
-          />
+        <div className="mt-3 flex items-center justify-center text-xl text-white/80 md:text-2xl">
+          {/* {ContactData.ContactPosition} */}
+          <HyperText text={ContactData.ContactPosition} duration={1000} />
         </div>
       </div>
 
@@ -43,7 +39,7 @@ export default function ContactCard({ ContactData }: any) {
         </a>
         <a
           href={`mailto:${ContactData.Email}`}
-          className="text-white/70 transition-colors hover:text-blue-500"
+          className="text-sm text-white/70 transition-colors hover:text-blue-500"
         >
           {ContactData.Email}
         </a>
