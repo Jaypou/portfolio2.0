@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import { HyperText } from "../shared";
+import { HyperText, IconComp } from "@/components";
 
 export default function ContactCard({ ContactData }: any) {
   return (
@@ -20,27 +20,33 @@ export default function ContactCard({ ContactData }: any) {
 
       {/* Name and Title */}
       <div className="text-center">
-        <h1 className="text-4xl font-bold text-white md:text-6xl">
+        <h1 className="text-4xl font-bold text-white sm:text-5xl md:text-6xl">
           {ContactData.ContactName}
         </h1>
-        <div className="mt-3 flex items-center justify-center text-xl text-white/80 md:text-2xl">
+        <div className="mt-3 flex items-center justify-center text-xl text-white/80 sm:text-2xl md:text-3xl">
           {/* {ContactData.ContactPosition} */}
           <HyperText text={ContactData.ContactPosition} duration={1000} />
         </div>
       </div>
 
       {/* Contact Information */}
-      <div className="flex items-center justify-center gap-10">
+      <div className="flex flex-col items-center justify-center gap-4 text-sm md:flex-row md:gap-10 md:text-base">
         <a
           href={`tel:+${ContactData.PhoneNumber}`}
-          className="text-white/70 transition-colors hover:text-blue-500"
+          className="flex items-center justify-center gap-2 text-white/70 transition-colors hover:text-blue-500"
         >
+          <IconComp icon="line-md:phone" className="h-6 w-6" />
           {ContactData.PhoneNumber}
         </a>
         <a
           href={`mailto:${ContactData.Email}`}
+<<<<<<< Updated upstream
           className="text-sm text-white/70 transition-colors hover:text-blue-500"
+=======
+          className="flex items-center justify-center gap-2 text-white/70 transition-colors hover:text-blue-500"
+>>>>>>> Stashed changes
         >
+          <IconComp icon="line-md:email" className="h-6 w-6" />
           {ContactData.Email}
         </a>
       </div>
