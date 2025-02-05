@@ -40,11 +40,7 @@ export default function ContactCard({ ContactData }: any) {
         </a>
         <a
           href={`mailto:${ContactData.Email}`}
-<<<<<<< Updated upstream
-          className="text-sm text-white/70 transition-colors hover:text-blue-500"
-=======
           className="flex items-center justify-center gap-2 text-white/70 transition-colors hover:text-blue-500"
->>>>>>> Stashed changes
         >
           <IconComp icon="line-md:email" className="h-6 w-6" />
           {ContactData.Email}
