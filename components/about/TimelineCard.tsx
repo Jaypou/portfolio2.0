@@ -34,20 +34,18 @@ export default function TimelineCard({
     <div className="group relative mb-16 grid w-full items-start gap-6 sm:grid-cols-[1fr,auto]">
       {/* Content */}
       <div className="w-full">
-        <div className="rounded-xl bg-white p-8 shadow-lg shadow-gray-700 transition-all duration-300 group-hover:shadow-xl group-hover:shadow-gray-800 dark:bg-gray-800/50 dark:backdrop-blur-sm">
+        <div className="shadow-white-20  rounded-xl bg-gradient-to-br from-zinc-800/90 to-zinc-950/100 p-8 shadow-lg transition-all duration-300 group-hover:shadow-white/80 dark:bg-gray-800/50 dark:backdrop-blur-sm">
           <div className="flex flex-col gap-4">
             <div className="flex items-center gap-4">
               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-500/10 p-2">
                 <IconComp icon={icon} className="h-8 w-8 text-blue-500" />
               </div>
               <div className="flex flex-col">
-                <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
-                  {title}
-                </h3>
-                <h4 className="text-gray-500">{year}</h4>
+                <h3 className="text-2xl font-bold text-white">{title}</h3>
+                <h4 className="text-white/50">{year}</h4>
               </div>
             </div>
-            <p className="text-lg leading-relaxed text-gray-600 dark:text-gray-300">
+            <p className="text-lg leading-relaxed text-white/80">
               {description}
             </p>
           </div>
@@ -65,7 +63,7 @@ export default function TimelineCard({
           });
         }}
       >
-        <div className="relative flex h-12 w-12 items-center justify-center">
+        <div className="relative z-0 flex h-12 w-12 items-center justify-center">
           <div className="absolute h-12 w-12 rounded-full bg-blue-500 opacity-20 transition-transform duration-300 group-hover:scale-125" />
           <div className="absolute h-8 w-8 rounded-full bg-blue-500 transition-transform duration-300 group-hover:scale-110" />
           <div className="absolute h-4 w-4 rounded-full bg-white" />

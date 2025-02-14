@@ -11,6 +11,7 @@ import DictionaryProvider from "./(public)/dictionary-provider";
 import { getDictionary } from "./(public)/public-dictionaries";
 import ProgressNav from "@/components/navigation/ProgressNav";
 import LanguageSwitcher from "@/components/navigation/LanguageSwitcher";
+import BackgroundEffects from "@/components/shared/BackgroundEffects";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -44,6 +45,7 @@ export default async function RootLayout({
         className={`relative ${geistSans.variable} ${geistMono.variable} text-black antialiased dark:text-white`}
       >
         <Providers>
+          <BackgroundEffects />
           {/* <Navbar navItems={navItems} /> */}
           {/* <div className="absolute left-5 top-5 z-[5]"> */}
           {/* <ThemeSwitcher /> */}

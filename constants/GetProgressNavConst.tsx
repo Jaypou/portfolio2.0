@@ -8,11 +8,7 @@ export function GetProgressNavItems() {
       href: "#contact",
       label: dictionary.ProgressNav.Contact,
     },
-    {
-      icon: "mdi:rocket-launch",
-      href: "#about",
-      label: dictionary.ProgressNav.About,
-    },
+
     {
       icon: "mdi:lightbulb",
       href: "#skills",
@@ -22,6 +18,11 @@ export function GetProgressNavItems() {
       icon: "mdi:briefcase",
       href: "#experiences",
       label: dictionary.ProgressNav.Experiences,
+    },
+    {
+      icon: "mdi:rocket-launch",
+      href: "#about",
+      label: dictionary.ProgressNav.About,
     },
   ];
 }

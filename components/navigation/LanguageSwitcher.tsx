@@ -23,14 +23,12 @@ export default function LanguageSwitcher() {
     <div className="fixed right-8 top-8 z-50 flex items-center ">
       {locales.map((locale, index) => (
         <div key={locale.code} className="flex items-center">
-          {index > 0 && <span className="text-red-500">|</span>}
+          {index > 0 && <span className="text-white/40">|</span>}
           <button
             onClick={() => handleLocaleChange(locale.code)}
             className={cn(
-              "px-1 transition-all duration-200 hover:text-red-700",
-              currentLocale === locale.code
-                ? "font-bold text-red-400"
-                : "text-red-500"
+              "px-1 text-[#00a2ff] transition-all duration-200 ease-in-out hover:scale-110 hover:text-xl",
+              currentLocale === locale.code ? "text-xl font-bold" : ""
             )}
             disabled={currentLocale === locale.code}
           >

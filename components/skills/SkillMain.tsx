@@ -68,8 +68,8 @@ export default function SkillMain() {
 
   return (
     <div className="w-full py-20">
-      <div className="container mx-auto flex flex-col items-center px-8 lg:max-w-7xl">
-        <h1 className="mb-16 text-center text-5xl font-bold">
+      <div className="container mx-auto flex flex-col items-center px-8">
+        <h1 className="mb-16 text-center text-5xl font-bold text-white">
           Skills & Technologies
         </h1>
         <div className="flex w-full flex-col divide-y divide-gray-700/50 md:grid md:grid-cols-2 md:gap-6 md:divide-y-0 xl:grid-cols-3">

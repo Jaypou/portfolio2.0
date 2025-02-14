@@ -16,18 +16,20 @@ export default function SkillCard({
   skills,
 }: SkillCardProps) {
   return (
-    <div className="relative w-full ease-in-out md:min-h-[310px] md:rounded-lg md:bg-white/90 md:p-6 md:shadow-xl md:shadow-gray-700 md:transition-all md:hover:scale-105 md:hover:shadow-gray-800 lg:min-h-[300px]">
+    <div className="to relative w-full bg-gradient-to-br from-zinc-800/90 to-zinc-950/100 ease-in-out md:min-h-[310px] md:rounded-lg md:p-6 md:shadow-xl md:shadow-white/20 md:transition-all md:hover:scale-105 md:hover:shadow-white/80 lg:min-h-[300px]">
       <div className="flex flex-col gap-4">
         <div className="flex items-center gap-3">
           <IconComp
             className={cn(
-              "-top-3 left-2 h-12 w-12 min-w-[48px] rounded-lg p-2 text-white shadow-xl shadow-gray-500 md:absolute md:h-16 md:w-16 md:min-w-[64px]",
+              "-top-3 left-2 h-12 w-12 min-w-[48px] rounded-lg p-2 text-white shadow-xl shadow-white/20 md:absolute md:h-16 md:w-16 md:min-w-[64px]",
               `bg-${iconColor}`
             )}
             icon={icon}
           />
 
-          <h3 className="text-xl font-semibold md:ml-4 md:mt-10">{title}</h3>
+          <h3 className="text-xl font-semibold text-white/80 md:ml-4 md:mt-10">
+            {title}
+          </h3>
         </div>
 
         <ul
@@ -37,7 +39,7 @@ export default function SkillCard({
           )}
         >
           {skills.map((skill, index) => (
-            <li key={index} className="text-black/80">
+            <li key={index} className="text-white/80">
               {skill}
             </li>
           ))}

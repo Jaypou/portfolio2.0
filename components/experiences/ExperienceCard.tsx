@@ -22,18 +22,18 @@ export default function ExperienceCard({
   link,
 }: ExperienceCardProps) {
   return (
-    <div className="group relative mb-12 sm:mb-16 w-full items-start md:px-8">
+    <div className="group relative mb-12 w-full items-start sm:mb-16 md:px-8">
       {/* Content */}
       <div className="w-full">
-        <div className="rounded-xl bg-white p-4 sm:p-8 shadow-xl shadow-gray-700 transition-all duration-300 group-hover:shadow-xl group-hover:shadow-gray-800 dark:bg-gray-800/50 dark:backdrop-blur-sm">
+        <div className="rounded-xl bg-gradient-to-br from-zinc-800/90 to-zinc-950/100 p-4 shadow-lg shadow-white/20 transition-all duration-300 group-hover:shadow-white/80 sm:p-8">
           <div className="flex flex-col gap-6">
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 sm:gap-4">
+            <div className="flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:gap-4">
               {/* Image & Link */}
               {link ? (
                 <Link
                   href={link}
                   target="_blank"
-                  className={`flex h-24 w-24 sm:h-20 sm:w-20 items-center justify-center rounded-xl shadow-md shadow-gray-500 transition-all hover:scale-110 active:scale-90 ${classnames ? classnames : ""}`}
+                  className={`flex h-24 w-24 items-center justify-center rounded-xl shadow-md shadow-gray-500 transition-all hover:scale-110 active:scale-90 sm:h-20 sm:w-20 ${classnames ? classnames : ""}`}
                 >
                   <Image
                     src={image}
@@ -43,7 +43,7 @@ export default function ExperienceCard({
                 </Link>
               ) : (
                 <div
-                  className={`flex h-24 w-24 sm:h-20 sm:w-20 items-center justify-center rounded-xl shadow-md shadow-gray-500 transition-all hover:scale-110 active:scale-90 ${classnames ? classnames : ""}`}
+                  className={`flex h-24 w-24 items-center justify-center rounded-xl shadow-md shadow-gray-500 transition-all hover:scale-110 active:scale-90 sm:h-20 sm:w-20 ${classnames ? classnames : ""}`}
                 >
                   <Image
                     src={image}
@@ -55,23 +55,21 @@ export default function ExperienceCard({
 
               {/* Title */}
               <div className="flex flex-col">
-                <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
-                  {title}
-                </h3>
-                <h4 className="font-light tracking-wider text-gray-500">
+                <h3 className="text-2xl font-bold text-white">{title}</h3>
+                <h4 className="font-light tracking-wider text-white/50">
                   {year}
                 </h4>
               </div>
             </div>
 
             {/* Description */}
-            <p className="text-base sm:text-lg font-medium leading-relaxed text-gray-800 dark:text-gray-300 sm:ml-8">
+            <p className="text-base font-medium leading-relaxed text-white sm:ml-8 sm:text-lg">
               {description}
             </p>
 
             {/* Tasks */}
             {tasks && (
-              <ul className="ml-4 list-inside list-disc space-y-3 text-sm sm:text-base text-gray-600 dark:text-gray-300 sm:ml-16">
+              <ul className="ml-4 list-inside list-disc space-y-3 text-sm text-white/60 sm:ml-16 sm:text-base">
                 {tasks.map((task, index) => (
                   <li key={index} className="">
                     {task}

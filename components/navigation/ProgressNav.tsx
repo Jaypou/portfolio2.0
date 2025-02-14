@@ -50,14 +50,14 @@ export default function ProgressNav() {
 
   return (
     <nav
-      className={`fixed bottom-4 left-1/2 z-50 -translate-x-1/2 rounded-2xl bg-white opacity-0 transition-all duration-500 md:bottom-auto md:left-5 md:top-1/2 md:-translate-y-1/2 md:translate-x-0 md:rounded-none md:bg-transparent ${!isLoading ? "opacity-100" : ""}`}
+      className={`fixed bottom-4 left-1/2 z-50 -translate-x-1/2 rounded-2xl opacity-0 transition-all duration-500 md:bottom-auto md:left-5 md:top-1/2 md:-translate-y-1/2 md:translate-x-0 md:rounded-none md:bg-transparent ${!isLoading ? "opacity-100" : ""}`}
     >
       <div className="relative flex items-center gap-4 p-4 md:flex-col md:gap-12 md:px-0 md:py-12">
         {/* Progress bar container - only visible on desktop */}
         <div className="absolute inset-y-0 hidden w-[2px] bg-white/20 md:block">
           {/* Progress bar fill */}
           <div
-            className="w-full bg-red-600 transition-all duration-300"
+            className="w-full bg-[#00a2ff] transition-all duration-300"
             style={{
               height: `${scrollProgress}%`,
             }}
@@ -96,11 +96,11 @@ export default function ProgressNav() {
 
               <div className="relative">
                 <div
-                  className={`flex h-10 w-10 items-center justify-center rounded-lg transition-all duration-300 group-hover:scale-110 group-hover:bg-gray-900 sm:h-12 sm:w-12 md:h-10 md:w-10 xl:h-14 xl:w-14
+                  className={`flex h-10 w-10 items-center justify-center rounded-lg bg-white/80 backdrop-blur-md transition-all duration-300 group-hover:scale-110 sm:h-12 sm:w-12 md:h-10 md:w-10 md:bg-gradient-to-br md:from-zinc-800/90 md:to-zinc-950/100 xl:h-14 xl:w-14
                     ${
                       activeSection === item.href.substring(1)
-                        ? "bg-gray-800 shadow-lg shadow-gray-700"
-                        : "bg-white shadow-lg shadow-gray-500"
+                        ? "shadow-md shadow-[#00a2ff] md:bg-gray-800"
+                        : "shadow-sm shadow-white/20"
                     }`}
                 >
                   <IconComp
@@ -108,8 +108,8 @@ export default function ProgressNav() {
                     className={`relative h-6 w-6 transition-all duration-300
                       ${
                         activeSection === item.href.substring(1)
-                          ? "text-white"
-                          : "text-black group-hover:text-white"
+                          ? "text-black md:text-white"
+                          : "text-black group-hover:text-black md:text-white"
                       }`}
                   />
                 </div>

@@ -17,23 +17,15 @@ export default async function Page({ params }: { params: { locale: string } }) {
       {/* Contact Section */}
       <section
         id="contact"
-        className="flex min-h-screen w-full items-start justify-center bg-gradient-to-b from-black to-gray-600 md:pl-24 xl:pl-32"
+        className="flex min-h-screen w-full items-start justify-center md:pl-24 xl:pl-32"
       >
         <ContactMain />
-      </section>
-
-      {/* About Section */}
-      <section
-        id="about"
-        className="flex min-h-screen w-full items-start justify-center bg-gray-400 md:pl-24 xl:pl-32"
-      >
-        <AboutMain />
       </section>
 
       {/* Skills Section */}
       <section
         id="skills"
-        className="flex min-h-screen w-full items-start justify-center bg-gray-400 md:pl-24 xl:pl-32"
+        className="flex min-h-screen w-full items-start justify-center md:pl-24 xl:pl-32"
       >
         <SkillMain />
       </section>
@@ -41,9 +33,16 @@ export default async function Page({ params }: { params: { locale: string } }) {
       {/* Projects Section */}
       <section
         id="experiences"
-        className="flex min-h-screen w-full items-start justify-center bg-gray-400 md:pl-24 xl:pl-32"
+        className="flex min-h-screen w-full items-start justify-center md:pl-24 xl:pl-32"
       >
         <ExperienceMain />
+      </section>
+      {/* About Section */}
+      <section
+        id="about"
+        className="flex min-h-screen w-full items-start justify-center md:pl-24 xl:pl-32"
+      >
+        <AboutMain />
       </section>
 
       <div className="absolute bottom-0 right-0 z-[2] h-fit w-full">
