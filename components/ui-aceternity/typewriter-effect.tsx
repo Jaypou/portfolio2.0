@@ -42,7 +42,7 @@ export default function TypewriterEffect({
         }
       );
     }
-  }, [isInView]);
+  }, [isInView, animate]);
 
   const renderWords = () => {
     return (

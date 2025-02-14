@@ -189,7 +189,7 @@ const BackgroundEffects = () => {
         cancelAnimationFrame(animationFrameRef.current);
       }
     };
-  }, []);
+  }, [animate]);
 
   return (
     <canvas

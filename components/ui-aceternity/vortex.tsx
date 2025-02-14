@@ -2,7 +2,7 @@
 import { cn } from "@/lib/utils/cn";
 import React, { useEffect, useRef } from "react";
 import { createNoise3D } from "simplex-noise";
-import { motion } from "framer-motion";
+import { animate, motion } from "framer-motion";
 
 interface VortexProps {
   children?: any;
@@ -235,7 +235,7 @@ export default function Vortex(props: VortexProps) {
         resize(canvas, ctx);
       }
     });
-  }, []);
+  }, [animate]);
 
   return (
     <div className={cn("relative h-full w-full", props.containerClassName)}>
