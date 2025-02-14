@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useCallback } from "react";
 
 // Types
 interface Point {
@@ -144,7 +144,7 @@ const BackgroundEffects = () => {
     ctx.stroke();
   };
 
-  const animate = () => {
+  const animate = useCallback(() => {
     const canvas = canvasRef.current;
     const ctx = canvas?.getContext("2d");
     if (!canvas || !ctx) return;
@@ -158,7 +158,7 @@ const BackgroundEffects = () => {
     });
 
     animationFrameRef.current = requestAnimationFrame(animate);
-  };
+  }, []);
 
   useEffect(() => {
     const canvas = canvasRef.current;
