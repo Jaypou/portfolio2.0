@@ -1,80 +1,58 @@
 "use client";
-
 import { useDictionary } from "@/app/[locale]/(public)/dictionary-provider";
-import SkillCard from "./SkillCard";
+import { SkillCard } from "@/components";
+import { getSkillsUIData } from "@/constants/SkillsData";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 export default function SkillMain() {
-  const dictionary = useDictionary();
+  const containerRef = useRef(null);
 
-  const skillsData = [
-    {
-      icon: "mingcute:code-fill",
-      iconColor: "red-500",
-      title: "Architecture des Solutions Numériques",
-      skills: [
-        "PHP, Python, JavaScript (ES6+)",
-        "Laravel, NextJS, SpringBoot",
-        "Applications d'Entreprise",
-      ],
-    },
-    {
-      icon: "icomoon-free:database",
-      iconColor: "blue-500",
-      title: "Base de Données & Ingénierie des Données",
-      skills: [
-        "MySQL, SQL Server, PostgreSQL, Oracle",
-        "MongoDB, Processus ETL",
-        "Visualisation Power BI",
-      ],
-    },
-    {
-      icon: "zondicons:cloud",
-      iconColor: "orange-500",
-      title: "Cloud & DevOps",
-      skills: [
-        "Microsoft Azure (IaaS/PaaS)",
-        "Docker, Podman, Kubernetes",
-        "CI/CD avec Jenkins, Git/SVN",
-      ],
-    },
-    {
-      icon: "rivet-icons:gears",
-      iconColor: "yellow-500",
-      title: "Ingénierie Systèmes",
-      skills: [
-        "Développement C/C++, Java",
-        "Administration Linux",
-        "Optimisation des Performances",
-      ],
-    },
-    {
-      icon: "flowbite:brain-solid",
-      iconColor: "green-500",
-      title: "Inteligence Artificielle",
-      skills: [
-        "ChatGpt",
-        "Github Copilot",
-        "ClaudeAI",
-        "Cline (VS Code Addon)",
-      ],
-    },
-    {
-      icon: "mdi:toolbox",
-      iconColor: "purple-500",
-      title: "Compétences Professionnelles",
-      skills: ["Stratégie & Innovation Technique"],
-    },
-  ];
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const ctx = gsap.context(() => {
+      const cards = gsap.utils.toArray(".skill-card-container");
+
+      gsap.fromTo(
+        cards,
+        {
+          opacity: 0,
+          y: 50,
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          stagger: 0.2,
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: "top 80%",
+          },
+        }
+      );
+    }, containerRef);
+
+    return () => ctx.revert();
+  }, []);
+  const dictionary = useDictionary();
 
   return (
     <div className="w-full py-20">
       <div className="container mx-auto flex flex-col items-center px-8">
         <h1 className="mb-16 text-center text-5xl font-bold text-white">
-          Skills & Technologies
+          {dictionary.ProgressNav.Skills}
         </h1>
-        <div className="flex w-full flex-col divide-y divide-gray-700/50 md:grid md:grid-cols-2 md:gap-6 md:divide-y-0 xl:grid-cols-3">
-          {skillsData.map((skill, index) => (
-            <div key={index} className="py-8 first:pt-0 last:pb-0 md:py-0">
+        <div
+          ref={containerRef}
+          className="flex w-full flex-col divide-y divide-gray-700/50 md:grid md:grid-cols-2 md:gap-6 md:divide-y-0 xl:grid-cols-3"
+        >
+          {getSkillsUIData(dictionary).map((skill, index) => (
+            <div
+              key={index}
+              className={`skill-card-container py-8 first:pt-0 last:pb-0 md:py-0 ${index === getSkillsUIData(dictionary).length - 1 ? "xl:col-span-3" : ""}`}
+            >
               <SkillCard
                 icon={skill.icon}
                 iconColor={skill.iconColor}

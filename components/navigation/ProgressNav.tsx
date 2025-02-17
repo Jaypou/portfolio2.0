@@ -1,23 +1,26 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { IconComp } from "@/components";
-import { useMediaQuery } from "usehooks-ts";
-import { GetProgressNavItems } from "@/constants/GetProgressNavConst";
+import { useScrollVisibility } from "@/hooks/useScrollVisibility";
 
-export default function ProgressNav() {
+interface NavItem {
+  href: string;
+  label: string;
+  icon: string;
+}
+
+interface ProgressNavProps {
+  navItems: NavItem[];
+}
+
+export default function ProgressNav({ navItems }: ProgressNavProps) {
   const [activeSection, setActiveSection] = useState("");
   const [scrollProgress, setScrollProgress] = useState(0);
-  const [isLoading, setIsLoading] = useState(true);
-  const isDesktop = useMediaQuery("(min-width: 768px)");
+  const { isVisible, isLoading, isDesktop } = useScrollVisibility();
 
   // Constants for the progressNav are stored elsewhere for easier management
-  const navItems = GetProgressNavItems();
 
-  useEffect(() => {
-    setIsLoading(false);
-    return () => setIsLoading(true);
-  }, []);
-
+  // Handle section tracking and progress
   useEffect(() => {
     const handleScroll = () => {
       const sections = document.querySelectorAll("section");
@@ -50,21 +53,23 @@ export default function ProgressNav() {
 
   return (
     <nav
-      className={`fixed bottom-4 left-1/2 z-50 -translate-x-1/2 rounded-2xl opacity-0 transition-all duration-500 md:bottom-auto md:left-5 md:top-1/2 md:-translate-y-1/2 md:translate-x-0 md:rounded-none md:bg-transparent ${!isLoading ? "opacity-100" : ""}`}
+      className={`fixed bottom-4 left-1/2 z-50 -translate-x-1/2 rounded-2xl opacity-0 transition-all duration-500 md:bottom-auto md:left-5 md:top-1/2 md:-translate-y-1/2 md:translate-x-0 md:rounded-none md:bg-transparent 
+      ${!isLoading ? "opacity-100" : ""} 
+      ${!isDesktop ? (isVisible ? "translate-y-0 opacity-100" : "translate-y-20 opacity-0") : ""}`}
     >
       <div className="relative flex items-center gap-4 p-4 md:flex-col md:gap-12 md:px-0 md:py-12">
         {/* Progress bar container - only visible on desktop */}
         <div className="absolute inset-y-0 hidden w-[2px] bg-white/20 md:block">
           {/* Progress bar fill */}
           <div
-            className="w-full bg-[#00a2ff] transition-all duration-300"
+            className="bg-blue-primary w-full transition-all duration-300"
             style={{
               height: `${scrollProgress}%`,
             }}
           />
         </div>
 
-        {navItems.map((item, index) => (
+        {navItems.map((item: any, index: number) => (
           <a
             key={index}
             href={item.href}
@@ -82,7 +87,7 @@ export default function ProgressNav() {
                   isDesktop
                     ? "left-[calc(100%+12px)] top-1/2 -translate-y-1/2"
                     : "left-1/2 top-0 -translate-x-1/2 -translate-y-[calc(100%+12px)]"
-                } hidden rounded-md bg-white/90 px-3 py-1.5 text-sm capitalize text-black shadow-lg group-hover:block`}
+                } hidden rounded-md bg-white/90 px-3 py-1.5 text-sm capitalize text-black shadow-lg ${isVisible ? "group-hover:block" : ""}`}
               >
                 {item.label}
                 <div
@@ -99,7 +104,7 @@ export default function ProgressNav() {
                   className={`flex h-10 w-10 items-center justify-center rounded-lg bg-white/80 backdrop-blur-md transition-all duration-300 group-hover:scale-110 sm:h-12 sm:w-12 md:h-10 md:w-10 md:bg-gradient-to-br md:from-zinc-800/90 md:to-zinc-950/100 xl:h-14 xl:w-14
                     ${
                       activeSection === item.href.substring(1)
-                        ? "shadow-md shadow-[#00a2ff] md:bg-gray-800"
+                        ? "shadow-blue-primary shadow-md md:bg-gray-800"
                         : "shadow-sm shadow-white/20"
                     }`}
                 >

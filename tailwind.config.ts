@@ -130,6 +130,7 @@ module.exports = {
           "linear-gradient(90deg, #AE8625 0%, #F7EF8A 25%, #D2AC47 50%, #EDC967 100%)",
       },
       colors: {
+        "blue-primary": "#00a2ff",
         muted: {
           DEFAULT: "hsl(var(--muted))",
           foreground: "hsl(var(--muted-foreground))",
@@ -267,7 +268,7 @@ module.exports = {
     {
       pattern:
         /^(text-(?:slate|gray|zinc|neutral|stone|red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose)-(?:50|100|200|300|400|500|600|700|800|900|950))$/,
-      variants: ["hover", "ui-selected"],
+      variants: ["hover", "ui-selected", "marker"],
     },
     {
       pattern:
@@ -287,7 +288,7 @@ module.exports = {
         /^(fill-(?:slate|gray|zinc|neutral|stone|red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose)-(?:50|100|200|300|400|500|600|700|800|900|950))$/,
     },
   ],
-  darkMode: ["class", "class"],
+  darkMode: ["class"],
   plugins: [
     require("@nextui-org/react"),
     require("@headlessui/tailwindcss"),

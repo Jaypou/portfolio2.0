@@ -9,12 +9,10 @@ export default function ContactMain() {
   const ContactData = {
     ContactName: dictionary.Contact.ContactName,
     ContactPosition: dictionary.Contact.ContactPosition,
-    FindMe: dictionary.Contact.FindMe,
-    ContactMe: dictionary.Contact.ContactMe,
     SocialLinks: [
+      "https://facebook.com/jeremie_pouliot",
+      "https://linkedin.com/jeremie-pouliot",
       "https://github.com/jaypou",
-      "https://linkedin.com/in/jeremie-pouliot",
-      "https://twitter.com/jeremie_pouliot",
     ],
     PhoneNumber: "819-342-3376",
     Email: "jeremie.pouliot3376@hotmail.com",

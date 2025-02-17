@@ -1,6 +1,8 @@
 "use client";
 import Image, { StaticImageData } from "next/image";
 import Link, { LinkProps } from "next/link";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
 
 interface ExperienceCardProps {
   title: string;
@@ -21,13 +23,46 @@ export default function ExperienceCard({
   tasks,
   link,
 }: ExperienceCardProps) {
+  const titleRef = useRef(null);
+  const descriptionRef = useRef(null);
+  const tasksRef = useRef<(HTMLLIElement | null)[]>([]);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        titleRef.current,
+        { opacity: 0, x: -20 },
+        { opacity: 1, x: 0, duration: 0.5, delay: 0.3 }
+      );
+
+      gsap.fromTo(
+        descriptionRef.current,
+        { opacity: 0, x: -20 },
+        { opacity: 1, x: 0, duration: 0.5, delay: 0.4 }
+      );
+
+      gsap.fromTo(
+        tasksRef.current,
+        { opacity: 0, x: -20 },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 0.3,
+          stagger: 0.1,
+          delay: 0.5,
+        }
+      );
+    });
+
+    return () => ctx.revert();
+  }, []);
   return (
     <div className="group relative mb-12 w-full items-start sm:mb-16 md:px-8">
       {/* Content */}
       <div className="w-full">
-        <div className="rounded-xl bg-gradient-to-br from-zinc-800/90 to-zinc-950/100 p-4 shadow-lg shadow-white/20 transition-all duration-300 group-hover:shadow-white/80 sm:p-8">
+        <div className="rounded-xl bg-gradient-to-br from-zinc-800/90 to-zinc-950/100 px-2 py-5 shadow-lg shadow-white/20 transition-all duration-300 group-hover:scale-105 sm:p-8 md:p-6">
           <div className="flex flex-col gap-6">
-            <div className="flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:gap-4">
+            <div className="flex items-start gap-6 sm:items-center sm:gap-4">
               {/* Image & Link */}
               {link ? (
                 <Link
@@ -54,7 +89,7 @@ export default function ExperienceCard({
               )}
 
               {/* Title */}
-              <div className="flex flex-col">
+              <div ref={titleRef} className="flex flex-col">
                 <h3 className="text-2xl font-bold text-white">{title}</h3>
                 <h4 className="font-light tracking-wider text-white/50">
                   {year}
@@ -63,7 +98,10 @@ export default function ExperienceCard({
             </div>
 
             {/* Description */}
-            <p className="text-base font-medium leading-relaxed text-white sm:ml-8 sm:text-lg">
+            <p
+              ref={descriptionRef}
+              className="text-base font-medium leading-relaxed text-white sm:ml-8 sm:text-lg"
+            >
               {description}
             </p>
 
@@ -71,7 +109,13 @@ export default function ExperienceCard({
             {tasks && (
               <ul className="ml-4 list-inside list-disc space-y-3 text-sm text-white/60 sm:ml-16 sm:text-base">
                 {tasks.map((task, index) => (
-                  <li key={index} className="">
+                  <li
+                    key={index}
+                    ref={(el: HTMLLIElement | null) => {
+                      tasksRef.current[index] = el;
+                    }}
+                    className=""
+                  >
                     {task}
                   </li>
                 ))}

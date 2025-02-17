@@ -1,7 +1,8 @@
-import { useDictionary } from "@/app/[locale]/(public)/dictionary-provider";
+import { getDictionary } from "@/app/[locale]/(public)/public-dictionaries";
 
-export function GetProgressNavItems() {
-  const dictionary = useDictionary();
+export async function GetProgressNavItems(locale: string) {
+  const dictionary = await getDictionary(locale); // Get the dictionary for the given locale
+
   return [
     {
       icon: "mdi:account",

@@ -1,6 +1,8 @@
-import React from "react";
+"use client";
+import React, { useEffect, useRef } from "react";
 import { IconComp } from "../shared";
 import { cn } from "@/lib/utils/cn";
+import gsap from "gsap";
 
 interface SkillCardProps {
   icon: string;
@@ -15,31 +17,61 @@ export default function SkillCard({
   title,
   skills,
 }: SkillCardProps) {
+  const titleRef = useRef(null);
+  const skillsRef = useRef<(HTMLLIElement | null)[]>([]);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        titleRef.current,
+        { opacity: 0, x: -20 },
+        { opacity: 1, x: 0, duration: 0.5, delay: 0.3 }
+      );
+
+      gsap.fromTo(
+        skillsRef.current,
+        { opacity: 0, x: -20 },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 0.3,
+          stagger: 0.1,
+          delay: 0.5,
+        }
+      );
+    });
+
+    return () => ctx.revert();
+  }, []);
   return (
-    <div className="to relative w-full bg-gradient-to-br from-zinc-800/90 to-zinc-950/100 ease-in-out md:min-h-[310px] md:rounded-lg md:p-6 md:shadow-xl md:shadow-white/20 md:transition-all md:hover:scale-105 md:hover:shadow-white/80 lg:min-h-[300px]">
+    <div className="to relative w-full rounded-lg bg-gradient-to-br from-zinc-800/90 to-zinc-950/100 py-5 ease-in-out md:min-h-[380px] md:p-6 md:shadow-xl md:shadow-white/20 md:transition-all md:hover:scale-105 md:hover:shadow-white/80 lg:min-h-[320px]">
       <div className="flex flex-col gap-4">
-        <div className="flex items-center gap-3">
+        <div className="flex flex-col gap-3 md:flex-row md:items-center">
           <IconComp
             className={cn(
-              "-top-3 left-2 h-12 w-12 min-w-[48px] rounded-lg p-2 text-white shadow-xl shadow-white/20 md:absolute md:h-16 md:w-16 md:min-w-[64px]",
+              "absolute -top-3 left-2 h-12 w-12 min-w-[48px] rounded-lg p-2 text-white shadow-xl shadow-white/20 md:h-16 md:w-16 md:min-w-[64px]",
               `bg-${iconColor}`
             )}
             icon={icon}
           />
 
-          <h3 className="text-xl font-semibold text-white/80 md:ml-4 md:mt-10">
+          <h3
+            ref={titleRef}
+            className="ml-4 mt-4 text-xl font-semibold text-white/80 md:mt-10"
+          >
             {title}
           </h3>
         </div>
 
-        <ul
-          className={cn(
-            "ml-20 flex list-disc flex-col items-start justify-center gap-4 marker:text-xs md:ml-8",
-            iconColor ? `marker:text-${iconColor}` : "marker:text-primary"
-          )}
-        >
+        <ul className="ml-12 flex list-disc flex-col items-start justify-center gap-4 text-sm text-white/80 marker:text-xs md:ml-8 md:text-base">
           {skills.map((skill, index) => (
-            <li key={index} className="text-white/80">
+            <li
+              key={index}
+              ref={(el: HTMLLIElement | null) => {
+                skillsRef.current[index] = el;
+              }}
+              className={cn(`marker:text-${iconColor}`)}
+            >
               {skill}
             </li>
           ))}

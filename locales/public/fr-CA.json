@@ -2,62 +2,60 @@
   "ProgressNav": {
     "Contact": "Contact",
     "About": "À Propos",
-    "Skills": "Compétances",
+    "Skills": "Compétances & expertises",
     "Experiences": "Expériences"
   },
-
-  "Landing": {
-    "Hello": "Bonjour, je suis Jérémie, ",
-    "CreatingExperiences": "et je crée des expériences engageantes"
-  },
+  "Copyrights": "Tous droits réservés",
 
   "Contact": {
     "ContactName": "Jérémie Pouliot",
-    "ContactPosition": "Développeur web junior",
-    "FindMe": "Trouvez moi sur",
-    "ContactMe": "Contactez moi ici!",
-    "EmailForm": {
-      "Title": "Envoyez-moi un message",
-      "Name": {
-        "Label": "Nom",
-        "Placeholder": "Votre nom"
-      },
-      "Email": {
-        "Label": "Courriel",
-        "Placeholder": "votre.courriel@exemple.com"
-      },
-      "Message": {
-        "Label": "Message",
-        "Placeholder": "Votre message..."
-      },
-      "Submit": "Envoyer le message"
+    "ContactPosition": "Développeur web junior"
+  },
+
+  "Skills": {
+    "FrontEnd": {
+      "title": "Développement Front-End"
+    },
+    "BackEnd": {
+      "title": "Back-End & Infrastructure"
+    },
+    "AI": {
+      "title": "Intelligence Artificielle & Assistants"
+    },
+    "Professional": {
+      "title": "Compétences Professionnelles"
     }
   },
 
-  "Navbar": {
-    "Home": "Accueil",
-    "About": "À Propos",
-    "Contact": "Contact",
-    "Homepage": "HomePage",
-    "Projects": "Projets",
-    "Skills": "Compétances"
-  },
-
   "About": {
-    "title": "Mon parcous",
-    "BeginningCarpentry": "Début profesionnels",
-    "BeginningCarpentryDesc": "J'ai commencé mon parcours dans la construction à l'école de menuiserie, où j'ai appris les fondamentaux du travail du bois, des outils et des mesures. Plus important encore, j'ai développé la discipline, la ponctualité et une grande attention aux détails—des compétences qui deviendraient plus tard cruciales dans ma carrière.",
-    "ProfessionalExperience": "Expérience en chantier",
-    "ProfessionalExperienceDesc": "Après l'obtention de mon diplôme, j'ai passé cinq ans sur les chantiers, travaillant en étroite collaboration avec des menuisiers expérimentés. Cette expérience pratique a renforcé mes compétences en résolution de problèmes et mon adaptabilité. Le travail d'équipe et une communication claire étaient essentiels au quotidien, assurant le bon déroulement des projets. À travers cela, j'ai appris la patience et la persévérance—des qualités qui façonnent maintenant mon approche du codage et de la résolution de problèmes.",
-    "TransitionWebDev": "Transition vers le Développement Web",
-    "TransitionWebDevDesc": "J'ai fait la transition vers le développement web grâce à un programme ACS intensif de 8 mois. Le programme accéléré nécessitait du dévouement, et à la fin, seule une douzaine d'étudiants sur 30 sont restés. Cette expérience a solidifié ma base technique et développé davantage ma résilience. Bien que j'aie apprécié la menuiserie, j'ai trouvé la structure de l'industrie limitante et les exigences physiques difficiles. Les incitatifs gouvernementaux pour la reconversion dans la technologie m'ont donné l'impulsion finale dont j'avais besoin pour poursuivre le développement web—un domaine où la créativité, la résolution de problèmes et l'apprentissage continu sont essentiels.",
-    "SkillDevelopment": "Développement des Compétences",
-    "SkillDevelopmentDesc": "Tout au long de 2023, j'ai perfectionné mes compétences en React grâce aux cours Udemy et exploré Java, ce qui m'a aidé à affiner mon focus sur le développement frontend. Malgré les défis rencontrés pour décrocher mon premier poste, j'ai acquis de précieuses perspectives à travers les entretiens et suis resté déterminé à améliorer mon métier.",
-    "ReadyForImpact": "Prêt pour l'Impact",
-    "ReadyForImpactDesc": "Désireux d'appliquer mes compétences techniques et mon esprit de résolution de problèmes à des projets concrets, contribuant à un travail de développement innovant et impactant."
+    "title": "Mon Parcours",
+    "BeginningCarpentry": "Débuts professionnels",
+    "BeginningCarpentryDesc": [
+      "J'ai débuté ma carrière en école de menuiserie, où j'ai appris à travailler le bois avec précision.",
+      "Au-delà des aspects techniques, cette formation m'a inculqué la rigueur, la ponctualité et un grand souci du détail ; des qualités essentielles qui influencent encore aujourd'hui ma façon de travailler."
+    ],
+
+    "ProfessionalExperience": "Expérience sur chantier",
+    "ProfessionalExperienceDesc": [
+      "Après l'obtention de mon diplôme, j'ai passé quatre ans sur les chantiers aux côtés de menuisiers expérimentés. Cette immersion m'a appris à résoudre des problèmes rapidement et à m'adapter aux imprévus.",
+      "Chaque journée nécessitait une communication claire et un bon esprit d'équipe pour mener les projets à bien. C'est dans cet environnement que j'ai développé la patience et la persévérance ; deux qualités essentielles dans le développement web."
+    ],
+
+    "TransitionWebDev": "Passage au développement web",
+    "TransitionWebDevDesc": [
+      "En quête d'un nouveau défi, j'ai suivi un programme intensif (AEC) de 8 mois en développement web. Le rythme exigeant demandait une grande implication, et à la fin, seuls une douzaine d'étudiants sur 30 avaient tenu le cap.",
+      "Bien que la menuiserie m'ait plu, les contraintes du métier et la demande physique m'ont poussé à explorer d'autres horizons. Le domaine de la tech, avec son besoin constant d'innovation et d'apprentissage, était exactement ce qu'il me fallait."
+    ],
+
+    "SkillDevelopment": "Montée en compétences",
+    "SkillDevelopmentDesc": "En 2023, j'ai perfectionné mes compétences en React grâce à des formations en ligne, explorer Java et trouver un emploi, ce qui m'a aidé à affiner mon orientation vers le développement frontend. Trouver un premier poste n'a pas été simple, mais chaque défi et chaque entretien m'ont apporté des enseignements précieux, renforçant ma motivation et mes compétences.",
+
+    "ReadyForImpact": "Prêt à faire la différence",
+    "ReadyForImpactDesc": "Aujourd'hui, je suis disponible et prêt à mettre mes compétences techniques et mon esprit d'analyse au service de projets concrets, en contribuant à des solutions innovantes et impactantes."
   },
 
   "Experience": {
+    "ExpTitle": "Expériences professionnelles",
     "AECTitle": "AEC en Développement Web",
     "AECDesc": "Programme intensif de 8 mois en développement web au Cégep de Sherbrooke",
     "AECTasks": [

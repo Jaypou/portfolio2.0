@@ -1,22 +1,12 @@
-import { Social } from "@/components";
-
+"use client";
+import { useDictionary } from "@/app/[locale]/(public)/dictionary-provider";
 export default function LandingFooter() {
-  return (
-    <div className="fixed bottom-4 right-4 flex flex-col items-end gap-2 rounded-lg p-4">
-      <div className="flex items-center space-x-4">
-        <Social
-          hrefs={[
+  const dictionary = useDictionary();
 
-            "https://discord.com",
-            "https://github.com/jaypou",
-            "https://linkedin.com/in/username",
-          ]}
-          className="h-12 w-12"
-          rotate
-        />
-      </div>
-      <div className="text-sm text-white">
-        © {new Date().getFullYear()} Jeremie Pouliot
+  return (
+    <div className="fixed bottom-0 right-0 -z-10 rounded-lg p-4">
+      <div className="text-sm italic text-white opacity-40">
+        © {new Date().getFullYear()} Jérémie Pouliot {dictionary.Copyrights}
       </div>
     </div>
   );

@@ -1,11 +1,9 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "../globals.css";
-import ThemeSwitcher from "@/components/shared/ThemeSwitcher";
 import { Providers } from "@/app/[locale]/providers";
 import { ToastContainer } from "react-toastify";
-import { Navbar } from "@/components";
-import { GetNavItems } from "@/constants/GetNavbarConst";
+import { GetProgressNavItems } from "@/constants/GetProgressNavConst";
 
 import DictionaryProvider from "./(public)/dictionary-provider";
 import { getDictionary } from "./(public)/public-dictionaries";
@@ -38,11 +36,11 @@ export default async function RootLayout({
   params: { locale: string };
 }>) {
   const dictionary = await getDictionary(locale);
-  const navItems = await GetNavItems(locale);
+  const navItems = await GetProgressNavItems(locale);
   return (
     <html lang={locale}>
       <body
-        className={`relative ${geistSans.variable} ${geistMono.variable} text-black antialiased dark:text-white`}
+        className={`relative ${geistSans.variable} ${geistMono.variable} text-black antialiased`}
       >
         <Providers>
           <BackgroundEffects />
@@ -52,7 +50,7 @@ export default async function RootLayout({
           {/* </div> */}
           <ToastContainer />
           <DictionaryProvider dictionary={dictionary}>
-            <ProgressNav />
+            <ProgressNav navItems={navItems} />
             <LanguageSwitcher />
             {children}
           </DictionaryProvider>

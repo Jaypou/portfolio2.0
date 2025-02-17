@@ -22,7 +22,7 @@ const LINE_STYLE = {
   color: "rgba(0, 140, 255, 0.6)",
   width: 1.5,
   glow: {
-    color: "#00a2ff",
+    color: "blue-primary",
     blur: 20,
   },
 } as const;
@@ -194,7 +194,7 @@ const BackgroundEffects = () => {
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 z-0 h-screen w-screen"
+      className="fixed inset-0 -z-20 h-screen w-screen"
       style={{
         background: "linear-gradient(to bottom, #000000, #1a1a1a)",
       }}

@@ -2,62 +2,60 @@
   "ProgressNav": {
     "Contact": "Contact",
     "About": "About",
-    "Skills": "Skills",
+    "Skills": "Skills & expertise",
     "Experiences": "Experiences"
   },
-
-  "Landing": {
-    "Hello": "Hello, I'm Jérémie, ",
-    "CreatingExperiences": "and I am Creating Engaging Experiences"
-  },
+  "Copyrights": "All rights reserved",
 
   "Contact": {
     "ContactName": "Jérémie Pouliot",
-    "ContactPosition": "Junior web developer",
-    "FindMe": "Find me on",
-    "ContactMe": "Contact me here!",
-    "EmailForm": {
-      "Title": "Send me a message",
-      "Name": {
-        "Label": "Name",
-        "Placeholder": "Your name"
-      },
-      "Email": {
-        "Label": "Email",
-        "Placeholder": "your.email@example.com"
-      },
-      "Message": {
-        "Label": "Message",
-        "Placeholder": "Your message..."
-      },
-      "Submit": "Send Message"
+    "ContactPosition": "Junior web developer"
+  },
+
+  "Skills": {
+    "FrontEnd": {
+      "title": "Front-End Development"
+    },
+    "BackEnd": {
+      "title": "Back-End & Infrastructure"
+    },
+    "AI": {
+      "title": "Artificial Intelligence & Assistants"
+    },
+    "Professional": {
+      "title": "Professional Skills"
     }
   },
 
-  "Navbar": {
-    "Home": "Home",
-    "About": "About",
-    "Contact": "Contact",
-    "Homepage": "Homepage",
-    "Projects": "Projects",
-    "Skills": "Skills"
-  },
-
   "About": {
-    "title": "My journey",
-    "BeginningCarpentry": "Professionnal Beginnings",
-    "BeginningCarpentryDesc": "I began my journey in construction at carpentry school, where I learned the fundamentals of working with wood, tools, and measurements. More importantly, I developed discipline, punctuality, and a strong attention to detail—skills that would later become crucial in my career.",
-    "ProfessionalExperience": "Jobsite experience",
-    "ProfessionalExperienceDesc": "After graduating, I spent five years on job sites, working closely with experienced carpenters. This hands-on experience strengthened my problem-solving skills and adaptability. Teamwork and clear communication were essential daily, ensuring projects ran smoothly. Through this, I learned patience and perseverance—qualities that now shape my approach to coding and problem-solving.",
+    "title": "My Journey",
+    "BeginningCarpentry": "Professional Beginnings",
+    "BeginningCarpentryDesc": [
+      "I started my career in carpentry school, learning the fundamentals of woodworking, precision tools, and measurements.",
+      "More than just technical skills, this experience taught me discipline, punctuality, and a strong attention to detail—qualities that continue to shape my approach to work."
+    ],
+
+    "ProfessionalExperience": "Jobsite Experience",
+    "ProfessionalExperienceDesc": [
+      "After graduating, I spent four years on construction sites, collaborating with experienced carpenters. This hands-on experience strengthened my problem-solving abilities and adaptability.",
+      "Every day, teamwork and clear communication were essential to ensuring smooth project execution. Through these challenges, I developed patience and perseverance—two qualities that now define my approach to coding."
+    ],
+
     "TransitionWebDev": "Transition to Web Development",
-    "TransitionWebDevDesc": "I transitioned into web development through an intensive 8-month ACS program. The fast-paced curriculum required dedication, and by the end, only a dozen students remained out of 30. This experience solidified my technical foundation and further developed my resilience. While I enjoyed carpentry, I found the industry's structure limiting, and the physical demands challenging. Government incentives for retraining in tech provided the final push I needed to pursue web development—a field where creativity, problem-solving, and continuous learning are key.",
+    "TransitionWebDevDesc": [
+      "Looking for a new challenge, I enrolled in an intensive 8-month ACS program in web development. The fast-paced curriculum demanded dedication, and by the end, only a dozen students remained out of the original 30.",
+      "While I enjoyed carpentry, the industry's rigid structure and physical demands made me reconsider my path. The opportunity to transition into tech—where creativity, logic, and continuous learning thrive—was exactly what I needed."
+    ],
+
     "SkillDevelopment": "Skill Development",
-    "SkillDevelopmentDesc": "Throughout 2023, I honed my skills in React through Udemy courses and explored Java, which helped me refine my focus on frontend development. Despite facing challenges in landing my first role, I gained valuable insights through interviews and remained committed to improving my craft.",
+    "SkillDevelopmentDesc": "Throughout 2023, I refined my skills in React through Udemy courses, explored Java and found a job, which helped me solidify my interest in frontend development. Breaking into the industry wasn't easy, but each challenge, including job interviews, provided valuable insights that strengthened my determination and skill set.",
+
     "ReadyForImpact": "Ready for Impact",
-    "ReadyForImpactDesc": "Eager to apply my technical skills and problem-solving mindset to real-world projects, contributing to innovative and impactful development work."
+    "ReadyForImpactDesc": "Now, I'm available and eager to apply my expertise and problem-solving mindset to meaningful projects, contributing to innovative and impactful development work."
   },
 
   "Experience": {
+    "ExpTitle": "Professionnal Experiences",
     "AECTitle": "AEC in Web Development",
     "AECDesc": "8-month intensive web development program at Cegep de Sherbrooke",
     "AECTasks": [
