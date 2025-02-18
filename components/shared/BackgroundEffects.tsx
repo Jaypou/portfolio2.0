@@ -1,5 +1,6 @@
 "use client";
-import React, { useEffect, useRef, useCallback } from "react";
+
+import React, { useCallback, useEffect, useRef } from "react";
 
 // Types
 interface Point {
@@ -33,6 +34,7 @@ const debounce = <T extends (...args: any[]) => any>(
   wait: number
 ): ((...args: Parameters<T>) => void) => {
   let timeoutId: NodeJS.Timeout | undefined;
+
   return function (this: any, ...args: Parameters<T>) {
     clearTimeout(timeoutId);
     timeoutId = setTimeout(() => func.apply(this, args), wait);
@@ -148,6 +150,7 @@ const BackgroundEffects = () => {
   const animate = useCallback(() => {
     const canvas = canvasRef.current;
     const ctx = canvas?.getContext("2d");
+
     if (!canvas || !ctx) return;
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -163,12 +166,14 @@ const BackgroundEffects = () => {
 
   useEffect(() => {
     const canvas = canvasRef.current;
+
     if (!canvas) return;
 
     const getSnakeCount = () => {
       if (window.matchMedia("(min-width: 1280px)").matches) return 5;
       if (window.matchMedia("(min-width: 1024px)").matches) return 4;
       if (window.matchMedia("(min-width: 640px)").matches) return 3;
+
       return 2;
     };
 

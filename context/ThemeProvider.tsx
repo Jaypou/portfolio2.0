@@ -1,5 +1,8 @@
-import React, { createContext, useContext, useState, useEffect } from "react";
-import { saveUserPreferences } from "@/services/userPreferences"; // Import the service function
+import React, { createContext, useContext, useEffect, useState } from "react";
+
+import { saveUserPreferences } from "@/services/userPreferences";
+
+// Import the service function
 
 interface ThemeContextType {
   theme: string;
@@ -18,6 +21,7 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
   const getCookie = (name: string) => {
     const value = `; ${document.cookie}`;
     const parts = value.split(`; ${name}=`);
+
     if (parts.length === 2) return parts.pop()?.split(";").shift();
   };
 
@@ -47,11 +51,13 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
 
   const toggleTheme = () => {
     const newTheme = theme === "light" ? "dark" : "light";
+
     setTheme(newTheme);
   };
 
   const toggleOS = () => {
     const newOS = os === "mac" ? "windows" : "mac";
+
     setOS(newOS);
   };
 

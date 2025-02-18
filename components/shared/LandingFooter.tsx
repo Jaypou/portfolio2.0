@@ -1,5 +1,7 @@
 "use client";
+
 import { useDictionary } from "@/app/[locale]/dictionary-provider";
+
 export default function LandingFooter() {
   const dictionary = useDictionary();
 

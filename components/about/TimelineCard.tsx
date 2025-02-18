@@ -15,25 +15,26 @@ export default function TimelineCard({
   year,
 }: TimelineCardProps) {
   const icon = yearToIcon[year as keyof typeof yearToIcon];
+
   return (
     <article className="group relative mx-auto w-full px-2 md:max-w-6xl md:px-6">
       <div
+        aria-labelledby={`timeline-title-${year}`}
         className="shadow-white-20 min-h-[400px] rounded-xl bg-gradient-to-br from-zinc-800/90 to-zinc-950/100 p-4 shadow-lg transition-all duration-300 md:min-h-[250px] md:p-8"
         role="article"
-        aria-labelledby={`timeline-title-${year}`}
       >
         <div className="flex flex-col gap-6">
           <header className="flex items-center gap-4">
             <div
-              className="flex h-16 w-16 items-center justify-center rounded-full bg-blue-500/10 p-2"
               aria-hidden="true"
+              className="flex h-16 w-16 items-center justify-center rounded-full bg-blue-500/10 p-2"
             >
-              <IconComp icon={icon} className="text-blue-primary h-10 w-10" />
+              <IconComp className="h-10 w-10 text-blue-primary" icon={icon} />
             </div>
             <div className="flex flex-col">
               <h3
-                id={`timeline-title-${year}`}
                 className="text-2xl font-bold text-white md:text-3xl"
+                id={`timeline-title-${year}`}
               >
                 {title}
               </h3>

@@ -1,10 +1,13 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
+
 import { usePathname, useRouter } from "next/navigation";
-import { cn } from "@/lib/cn";
-import clsx from "clsx";
+
 import { useScrollVisibility } from "@/hooks/useScrollVisibility";
+import clsx from "clsx";
+
+import { cn } from "@/lib/cn";
 
 const locales = [
   { code: "en", label: "EN" },
@@ -17,7 +20,7 @@ export default function LanguageSwitcher() {
   const currentLocale = pathname.split("/")[1];
   const { isVisible, isLoading } = useScrollVisibility();
   const [isClient, setIsClient] = useState(false);
-  
+
   useEffect(() => {
     setIsClient(true);
   }, []);
@@ -25,6 +28,7 @@ export default function LanguageSwitcher() {
   const handleLocaleChange = (locale: string) => {
     if (locale === currentLocale) return;
     const newPath = pathname.replace(`/${currentLocale}`, `/${locale}`);
+
     router.push(newPath);
   };
 
@@ -41,12 +45,12 @@ export default function LanguageSwitcher() {
         <div key={locale.code} className="flex items-center">
           {index > 0 && <span className="text-white/40">|</span>}
           <button
-            onClick={() => handleLocaleChange(locale.code)}
             className={cn(
-              "text-blue-primary px-1 transition-all duration-200 ease-in-out hover:scale-110 hover:text-xl",
+              "px-1 text-blue-primary transition-all duration-200 ease-in-out hover:scale-110 hover:text-xl",
               currentLocale === locale.code ? "text-xl font-bold" : ""
             )}
             disabled={currentLocale === locale.code}
+            onClick={() => handleLocaleChange(locale.code)}
           >
             {locale.label}
           </button>

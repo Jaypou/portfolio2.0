@@ -58,6 +58,7 @@ export async function getAllBlogs(locale: string) {
     }),
   });
   const json = await res.json();
+
   return json.data.blogsConnection.edges;
 }
 
@@ -150,6 +151,7 @@ export async function getAllBlogsStaticParams() {
     }),
   });
   const json = await res.json();
+
   return json.data.blogsConnection.edges;
 }
 
@@ -196,6 +198,7 @@ export async function getBlogDetails(slug: string, locale: string) {
     }),
   });
   const json = await res.json();
+
   return json.data.post;
 }
 
@@ -234,6 +237,7 @@ export async function getFeaturedBlogs(locale: string) {
     }),
   });
   const json = await res.json();
+
   return json.data.posts;
 }
 
@@ -258,6 +262,7 @@ export async function getCategories(locale: string) {
     }),
   });
   const json = await res.json();
+
   return json.data.categories;
 }
 
@@ -282,6 +287,7 @@ export async function getCategoriesStaticParams() {
     }),
   });
   const json = await res.json();
+
   return json.data.categories;
 }
 
@@ -328,6 +334,7 @@ export async function getCategoryPost(slug: string, locale: string) {
     }),
   });
   const json = await res.json();
+
   return json.data.blogsConnection.edges;
 }
 
@@ -366,6 +373,7 @@ export async function getRecentPosts(locale: string) {
     }),
   });
   const json = await res.json();
+
   return json.data.posts;
 }
 
@@ -413,5 +421,6 @@ export async function getSimilarPosts(
     }),
   });
   const json = await res.json();
+
   return json.data.posts;
 }

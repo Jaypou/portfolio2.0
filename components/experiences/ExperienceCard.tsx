@@ -1,7 +1,10 @@
 "use client";
+
+import { useEffect, useRef } from "react";
+
 import Image, { StaticImageData } from "next/image";
 import Link, { LinkProps } from "next/link";
-import { useEffect, useRef } from "react";
+
 import gsap from "gsap";
 
 interface ExperienceCardProps {
@@ -56,6 +59,7 @@ export default function ExperienceCard({
 
     return () => ctx.revert();
   }, []);
+
   return (
     <div className="group relative mb-12 w-full items-start sm:mb-16 md:px-8">
       {/* Content */}
@@ -66,14 +70,14 @@ export default function ExperienceCard({
               {/* Image & Link */}
               {link ? (
                 <Link
+                  className={`flex h-24 w-24 items-center justify-center rounded-xl shadow-md shadow-gray-500 transition-all hover:scale-110 active:scale-90 sm:h-20 sm:w-20 ${classnames ? classnames : ""}`}
                   href={link}
                   target="_blank"
-                  className={`flex h-24 w-24 items-center justify-center rounded-xl shadow-md shadow-gray-500 transition-all hover:scale-110 active:scale-90 sm:h-20 sm:w-20 ${classnames ? classnames : ""}`}
                 >
                   <Image
-                    src={image}
                     alt={`${title} Logo`}
                     className="object-contain p-3 sm:p-2"
+                    src={image}
                   />
                 </Link>
               ) : (
@@ -81,9 +85,9 @@ export default function ExperienceCard({
                   className={`flex h-24 w-24 items-center justify-center rounded-xl shadow-md shadow-gray-500 transition-all hover:scale-110 active:scale-90 sm:h-20 sm:w-20 ${classnames ? classnames : ""}`}
                 >
                   <Image
-                    src={image}
                     alt={`${title} Logo`}
                     className="object-contain p-3 sm:p-2"
+                    src={image}
                   />
                 </div>
               )}

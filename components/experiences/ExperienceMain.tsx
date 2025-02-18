@@ -1,13 +1,13 @@
 "use client";
 
+import { useEffect, useRef } from "react";
+
 import { useDictionary } from "@/app/[locale]/dictionary-provider";
 import { ExperienceCard } from "@/components";
-import { useEffect, useRef } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-
 import CegepSherbrookeLogo from "@/public/assets/images/CegepSherbrookeLogo.png";
 import InnovationKKLogo from "@/public/assets/images/InnovationKKLogo.png";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 export default function ExperiencesMain() {
   const containerRef = useRef(null);
@@ -73,13 +73,13 @@ export default function ExperiencesMain() {
             <div key={index} className="experience-card-container">
               <ExperienceCard
                 key={index}
-                title={experience.title}
-                description={experience.description}
-                year={experience.year}
-                image={experience.image}
                 classnames={experience.classnames}
-                tasks={experience.tasks}
+                description={experience.description}
+                image={experience.image}
                 link={experience.link}
+                tasks={experience.tasks}
+                title={experience.title}
+                year={experience.year}
               />
             </div>
           ))}

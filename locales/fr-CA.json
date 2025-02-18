@@ -1,4 +1,8 @@
 {
+  "metadata": {
+    "title": "Jérémie Pouliot | Développeur web junior",
+    "description": "Portfolio présentant mon parcours, mes compétences et mes expériences en tant que développeur web"
+  },
   "ProgressNav": {
     "Contact": "Contact",
     "About": "À Propos",

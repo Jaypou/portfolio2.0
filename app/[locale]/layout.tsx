@@ -1,46 +1,50 @@
-import "@/styles/globals.css";
-import { Metadata, Viewport } from "next";
+import { Metadata } from "next";
+
+import { GetProgressNavItems } from "@/constants/GetProgressNavConst";
 import clsx from "clsx";
 import { ToastContainer } from "react-toastify";
 
-import { Providers } from "../providers";
-
-import { getDictionary } from "./public-dictionaries";
-import DictionaryProvider from "./dictionary-provider";
-
-import { GetProgressNavItems } from "@/constants/GetProgressNavConst";
-
-import { siteConfig } from "@/config/site";
 import { fontSans } from "@/config/fonts";
+
 import LanguageSwitcher from "@/components/navigation/LanguageSwitcher";
 import ProgressNav from "@/components/navigation/ProgressNav";
 import BackgroundEffects from "@/components/shared/BackgroundEffects";
 
-export const metadata: Metadata = {
-  title: {
-    default: siteConfig.name,
-    template: `%s - ${siteConfig.name}`,
-  },
-  description: siteConfig.description,
-  icons: {
-    icon: "/favicon.ico",
-  },
-};
+import "@/styles/globals.css";
 
-// export const viewport: Viewport = {
-//   themeColor: [
-//     { media: "(prefers-color-scheme: light)", color: "white" },
-//     { media: "(prefers-color-scheme: dark)", color: "black" },
-//   ],
-// };
+import { Providers } from "../providers";
+import DictionaryProvider from "./dictionary-provider";
+import { getDictionary } from "./public-dictionaries";
 
-export default async function RootLayout({
-  children,
-  params,
-}: {
+export async function generateMetadata(
+  props: { 
+    params: Promise<{ locale: string }> 
+  }
+): Promise<Metadata> {
+  const params = await props.params;
+  const locale = params.locale ?? "en";
+  const dictionary = await getDictionary(locale);
+
+  return {
+    title: {
+      default: dictionary.metadata.title,
+      template: `%s - ${dictionary.metadata.title}`,
+    },
+    description: dictionary.metadata.description,
+    icons: {
+      icon: "/favicon.ico",
+    },
+  };
+}
+
+export default async function RootLayout(props: {
   children: React.ReactNode;
-  params: { locale?: string }; // No Promise, and optional in case of issues
+  params: Promise<{ locale?: string }>; // No Promise, and optional in case of issues
 }) {
+  const params = await props.params;
+
+  const { children } = props;
+
   const locale = params.locale ?? "en"; // Fallback to "en" if undefined
 
   const dictionary = await getDictionary(locale);
@@ -52,7 +56,7 @@ export default async function RootLayout({
       <body
         className={clsx(
           "min-h-screen font-sans antialiased",
-          fontSans.variable,
+          fontSans.variable
         )}
       >
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>

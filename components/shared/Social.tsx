@@ -1,6 +1,8 @@
-import IconComp from "./IconComp";
 import React from "react";
+
 import Link from "next/link";
+
+import IconComp from "./IconComp";
 
 interface SocialProps {
   hrefs: string[];
@@ -100,8 +102,9 @@ const Social: React.FC<SocialProps> = ({
   const extractUsername = (url: string): string | null => {
     try {
       const parts = new URL(url).pathname.split("/").filter(Boolean);
+
       return parts.length > 0 ? `@${parts[parts.length - 1]}` : null;
-    } catch (e) {
+    } catch {
       return null;
     }
   };
@@ -112,6 +115,7 @@ const Social: React.FC<SocialProps> = ({
     >
       {hrefs.map((href, index) => {
         const platform = getPlatform(href);
+
         if (!platform) return null;
 
         const username = extractUsername(href);
@@ -131,13 +135,12 @@ const Social: React.FC<SocialProps> = ({
             className={`flex ${layout === "col" ? "flex-col items-start" : "flex-col items-center"}`}
           >
             <Link
-              href={href}
-              target="_blank"
-              rel="noopener noreferrer"
               className={linkClass}
+              href={href}
+              rel="noopener noreferrer"
+              target="_blank"
             >
               <IconComp
-                icon={platform.icon}
                 className={`
                   ${platform.colorClass}
                   ${className}
@@ -145,6 +148,7 @@ const Social: React.FC<SocialProps> = ({
                   transition-all duration-500
                   hover:opacity-80
                 `}
+                icon={platform.icon}
               />
               {showUsername && username && (
                 <span className="mt-2 text-sm text-gray-400">{username}</span>

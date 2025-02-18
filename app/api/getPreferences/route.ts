@@ -9,6 +9,7 @@ export async function GET(request: Request) {
   if (cookies) {
     const cookieArray = cookies.split("; ").map((cookie) => cookie.split("="));
     const osCookie = cookieArray.find(([name]) => name === "os");
+
     if (osCookie) {
       os = osCookie[1];
     }

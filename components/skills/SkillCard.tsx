@@ -1,8 +1,12 @@
 "use client";
+
 import React, { useEffect, useRef } from "react";
-import { IconComp } from "../shared";
-import { cn } from "@/lib/cn";
+
 import gsap from "gsap";
+
+import { cn } from "@/lib/cn";
+
+import { IconComp } from "../shared";
 
 interface SkillCardProps {
   icon: string;
@@ -43,6 +47,7 @@ export default function SkillCard({
 
     return () => ctx.revert();
   }, []);
+
   return (
     <div className="to relative w-full rounded-lg bg-gradient-to-br from-zinc-800/90 to-zinc-950/100 py-5 ease-in-out md:min-h-[380px] md:p-6 md:shadow-xl md:shadow-white/20 md:transition-all md:hover:scale-105 lg:min-h-[320px]">
       <div className="flex flex-col gap-4">

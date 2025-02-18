@@ -8,6 +8,7 @@ export async function POST(request: Request) {
 
   // Set cookies for theme and os preferences
   const response = NextResponse.json({ success: true });
+
   response.cookies.set("theme", mode, { path: "/", maxAge: 2592000 }); // 30 days
   response.cookies.set("os", os, { path: "/", maxAge: 2592000 }); // 30 days
 

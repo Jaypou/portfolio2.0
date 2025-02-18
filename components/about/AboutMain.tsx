@@ -8,9 +8,12 @@ export default function AboutMain() {
   const dictionary = useDictionary();
 
   return (
-    <section className="max-w-7xl py-20" aria-labelledby="about-title">
+    <section aria-labelledby="about-title" className="max-w-7xl py-20">
       <div className="container mx-auto flex flex-col items-center md:px-0">
-        <h1 id="about-title" className="mb-16 text-center text-5xl font-bold text-white">
+        <h1
+          className="mb-16 text-center text-5xl font-bold text-white"
+          id="about-title"
+        >
           {dictionary.About.title}
         </h1>
         <AboutTimeline timelineData={timelineData} />

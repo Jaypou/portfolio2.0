@@ -1,8 +1,12 @@
 "use client";
+
 import React, { useEffect, useRef } from "react";
-import gsap from "gsap";
+
 import Image from "next/image";
+
 import { HyperText, IconComp, Social } from "@/components";
+import gsap from "gsap";
+
 // import { Skeleton } from "@nextui-org/react";
 
 export default function ContactCard({ ContactData }: any) {
@@ -45,10 +49,10 @@ export default function ContactCard({ ContactData }: any) {
       <div className="relative h-60 w-60">
         <div className="absolute h-full w-full rounded-full border-4 border-white/20 [box-shadow:0_0_20px_20px_rgba(0,165,255,0.5)]">
           <Image
-            src="/assets/images/jeremie-no-bg.png"
-            alt="Profile"
             fill
+            alt="Profile"
             className="rounded-full bg-black object-cover"
+            src="/assets/images/jeremie-no-bg.png"
           />
         </div>
       </div>
@@ -59,30 +63,30 @@ export default function ContactCard({ ContactData }: any) {
         </h1>
         <div className="mt-3 flex items-center justify-center text-xl text-white/80 sm:text-2xl md:text-3xl">
           {/* {ContactData.ContactPosition} */}
-          <HyperText text={ContactData.ContactPosition} duration={600} />
+          <HyperText duration={600} text={ContactData.ContactPosition} />
         </div>
       </div>
       {/* Contact Information */}
       <div className="flex flex-col items-center justify-center gap-4 text-sm [text-shadow:_0_2px_4px_rgb(255_255_255_/_30%)] md:flex-row md:gap-10 md:text-base">
         <a
           ref={phoneRef}
-          href={`tel:+${ContactData.PhoneNumber}`}
           className="flex items-center justify-center gap-2 text-white/70 transition-colors hover:text-blue-500"
+          href={`tel:+${ContactData.PhoneNumber}`}
         >
-          <IconComp icon="line-md:phone" className="h-6 w-6" />
+          <IconComp className="h-6 w-6" icon="line-md:phone" />
           {ContactData.PhoneNumber}
         </a>
         <a
           ref={emailRef}
-          href={`mailto:${ContactData.Email}`}
           className="flex items-center justify-center gap-2 text-white/70 transition-colors hover:text-blue-500"
+          href={`mailto:${ContactData.Email}`}
         >
-          <IconComp icon="line-md:email" className="h-6 w-6" />
+          <IconComp className="h-6 w-6" icon="line-md:email" />
           {ContactData.Email}
         </a>
       </div>
       <div ref={socialsRef} className="flex items-center space-x-4">
-        <Social hrefs={ContactData.SocialLinks} className="h-12 w-12" rotate />
+        <Social rotate className="h-12 w-12" hrefs={ContactData.SocialLinks} />
       </div>
     </div>
     // </Skeleton>

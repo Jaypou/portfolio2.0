@@ -1,7 +1,7 @@
-// dictionary-provider.tsx
 "use client";
 
 import React from "react";
+
 import { getDictionary } from "./public-dictionaries";
 
 type Dictionary = Awaited<ReturnType<typeof getDictionary>>;
@@ -24,6 +24,7 @@ export default function DictionaryProvider({
 
 export function useDictionary() {
   const dictionary = React.useContext(DictionaryContext);
+
   if (dictionary === null) {
     throw new Error(
       "useDictionary hook must be used within DictionaryProvider"

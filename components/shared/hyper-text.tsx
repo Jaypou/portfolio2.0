@@ -1,8 +1,11 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { motion, Variants } from "framer-motion";
+
 import { Rock_Salt } from "next/font/google";
+
+import { Variants, motion } from "framer-motion";
+
 import { cn } from "@/lib/cn";
 
 const rockSalt = Rock_Salt({
@@ -24,16 +27,12 @@ const alphabets = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 const symbols = "!@#$%^&*()_+-=[]{}|;:,.<>?/~".split("");
 const allCharacters = [...alphabets, ...symbols];
 
-const getRandomChar = () => allCharacters[Math.floor(Math.random() * allCharacters.length)];
+const getRandomChar = () =>
+  allCharacters[Math.floor(Math.random() * allCharacters.length)];
 
 export default function HyperText({
   text,
   duration = 800,
-  framerProps = {
-    initial: { opacity: 0, y: -10 },
-    animate: { opacity: 1, y: 0 },
-    exit: { opacity: 0, y: 3 },
-  },
   className,
   animateOnLoad = true,
   font = "default",
@@ -55,6 +54,7 @@ export default function HyperText({
         if (!animateOnLoad && isFirstRender.current) {
           clearInterval(interval);
           isFirstRender.current = false;
+
           return;
         }
         if (interations.current < text.length) {
@@ -75,6 +75,7 @@ export default function HyperText({
       },
       duration / (text.length * 10)
     );
+
     // Clean up interval on unmount
     return () => clearInterval(interval);
   }, [text, duration, trigger, animateOnLoad]);
@@ -91,15 +92,15 @@ export default function HyperText({
         {displayText.map((letter, i) => (
           <motion.div
             key={`${letter}-${i}-${trigger}`}
-            initial={{ opacity: 0.75, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 3 }}
             className={cn(
               "font-mono",
               letter === " " ? "w-3" : "",
               font === "rockSalt" ? rockSalt.className : "",
               className
             )}
+            exit={{ opacity: 0, y: 3 }}
+            initial={{ opacity: 0.75, y: -10 }}
           >
             {letter.toUpperCase()}
           </motion.div>

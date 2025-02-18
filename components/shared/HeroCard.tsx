@@ -16,6 +16,7 @@ export default function HeroCard({
   // Function to extract the file name from StaticImageData
   const extractName = (image: StaticImageData) => {
     const imageName = image.src.split("/").pop()?.split(".")[0];
+
     return imageName || "Image";
   };
 
@@ -28,23 +29,23 @@ export default function HeroCard({
       <div className="wrapper absolute z-[-1] w-full rounded-lg  shadow-lg shadow-black transition-all duration-400 group-hover:shadow-[0_100px_60px_-15px_rgba(0,0,0,0.8)]">
         <Image
           // src="https://ggayane.github.io/css-experiments/cards/force_mage-cover.jpg"
-          src={coverImage}
           alt={coverName}
           className="cover-image h-full w-full scale-x-[-1] rounded-lg bg-gradient-to-t from-black/10 to-black object-cover transition-all"
+          src={coverImage}
         />
         <div className="absolute top-0 h-full w-full rounded-lg from-black/10 to-black transition-all group-hover:bg-gradient-to-t group-hover:backdrop-blur-sm" />
       </div>
       <Image
         // src="https://ggayane.github.io/css-experiments/cards/force_mage-title.png"
-        src={titleImage}
         alt={titleName}
         className="title absolute z-10 w-full translate-y-[150%] scale-110 transition-transform group-hover:translate-y-10 group-hover:scale-125"
+        src={titleImage}
       />
       <Image
         // src="https://ggayane.github.io/css-experiments/cards/force_mage-character.webp"
-        src={characterImage}
         alt={characterName}
         className="character absolute z-[-1] opacity-0 transition-all duration-400 group-hover:translate-x-[-5%] group-hover:translate-y-[-7%] group-hover:scale-110 group-hover:opacity-100"
+        src={characterImage}
       />
     </div>
   );

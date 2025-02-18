@@ -1,6 +1,7 @@
+import { NextRequest, NextResponse } from "next/server";
+
 import { match } from "@formatjs/intl-localematcher";
 import Negotiator from "negotiator";
-import { NextRequest, NextResponse } from "next/server";
 
 let locales = ["en-CA", "fr-CA", "en-US", "fr-FR"];
 let defaultLocale = "en-CA";
@@ -44,11 +45,13 @@ const middleware = (request: NextRequest) => {
   // Handle :locale in pathname
   if (pathname.includes(":locale")) {
     request.nextUrl.pathname = pathname.replace("/:locale", "");
+
     return NextResponse.redirect(request.nextUrl);
   }
 
   // For the root path or paths without locale prefix, add the locale
   const locale = getLocale(request);
+
   request.nextUrl.pathname = `/${locale}${pathname === "/" ? "" : pathname}`;
 
   return NextResponse.redirect(request.nextUrl);

@@ -1,8 +1,10 @@
 "use client";
+
+import { useEffect, useRef } from "react";
+
 import { useDictionary } from "@/app/[locale]/dictionary-provider";
 import { SkillCard } from "@/components";
 import { getSkillsUIData } from "@/constants/SkillsData";
-import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
@@ -56,8 +58,8 @@ export default function SkillMain() {
               <SkillCard
                 icon={skill.icon}
                 iconColor={skill.iconColor}
-                title={skill.title}
                 skills={skill.skills}
+                title={skill.title}
               />
             </div>
           ))}

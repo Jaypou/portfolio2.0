@@ -1,50 +1,42 @@
 import {
-  LandingFooter,
-  ContactMain,
   AboutMain,
+  ContactMain,
   ExperienceMain,
+  LandingFooter,
   SkillMain,
 } from "@/components";
-import { LoadingScreen } from "@/components/shared/LoadingScreen";
 
-export default async function Page({
-  params,
-}: {
-  params: { locale: string } | Promise<{ locale: string }>; // Accept both cases
-}) {
-  const resolvedParams = params instanceof Promise ? await params : params; // Handle both sync and async cases
-  const { locale } = resolvedParams;
-
+export default function Page() {
   return (
     <div className="relative w-full">
       {/* Contact Section */}
       <section
-        id="contact"
         className="flex min-h-screen w-full items-start justify-center md:pl-24 xl:pl-32"
+        id="contact"
       >
         <ContactMain />
       </section>
 
       {/* Skills Section */}
       <section
-        id="skills"
         className="flex min-h-screen w-full items-start justify-center md:pl-24 xl:pl-32"
+        id="skills"
       >
         <SkillMain />
       </section>
 
       {/* Projects Section */}
       <section
-        id="experiences"
         className="flex min-h-screen w-full items-start justify-center md:pl-24 xl:pl-32"
+        id="experiences"
       >
         <ExperienceMain />
       </section>
 
       {/* About Section */}
       <section
-        id="about"
         className="flex min-h-screen w-full items-center justify-center md:pl-24 xl:pl-32"
+        id="about"
       >
         <AboutMain />
       </section>

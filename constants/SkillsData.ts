@@ -5,7 +5,7 @@ export const SkillsData = {
       "React, Next.js",
       "TailwindCSS, GSAP, Framer Motion",
       "HeroUI, HeroUI Pro, TailwindUI",
-      "MagicUI, AceternityUI, Bootstrap"
+      "MagicUI, AceternityUI, Bootstrap",
     ],
   },
   BackEnd: {
@@ -14,14 +14,14 @@ export const SkillsData = {
       "RESTful API, GraphQL, Hygraph",
       "MySQL, Apache",
       "Microsoft Azure, Docker",
-      "GitHub, Git"
+      "GitHub, Git",
     ],
   },
   AI: {
     skills: [
       "ChatGPT, Copilot, ClaudeAI",
       "GitHub Copilot",
-      "Cline (VS Code Addon)"
+      "Cline (VS Code Addon)",
     ],
   },
   Professional: {
@@ -29,7 +29,7 @@ export const SkillsData = {
       "Strategy & Innovation",
       "Performance Optimization",
       "Problem Solving & Teamwork",
-      "Adaptability & Continuous Learning"
+      "Adaptability & Continuous Learning",
     ],
   },
 };

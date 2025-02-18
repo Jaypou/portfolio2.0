@@ -16,6 +16,7 @@ export async function saveUserPreferences(theme: string, os: string) {
     }
 
     const data = await res.json();
+
     return data;
   } catch (error) {
     console.error("Failed to save user preferences:", error);
