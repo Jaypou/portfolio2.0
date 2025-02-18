@@ -40,41 +40,46 @@ export default function HyperText({
 }: HyperTextProps) {
   const [displayText, setDisplayText] = useState(text.split(""));
   const [trigger, setTrigger] = useState(false);
-  const interations = useRef(0);
+  const iterations = useRef(0);
   const isFirstRender = useRef(true);
 
   const triggerAnimation = () => {
-    interations.current = 0;
+    iterations.current = 0;
     setTrigger(true);
   };
 
   useEffect(() => {
-    const interval = setInterval(
-      () => {
-        if (!animateOnLoad && isFirstRender.current) {
-          clearInterval(interval);
-          isFirstRender.current = false;
+    // Base interval of 100ms for more noticeable character changes
+    const baseInterval = 30;
+    // Calculate how many steps we need based on duration
+    const totalSteps = Math.floor(duration / baseInterval);
+    // Calculate increment to complete within duration
+    const increment = text.length / totalSteps;
 
-          return;
-        }
-        if (interations.current < text.length) {
-          setDisplayText((t) =>
-            t.map((l, i) =>
-              l === " "
-                ? l
-                : i <= interations.current
-                  ? text[i]
-                  : getRandomChar()
-            )
-          );
-          interations.current = interations.current + 0.1;
-        } else {
-          setTrigger(false);
-          clearInterval(interval);
-        }
-      },
-      duration / (text.length * 10)
-    );
+    const interval = setInterval(() => {
+      if (!animateOnLoad && isFirstRender.current) {
+        clearInterval(interval);
+        isFirstRender.current = false;
+
+        return;
+      }
+
+      if (iterations.current < text.length) {
+        setDisplayText((t) =>
+          t.map((l, i) =>
+            l === " "
+              ? l
+              : i <= Math.floor(iterations.current)
+                ? text[i]
+                : getRandomChar()
+          )
+        );
+        iterations.current = iterations.current + increment;
+      } else {
+        setTrigger(false);
+        clearInterval(interval);
+      }
+    }, baseInterval);
 
     // Clean up interval on unmount
     return () => clearInterval(interval);
