@@ -63,7 +63,7 @@ export default function ContactCard({ ContactData }: any) {
         </h1>
         <div className="mt-3 flex items-center justify-center text-xl text-white/80 sm:text-2xl md:text-3xl">
           {/* {ContactData.ContactPosition} */}
-          <HyperText duration={3500} text={ContactData.ContactPosition} />
+          <HyperText duration={1800} text={ContactData.ContactPosition} />
         </div>
       </div>
       {/* Contact Information */}

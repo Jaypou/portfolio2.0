@@ -18,16 +18,41 @@
 
   "Skills": {
     "FrontEnd": {
-      "title": "Front-End Development"
+      "title": "Front-End Development",
+      "skills": [
+        "HTML, CSS, TypeScript, JavaScript",
+        "React, Next.js",
+        "TailwindCSS, GSAP, Framer Motion",
+        "HeroUI, HeroUI Pro, TailwindUI",
+        "MagicUI, AceternityUI, Bootstrap"
+      ]
     },
     "BackEnd": {
-      "title": "Back-End & Infrastructure"
+      "title": "Back-End & Infrastructure",
+      "skills": [
+        "PHP, Java, Node.js, Laravel",
+        "RESTful API, GraphQL, Hygraph",
+        "MySQL, Apache",
+        "Microsoft Azure, Docker",
+        "GitHub, Git"
+      ]
     },
     "AI": {
-      "title": "Artificial Intelligence & Assistants"
+      "title": "Artificial Intelligence & Assistants",
+      "skills": [
+        "ChatGPT, Copilot, ClaudeAI",
+        "GitHub Copilot",
+        "Cline (VS Code Addon)"
+      ]
     },
     "Professional": {
-      "title": "Professional Skills"
+      "title": "Professional Skills",
+      "skills": [
+        "Strategy & Innovation",
+        "Performance Optimization",
+        "Problem Solving & Teamwork",
+        "Adaptability & Continuous Learning"
+      ]
     }
   },
 

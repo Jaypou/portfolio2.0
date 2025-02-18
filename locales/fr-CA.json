@@ -6,7 +6,7 @@
   "ProgressNav": {
     "Contact": "Contact",
     "About": "À Propos",
-    "Skills": "Compétances & expertises",
+    "Skills": "Compétences & expertises",
     "Experiences": "Expériences"
   },
   "Copyrights": "Tous droits réservés",
@@ -18,16 +18,41 @@
 
   "Skills": {
     "FrontEnd": {
-      "title": "Développement Front-End"
+      "title": "Développement Front-End",
+      "skills": [
+        "HTML, CSS, TypeScript, JavaScript",
+        "React, Next.js",
+        "TailwindCSS, GSAP, Framer Motion",
+        "HeroUI, HeroUI Pro, TailwindUI",
+        "MagicUI, AceternityUI, Bootstrap"
+      ]
     },
     "BackEnd": {
-      "title": "Back-End & Infrastructure"
+      "title": "Back-End & Infrastructure",
+      "skills": [
+        "PHP, Java, Node.js, Laravel",
+        "API RESTful, GraphQL, Hygraph",
+        "MySQL, Apache",
+        "Microsoft Azure, Docker",
+        "GitHub, Git"
+      ]
     },
     "AI": {
-      "title": "Intelligence Artificielle & Assistants"
+      "title": "Intelligence Artificielle & Assistants",
+      "skills": [
+        "ChatGPT, Copilot, ClaudeAI",
+        "GitHub Copilot",
+        "Cline (Extension VS Code)"
+      ]
     },
     "Professional": {
-      "title": "Compétences Professionnelles"
+      "title": "Compétences Professionnelles",
+      "skills": [
+        "Stratégie & Innovation",
+        "Optimisation des performances",
+        "Résolution de problèmes & Travail d'équipe",
+        "Adaptabilité & Apprentissage continu"
+      ]
     }
   },
 
