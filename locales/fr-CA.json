@@ -1,0 +1,76 @@
+{
+  "ProgressNav": {
+    "Contact": "Contact",
+    "About": "À Propos",
+    "Skills": "Compétances & expertises",
+    "Experiences": "Expériences"
+  },
+  "Copyrights": "Tous droits réservés",
+
+  "Contact": {
+    "ContactName": "Jérémie Pouliot",
+    "ContactPosition": "Développeur web junior"
+  },
+
+  "Skills": {
+    "FrontEnd": {
+      "title": "Développement Front-End"
+    },
+    "BackEnd": {
+      "title": "Back-End & Infrastructure"
+    },
+    "AI": {
+      "title": "Intelligence Artificielle & Assistants"
+    },
+    "Professional": {
+      "title": "Compétences Professionnelles"
+    }
+  },
+
+  "About": {
+    "title": "Mon Parcours",
+    "BeginningCarpentry": "Débuts professionnels",
+    "BeginningCarpentryDesc": [
+      "J'ai débuté ma carrière en école de menuiserie, où j'ai appris à travailler le bois avec précision.",
+      "Au-delà des aspects techniques, cette formation m'a inculqué la rigueur, la ponctualité et un grand souci du détail ; des qualités essentielles qui influencent encore aujourd'hui ma façon de travailler."
+    ],
+
+    "ProfessionalExperience": "Expérience sur chantier",
+    "ProfessionalExperienceDesc": [
+      "Après l'obtention de mon diplôme, j'ai passé quatre ans sur les chantiers aux côtés de menuisiers expérimentés. Cette immersion m'a appris à résoudre des problèmes rapidement et à m'adapter aux imprévus.",
+      "Chaque journée nécessitait une communication claire et un bon esprit d'équipe pour mener les projets à bien. C'est dans cet environnement que j'ai développé la patience et la persévérance ; deux qualités essentielles dans le développement web."
+    ],
+
+    "TransitionWebDev": "Passage au développement web",
+    "TransitionWebDevDesc": [
+      "En quête d'un nouveau défi, j'ai suivi un programme intensif (AEC) de 8 mois en développement web. Le rythme exigeant demandait une grande implication, et à la fin, seuls une douzaine d'étudiants sur 30 avaient tenu le cap.",
+      "Bien que la menuiserie m'ait plu, les contraintes du métier et la demande physique m'ont poussé à explorer d'autres horizons. Le domaine de la tech, avec son besoin constant d'innovation et d'apprentissage, était exactement ce qu'il me fallait."
+    ],
+
+    "SkillDevelopment": "Montée en compétences",
+    "SkillDevelopmentDesc": "En 2023, j'ai perfectionné mes compétences en React grâce à des formations en ligne, explorer Java et trouver un emploi, ce qui m'a aidé à affiner mon orientation vers le développement frontend. Trouver un premier poste n'a pas été simple, mais chaque défi et chaque entretien m'ont apporté des enseignements précieux, renforçant ma motivation et mes compétences.",
+
+    "ReadyForImpact": "Prêt à faire la différence",
+    "ReadyForImpactDesc": "Aujourd'hui, je suis disponible et prêt à mettre mes compétences techniques et mon esprit d'analyse au service de projets concrets, en contribuant à des solutions innovantes et impactantes."
+  },
+
+  "Experience": {
+    "ExpTitle": "Expériences professionnelles",
+    "AECTitle": "AEC en Développement Web",
+    "AECDesc": "Programme intensif de 8 mois en développement web au Cégep de Sherbrooke",
+    "AECTasks": [
+      "Développement front-end avec HTML, CSS, JavaScript, PHP et introduction à WordPress, Laravel et Bootstrap.",
+      "Développement back-end avec PHP et gestion de bases de données avec SQL.",
+      "Gestion de projet web, contrôle de version avec Git & GitHub, et déploiement sur le cloud (Azure).",
+      "Intégration full-stack, optimisation des performances, meilleures pratiques en accessibilité et sécurité."
+    ],
+    "WebDevTitle": "Développeur Web Junior",
+    "WebDevDesc": "Développeur web junior chez Innovation Kapital-K, spécialisé dans le développement frontend",
+    "WebDevTasks": [
+      "Développement et maintenance d'interfaces utilisateur réactives et dynamiques avec Next.js, React, Tailwind CSS et TypeScript.",
+      "Intégration d'API et de services tiers pour améliorer les fonctionnalités et le traitement des données.",
+      "Mise en place de composants modulaires et réutilisables pour une structure de code efficace et évolutive.",
+      "Optimisation des performances, débogage et application des meilleures pratiques en accessibilité et sécurité."
+    ]
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "ProgressNav": {
+    "Contact": "Contact",
+    "About": "About",
+    "Skills": "Skills & expertise",
+    "Experiences": "Experiences"
+  },
+  "Copyrights": "All rights reserved",
+
+  "Contact": {
+    "ContactName": "Jérémie Pouliot",
+    "ContactPosition": "Junior web developer"
+  },
+
+  "Skills": {
+    "FrontEnd": {
+      "title": "Front-End Development"
+    },
+    "BackEnd": {
+      "title": "Back-End & Infrastructure"
+    },
+    "AI": {
+      "title": "Artificial Intelligence & Assistants"
+    },
+    "Professional": {
+      "title": "Professional Skills"
+    }
+  },
+
+  "About": {
+    "title": "My Journey",
+    "BeginningCarpentry": "Professional Beginnings",
+    "BeginningCarpentryDesc": [
+      "I started my career in carpentry school, learning the fundamentals of woodworking, precision tools, and measurements.",
+      "More than just technical skills, this experience taught me discipline, punctuality, and a strong attention to detail—qualities that continue to shape my approach to work."
+    ],
+
+    "ProfessionalExperience": "Jobsite Experience",
+    "ProfessionalExperienceDesc": [
+      "After graduating, I spent four years on construction sites, collaborating with experienced carpenters. This hands-on experience strengthened my problem-solving abilities and adaptability.",
+      "Every day, teamwork and clear communication were essential to ensuring smooth project execution. Through these challenges, I developed patience and perseverance—two qualities that now define my approach to coding."
+    ],
+
+    "TransitionWebDev": "Transition to Web Development",
+    "TransitionWebDevDesc": [
+      "Looking for a new challenge, I enrolled in an intensive 8-month ACS program in web development. The fast-paced curriculum demanded dedication, and by the end, only a dozen students remained out of the original 30.",
+      "While I enjoyed carpentry, the industry's rigid structure and physical demands made me reconsider my path. The opportunity to transition into tech—where creativity, logic, and continuous learning thrive—was exactly what I needed."
+    ],
+
+    "SkillDevelopment": "Skill Development",
+    "SkillDevelopmentDesc": "Throughout 2023, I refined my skills in React through Udemy courses, explored Java and found a job, which helped me solidify my interest in frontend development. Breaking into the industry wasn't easy, but each challenge, including job interviews, provided valuable insights that strengthened my determination and skill set.",
+
+    "ReadyForImpact": "Ready for Impact",
+    "ReadyForImpactDesc": "Now, I'm available and eager to apply my expertise and problem-solving mindset to meaningful projects, contributing to innovative and impactful development work."
+  },
+
+  "Experience": {
+    "ExpTitle": "Professionnal Experiences",
+    "AECTitle": "AEC in Web Development",
+    "AECDesc": "8-month intensive web development program at Cegep de Sherbrooke",
+    "AECTasks": [
+      "Front-end development with HTML, CSS, JavaScript, PHP and introduction to Wordpress, Laravel and Bootstap.",
+      "Back-end development with PHP, and database management with SQL.",
+      "Web project management, version control with Git & Github, and cloud deployment (Azure)",
+      "Full-stack integration, performance optimization, best practices in accessibility and security"
+    ],
+    "WebDevTitle": "Junior Web Developer",
+    "WebDevDesc": "Junior web developer at InnovaKey, specialized in frontend development",
+    "WebDevTasks": [
+      "Development and maintenance of responsive and dynamic user interfaces using Next.js, React, Tailwind CSS, and TypeScript.",
+      "Integration of APIs and third-party services to enhance functionality and data processing.",
+      "Implementation of modular and reusable components for efficient and scalable code structure.",
+      "Performance optimization, debugging, and ensuring best practices in accessibility and security."
+    ]
+  }
+}

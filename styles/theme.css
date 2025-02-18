@@ -1,0 +1,113 @@
+/* :root {
+  --radial-gradient-background: 250, 250, 250;
+  --solid-color-background: 20, 20, 20;
+  --overlay-color: 210, 210, 210;
+} */
+
+.radial-gradient {
+  background: radial-gradient(
+      circle at 50% 0%,
+      rgba(var(--radial-gradient-background), 0.05) 0%,
+      transparent 60%
+    )
+    rgba(var(--solid-color-background), 1);
+}
+
+.linear-mask {
+  mask-image: linear-gradient(
+    -75deg,
+    white calc(var(--x) + 20%),
+    transparent calc(var(--x) + 30%),
+    white calc(var(--x) + 100%)
+  );
+  -webkit-mask-image: linear-gradient(
+    -75deg,
+    white calc(var(--x) + 20%),
+    transparent calc(var(--x) + 30%),
+    white calc(var(--x) + 100%)
+  );
+}
+
+.linear-overlay {
+  background-image: linear-gradient(
+    -75deg,
+    rgba(var(--overlay-color), 0.2) calc(var(--x) + 20%),
+    rgba(var(--overlay-color), 0.5) calc(var(--x) + 25%),
+    rgba(var(--overlay-color), 0.2) calc(var(--x) + 100%)
+  );
+  mask:
+    linear-gradient(black, black) content-box,
+    linear-gradient(black, black);
+  -webkit-mask:
+    linear-gradient(black, black) content-box,
+    linear-gradient(black, black);
+  mask-composite: exclude;
+  -webkit-mask-composite: xor;
+}
+
+.text-gold_gradient {
+  background: linear-gradient(to right, #ae8625, #f7ef8a, #d2ac47);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  z-index: 1;
+  height: full;
+}
+
+.HeroCard {
+  /* position: relative; */
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: flex-end; */
+  /* padding: 0 36px; */
+  perspective: 2500px;
+  /* margin: 0 50px; */
+}
+
+.HeroCard:hover .wrapper {
+  transform: perspective(900px) translateY(-5%) rotateX(25deg) translateZ(0);
+  /* box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75); */
+  /* -webkit-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75); */
+  /* -moz-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75); */
+}
+
+/* .wrapper::before,
+.wrapper::after {
+  content: "";
+  opacity: 0;
+  width: 100%;
+  height: 80px;
+  transition: all 0.5s;
+  position: absolute;
+  left: 0;
+} */
+
+/* .wrapper::after {
+  bottom: 0;
+  opacity: 1;
+  background-image: linear-gradient(
+    to bottom,
+    transparent 46%,
+    rgba(12, 13, 19, 0.5) 68%,
+    rgba(12, 13, 19) 97%
+  );
+} */
+
+/* .HeroCard:hover .wrapper::before,
+.wrapper::after {
+  opacity: 1;
+} */
+
+/* .HeroCard:hover .wrapper::after {
+  height: 120px;
+} */
+
+.HeroCard:hover .character {
+  /* transform: translate3d(0%, -30%, -100px); */
+  transform: scale(1.5);
+  transform: translate(-0.5rem);
+}
+
+.blur-container {
+  will-change: transform, opacity, backdrop-filter;
+}
