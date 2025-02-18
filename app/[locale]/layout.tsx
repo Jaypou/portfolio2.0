@@ -16,11 +16,9 @@ import { Providers } from "../providers";
 import DictionaryProvider from "./dictionary-provider";
 import { getDictionary } from "./public-dictionaries";
 
-export async function generateMetadata(
-  props: { 
-    params: Promise<{ locale: string }> 
-  }
-): Promise<Metadata> {
+export async function generateMetadata(props: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
   const params = await props.params;
   const locale = params.locale ?? "en";
   const dictionary = await getDictionary(locale);
