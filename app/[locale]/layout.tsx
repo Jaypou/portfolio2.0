@@ -71,72 +71,82 @@ export async function generateMetadata(props: {
 }): Promise<Metadata> {
   const params = await props.params;
   const locale = params.locale ?? "en";
+  const dictionary = await getDictionary(locale);
+
+  // export async function generateMetadata(props: {
+  //   params: { locale?: string };
+  // }): Promise<Metadata> {
+  //   const locale = props.params.locale ?? "fr";
+  //   const dictionary = await getDictionary(locale); // Default to French
+
+  const baseUrl = "https://jeremiepouliot.vercel.app";
+  const url = locale === "fr" ? baseUrl : `${baseUrl}/en`;
 
   return {
     title: {
-      default:
-        locale === "fr"
-          ? "Jérémie Pouliot | Développeur web junior"
-          : "Jérémie Pouliot | Junior Web Developer",
+      default: dictionary.metadata.title,
+      // locale === "fr"
+      //   ? "Jérémie Pouliot | Développeur web junior"
+      //   : "Jérémie Pouliot | Junior Web Developer",
       template:
         locale === "fr"
           ? "%s - Jérémie Pouliot | Développeur web junior"
           : "%s - Jérémie Pouliot | Junior Web Developer",
     },
-    description:
-      locale === "fr"
-        ? "Portfolio présentant mon parcours, mes compétences et mes expériences en tant que développeur web"
-        : "Portfolio showcasing my journey, skills, and experiences as a web developer",
+    description: dictionary.metadata.description,
+    // locale === "fr"
+    //   ? "Portfolio présentant mon parcours, mes compétences et mes expériences en tant que développeur web"
+    //   : "Portfolio showcasing my journey, skills, and experiences as a web developer",
     icons: {
       icon: "/favicon.ico",
     },
-    metadataBase: new URL("https://jeremiepouliot.vercel.app"),
+    metadataBase: new URL(baseUrl),
     openGraph: {
-      title:
-        locale === "fr"
-          ? "Jérémie Pouliot | Développeur web junior"
-          : "Jérémie Pouliot | Junior Web Developer",
-      description:
-        locale === "fr"
-          ? "Portfolio présentant mon parcours, mes compétences et mes expériences en tant que développeur web"
-          : "Portfolio showcasing my journey, skills, and experiences as a web developer",
-      url: "https://jeremiepouliot.vercel.app",
-      siteName:
-        locale === "fr"
-          ? "Jérémie Pouliot | Développeur web junior"
-          : "Jérémie Pouliot | Junior Web Developer",
+      title: dictionary.metadata.title,
+      // locale === "fr"
+      //   ? "Jérémie Pouliot | Développeur web junior"
+      //   : "Jérémie Pouliot | Junior Web Developer",
+      description: dictionary.metadata.description,
+      // locale === "fr"
+      //   ? "Portfolio présentant mon parcours, mes compétences et mes expériences en tant que développeur web"
+      //   : "Portfolio showcasing my journey, skills, and experiences as a web developer",
+      url, // Dynamically set the correct OG URL
+      siteName: dictionary.metadata.title,
+      // locale === "fr"
+      //   ? "Jérémie Pouliot | Développeur web junior"
+      //   : "Jérémie Pouliot | Junior Web Developer",
       images: [
         {
-          url: "https://jeremiepouliot.vercel.app/assets/favicons/Favicon.png",
+          url: `${baseUrl}/assets/favicons/Favicon.png`,
           width: 1200,
           height: 630,
-          alt:
-            locale === "fr"
-              ? "Photo de profil de Jérémie Pouliot"
-              : "Profile picture of Jérémie Pouliot",
+          alt: `${dictionary.ProfilePicture} ${dictionary.Contact.ContactName}`,
+          // locale === "fr"
+          //   ? "Photo de profil de Jérémie Pouliot"
+          //   : "Profile picture of Jérémie Pouliot",
         },
       ],
-      locale: locale,
+      locale,
       type: "website",
     },
     twitter: {
       card: "summary_large_image",
-      title:
-        locale === "fr"
-          ? "Jérémie Pouliot | Développeur web junior"
-          : "Jérémie Pouliot | Junior Web Developer",
-      description:
-        locale === "fr"
-          ? "Portfolio présentant mon parcours, mes compétences et mes expériences en tant que développeur web"
-          : "Portfolio showcasing my journey, skills, and experiences as a web developer",
-      images: ["https://jeremiepouliot.vercel.app/assets/favicons/Favicon.png"],
+      title: dictionary.metadata.title,
+      // locale === "fr"
+      //   ? "Jérémie Pouliot | Développeur web junior"
+      //   : "Jérémie Pouliot | Junior Web Developer",
+      description: dictionary.metadata.description,
+      // locale === "fr"
+      //   ? "Portfolio présentant mon parcours, mes compétences et mes expériences en tant que développeur web"
+      //   : "Portfolio showcasing my journey, skills, and experiences as a web developer",
+      images: [`${baseUrl}/assets/favicons/Favicon.png`],
       creator: "@JeremiePouliot",
     },
     alternates: {
-      canonical: "https://jeremiepouliot.vercel.app",
+      canonical: url, // Ensures the correct canonical URL for each locale
       languages: {
-        en: "https://jeremiepouliot.vercel.app/en",
-        fr: "https://jeremiepouliot.vercel.app/fr",
+        en: `${baseUrl}/en`,
+        fr: `${baseUrl}/fr`,
       },
     },
   };
@@ -150,7 +160,7 @@ export default async function RootLayout(props: {
 
   const { children } = props;
 
-  const locale = params.locale ?? "en"; // Fallback to "en" if undefined
+  const locale = params.locale ?? "fr"; // Fallback to "fr" if undefined
 
   const dictionary = await getDictionary(locale);
   const navItems = await GetProgressNavItems(locale);

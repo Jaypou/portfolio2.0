@@ -16,7 +16,7 @@ function getLocale(request: NextRequest) {
   // Match the best available locale, then normalize it
   let bestMatch = match(preferredLanguages, locales, defaultLocale);
   let simplifiedLocale = bestMatch.startsWith("en")
-    ? "en"
+    ? "fr"
     : bestMatch.startsWith("fr")
       ? "fr"
       : "en";
