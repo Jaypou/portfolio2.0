@@ -16,34 +16,104 @@ import { Providers } from "../providers";
 import DictionaryProvider from "./dictionary-provider";
 import { getDictionary } from "./public-dictionaries";
 
+// export async function generateMetadata(props: {
+//   params: Promise<{ locale: string }>;
+// }): Promise<Metadata> {
+//   const params = await props.params;
+//   const locale = params.locale ?? "en";
+//   const dictionary = await getDictionary(locale);
+
+//   return {
+//     title: {
+//       default: dictionary.metadata.title,
+//       template: `%s - ${dictionary.metadata.title}`,
+//     },
+//     description: dictionary.metadata.description,
+//     icons: {
+//       icon: "/favicon.ico",
+//     },
+//     metadataBase: new URL("https://jeremiepouliot.vercel.app"),
+//     openGraph: {
+//       title: dictionary.metadata.title,
+//       description: dictionary.metadata.description,
+//       url: "https://jeremiepouliot.vercel.app",
+//       siteName: dictionary.metadata.title,
+//       images: [
+//         {
+//           url: "https://jeremiepouliot.vercel.app/assets/favicons/Favicon.png",
+//           width: 1200,
+//           height: 630,
+//           alt: `${dictionary.ProfilePicture} ${dictionary.Contact.ContactName}`,
+//         },
+//       ],
+//       locale: locale,
+//       type: "website",
+//     },
+//     twitter: {
+//       card: "summary_large_image",
+//       title: dictionary.metadata.title,
+//       description: dictionary.metadata.description,
+//       images: ["https://jeremiepouliot.vercel.app/assets/favicons/Favicon.png"],
+//       creator: "@JeremiePouliot",
+//     },
+//     alternates: {
+//       canonical: "https://jeremiepouliot.vercel.app",
+//       languages: {
+//         "en-CA": "https://jeremiepouliot.vercel.app/en",
+//         "fr-CA": "https://jeremiepouliot.vercel.app/fr",
+//       },
+//     },
+//   };
+// }
+
 export async function generateMetadata(props: {
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const params = await props.params;
   const locale = params.locale ?? "en";
-  const dictionary = await getDictionary(locale);
 
   return {
     title: {
-      default: dictionary.metadata.title,
-      template: `%s - ${dictionary.metadata.title}`,
+      default:
+        locale === "fr-CA"
+          ? "Jérémie Pouliot | Développeur web junior"
+          : "Jérémie Pouliot | Junior Web Developer",
+      template:
+        locale === "fr-CA"
+          ? "%s - Jérémie Pouliot | Développeur web junior"
+          : "%s - Jérémie Pouliot | Junior Web Developer",
     },
-    description: dictionary.metadata.description,
+    description:
+      locale === "fr-CA"
+        ? "Portfolio présentant mon parcours, mes compétences et mes expériences en tant que développeur web"
+        : "Portfolio showcasing my journey, skills, and experiences as a web developer",
     icons: {
       icon: "/favicon.ico",
     },
     metadataBase: new URL("https://jeremiepouliot.vercel.app"),
     openGraph: {
-      title: dictionary.metadata.title,
-      description: dictionary.metadata.description,
+      title:
+        locale === "fr-CA"
+          ? "Jérémie Pouliot | Développeur web junior"
+          : "Jérémie Pouliot | Junior Web Developer",
+      description:
+        locale === "fr-CA"
+          ? "Portfolio présentant mon parcours, mes compétences et mes expériences en tant que développeur web"
+          : "Portfolio showcasing my journey, skills, and experiences as a web developer",
       url: "https://jeremiepouliot.vercel.app",
-      siteName: dictionary.metadata.title,
+      siteName:
+        locale === "fr-CA"
+          ? "Jérémie Pouliot | Développeur web junior"
+          : "Jérémie Pouliot | Junior Web Developer",
       images: [
         {
-          url: "/assets/images/Jeremie (1).png",
+          url: "https://jeremiepouliot.vercel.app/assets/favicons/Favicon.png",
           width: 1200,
           height: 630,
-          alt: `${dictionary.ProfilePicture} ${dictionary.Contact.ContactName}`,
+          alt:
+            locale === "fr-CA"
+              ? "Photo de profil de Jérémie Pouliot"
+              : "Profile picture of Jérémie Pouliot",
         },
       ],
       locale: locale,
@@ -51,9 +121,15 @@ export async function generateMetadata(props: {
     },
     twitter: {
       card: "summary_large_image",
-      title: dictionary.metadata.title,
-      description: dictionary.metadata.description,
-      images: ["/assets/images/Jeremie (1).png"],
+      title:
+        locale === "fr-CA"
+          ? "Jérémie Pouliot | Développeur web junior"
+          : "Jérémie Pouliot | Junior Web Developer",
+      description:
+        locale === "fr-CA"
+          ? "Portfolio présentant mon parcours, mes compétences et mes expériences en tant que développeur web"
+          : "Portfolio showcasing my journey, skills, and experiences as a web developer",
+      images: ["https://jeremiepouliot.vercel.app/assets/favicons/Favicon.png"],
       creator: "@JeremiePouliot",
     },
     alternates: {
