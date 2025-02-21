@@ -29,9 +29,40 @@ export async function generateMetadata(props: {
       template: `%s - ${dictionary.metadata.title}`,
     },
     description: dictionary.metadata.description,
-    // icons: {
-    //   icon: "/favicon.ico",
-    // },
+    icons: {
+      icon: "/favicon.ico",
+    },
+    metadataBase: new URL("https://jeremiepouliot.vercel.app"),
+    openGraph: {
+      title: dictionary.metadata.title,
+      description: dictionary.metadata.description,
+      url: "https://jeremiepouliot.vercel.app",
+      siteName: dictionary.metadata.title,
+      images: [
+        {
+          url: "/assets/images/Jeremie (1).png",
+          width: 1200,
+          height: 630,
+          alt: `${dictionary.ProfilePicture} ${dictionary.Contact.ContactName}`,
+        },
+      ],
+      locale: locale,
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: dictionary.metadata.title,
+      description: dictionary.metadata.description,
+      images: ["/assets/images/Jeremie (1).png"],
+      creator: "@JeremiePouliot",
+    },
+    alternates: {
+      canonical: "https://jeremiepouliot.vercel.app",
+      languages: {
+        "en-CA": "https://jeremiepouliot.vercel.app/en",
+        "fr-CA": "https://jeremiepouliot.vercel.app/fr",
+      },
+    },
   };
 }
 
