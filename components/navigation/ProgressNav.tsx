@@ -64,7 +64,7 @@ export default function ProgressNav({ navItems }: ProgressNavProps) {
   return (
     <nav
       className={clsx(
-        "fixed bottom-4 left-1/2 z-50 -translate-x-1/2 rounded-2xl opacity-0 transition-all duration-500",
+        "background-blur-xl fixed bottom-4 left-1/2 z-50 -translate-x-1/2 rounded-2xl bg-black/80 opacity-0 transition-all duration-500",
         isClient &&
           "md:bottom-auto md:left-5 md:top-1/2 md:-translate-y-1/2 md:translate-x-0 md:rounded-none md:bg-transparent",
         !isLoading && "opacity-100",
@@ -133,8 +133,8 @@ export default function ProgressNav({ navItems }: ProgressNavProps) {
                     className={clsx(
                       "relative h-6 w-6 transition-all duration-300",
                       activeSection === item.href.substring(1)
-                        ? "text-black md:text-white"
-                        : "text-black group-hover:text-black md:text-white"
+                        ? "text-black group-hover:text-blue-primary md:text-white"
+                        : "text-black group-hover:text-blue-primary md:text-white"
                     )}
                     icon={item.icon}
                   />

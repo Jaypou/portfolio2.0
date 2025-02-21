@@ -111,7 +111,7 @@ export default function ExperienceCard({
 
             {/* Tasks */}
             {tasks && (
-              <ul className="ml-4 list-inside list-disc space-y-3 text-sm text-white/60 sm:ml-16 sm:text-base">
+              <ul className="ml-6 list-outside list-disc space-y-3 text-sm text-white/60 sm:ml-16 sm:text-base">
                 {tasks.map((task, index) => (
                   <li
                     key={index}

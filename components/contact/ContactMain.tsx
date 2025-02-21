@@ -8,6 +8,7 @@ export default function ContactMain() {
 
   const ContactData = {
     ContactName: dictionary.Contact.ContactName,
+    ProfilePicture: dictionary.ProfilePicture,
     ContactPosition: dictionary.Contact.ContactPosition,
     SocialLinks: [
       "https://www.facebook.com/jeremie.pouliot.96/",
