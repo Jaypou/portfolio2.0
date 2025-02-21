@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 
 import { useDictionary } from "@/app/[locale]/dictionary-provider";
 import { ExperienceCard } from "@/components";
+import CarpentryLogo from "@/public/assets/images/Carpentry.png";
 import CegepSherbrookeLogo from "@/public/assets/images/CegepSherbrookeLogo.png";
 import InnovationKKLogo from "@/public/assets/images/InnovationKKLogo.png";
 import gsap from "gsap";
@@ -43,9 +44,18 @@ export default function ExperiencesMain() {
 
   const experienceData = [
     {
+      title: dictionary.Experience.ConstructionTitle,
+      description: dictionary.Experience.ConstructionDesc,
+      year: "2016 - 2021",
+      image: CarpentryLogo,
+      classnames: "bg-black p-0",
+      tasks: dictionary.Experience.ConstructionTasks,
+      // link: "",
+    },
+    {
       title: dictionary.Experience.AECTitle,
       description: dictionary.Experience.AECDesc,
-      year: "2021-2022",
+      year: "2021 - 2022",
       image: CegepSherbrookeLogo,
       classnames: "bg-white p-5",
       tasks: dictionary.Experience.AECTasks,
@@ -54,7 +64,7 @@ export default function ExperiencesMain() {
     {
       title: dictionary.Experience.WebDevTitle,
       description: dictionary.Experience.WebDevDesc,
-      year: "2023-2025",
+      year: "2023 - Fin 2024",
       image: InnovationKKLogo,
       classnames: "bg-black p-1",
       tasks: dictionary.Experience.WebDevTasks,

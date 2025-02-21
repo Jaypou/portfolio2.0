@@ -66,7 +66,7 @@ export default function ExperienceCard({
       <div className="w-full">
         <div className="rounded-xl bg-gradient-to-br from-zinc-800/90 to-zinc-950/100 px-2 py-5 shadow-lg shadow-white/20 transition-all duration-300 group-hover:scale-105 sm:p-8 md:p-6">
           <div className="flex flex-col gap-6">
-            <div className="flex items-start gap-4 sm:items-center sm:gap-6">
+            <div className="grid grid-cols-[5rem,1fr] gap-4 sm:grid-cols-[5rem,1fr] sm:items-center sm:gap-6 md:grid-cols-[6rem,1fr]">
               {/* Image & Link */}
               {link ? (
                 <Link
@@ -82,11 +82,11 @@ export default function ExperienceCard({
                 </Link>
               ) : (
                 <div
-                  className={`sm:h-18 sm:w-18 flex h-16 w-16 items-center justify-center rounded-xl shadow-md shadow-gray-500 transition-all hover:scale-110 active:scale-90 md:h-20 md:w-20 ${classnames ? classnames : ""}`}
+                  className={`flex h-[5rem] w-[5rem]  items-center justify-center rounded-xl shadow-md shadow-gray-500 transition-all hover:scale-110 active:scale-90 sm:h-20 sm:w-20 md:h-24 md:w-24 ${classnames ? classnames : ""}`}
                 >
                   <Image
                     alt={`${title} Logo`}
-                    className="object-scale-down sm:object-contain sm:p-2 md:p-2.5"
+                    className="object-contain md:p-2.5"
                     src={image}
                   />
                 </div>
@@ -94,7 +94,9 @@ export default function ExperienceCard({
 
               {/* Title */}
               <div ref={titleRef} className="flex flex-col">
-                <h3 className="text-2xl font-bold text-white">{title}</h3>
+                <h3 className="text-xl font-bold text-white sm:text-2xl">
+                  {title}
+                </h3>
                 <h4 className="font-light tracking-wider text-white/50">
                   {year}
                 </h4>

@@ -78,14 +78,22 @@
     ],
 
     "SkillDevelopment": "Montée en compétences",
-    "SkillDevelopmentDesc": "En 2023, j'ai perfectionné mes compétences en React grâce à des formations en ligne, explorer Java et trouver un emploi, ce qui m'a aidé à affiner mon orientation vers le développement frontend. Trouver un premier poste n'a pas été simple, mais chaque défi et chaque entretien m'ont apporté des enseignements précieux, renforçant ma motivation et mes compétences.",
+    "SkillDevelopmentDesc": "En 2023, j'ai perfectionné mes compétences en React grâce à des formations en ligne, exploré Java et trouvé un emploi, ce qui m'a aidé à affiner mon orientation vers le développement frontend. Trouver un premier poste n'a pas été simple, mais chaque défi et chaque entretien m'ont apporté des enseignements précieux, renforçant ma motivation et mes compétences. J'ai occupé cet emploi jusqu'à la fin de l'année 2024, ce qui m'a permis d'acquérir une expérience significative et de consolider mes compétences en développement",
 
     "ReadyForImpact": "Prêt à faire la différence",
-    "ReadyForImpactDesc": "Aujourd'hui, je suis disponible et prêt à mettre mes compétences techniques et mon esprit d'analyse au service de projets concrets, en contribuant à des solutions innovantes et impactantes."
+    "ReadyForImpactDesc": "Aujourd'hui, je suis disponible et prêt à mettre mes compétences techniques et mon esprit d'analyse au service de projets concrets, en contribuant à des solutions innovantes et impactantes!"
   },
 
   "Experience": {
     "ExpTitle": "Expériences professionnelles",
+    "ConstructionTitle": "Étudiant en Menuiserie & Travailleur de la Construction",
+    "ConstructionDesc": "Formation en menuiserie et expérience professionnelle en construction",
+    "ConstructionTasks": [
+      "Completion d'un programme complet de formation en menuiserie axé sur la construction résidentielle et commerciale",
+      "Acquisition d'une expérience pratique dans divers projets de construction, développant de solides compétences en résolution de problèmes",
+      "Collaboration avec diverses équipes pour réaliser des tâches complexes de construction dans les délais impartis",
+      "Développement d'une expertise en mesures précises, protocoles de sécurité et normes de contrôle qualité"
+    ],
     "AECTitle": "AEC en Développement Web",
     "AECDesc": "Programme intensif de 8 mois en développement web au Cégep de Sherbrooke",
     "AECTasks": [

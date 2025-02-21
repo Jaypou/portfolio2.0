@@ -78,15 +78,23 @@
     ],
 
     "SkillDevelopment": "Skill Development",
-    "SkillDevelopmentDesc": "Throughout 2023, I refined my skills in React through Udemy courses, explored Java and found a job, which helped me solidify my interest in frontend development. Breaking into the industry wasn't easy, but each challenge, including job interviews, provided valuable insights that strengthened my determination and skill set.",
+    "SkillDevelopmentDesc": "Throughout 2023, I refined my skills in React through online courses, explored Java, and secured a job, which helped me solidify my focus on frontend development. Finding my first position wasn't easy, but every challenge and interview provided valuable lessons that strengthened my motivation and skills. I held this job until the end of 2024, allowing me to gain significant experience and further develop my expertise in web development.",
 
     "ReadyForImpact": "Ready for Impact",
-    "ReadyForImpactDesc": "Now, I'm available and eager to apply my expertise and problem-solving mindset to meaningful projects, contributing to innovative and impactful development work."
+    "ReadyForImpactDesc": "Now, I'm available and eager to apply my expertise and problem-solving mindset to meaningful projects, contributing to innovative and impactful development work!"
   },
 
   "Experience": {
     "ExpTitle": "Professionnal Experiences",
-    "AECTitle": "AEC in Web Development",
+    "ConstructionTitle": "Carpentry Student & Construction Worker",
+    "ConstructionDesc": "Carpentry training and professional experience in construction",
+    "ConstructionTasks": [
+      "Completed comprehensive carpentry training program with focus on residential and commercial construction",
+      "Gained hands-on experience in various construction projects, developing strong problem-solving skills",
+      "Collaborated with diverse teams to complete complex construction tasks on schedule",
+      "Developed expertise in precise measurements, safety protocols, and quality control standards"
+    ],
+    "AECTitle": "ACS in Web Development",
     "AECDesc": "8-month intensive web development program at Cegep de Sherbrooke",
     "AECTasks": [
       "Front-end development with HTML, CSS, JavaScript, PHP and introduction to Wordpress, Laravel and Bootstap.",
