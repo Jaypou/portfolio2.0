@@ -5,6 +5,8 @@ import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 
 import { HyperText, IconComp, Social } from "@/components";
+import Jeremie2 from "@/public/assets/images/Jeremie2.png";
+// import Jeremie from "@/public/assets/images/Jeremie (1).png";
 import gsap from "gsap";
 
 // import { Skeleton } from "@nextui-org/react";
@@ -44,16 +46,19 @@ export default function ContactCard({ ContactData }: any) {
 
   return (
     // <Skeleton className="h-full w-full rounded-lg" isLoaded={ContactData}>
-    <div className="flex min-h-[100vh] flex-col items-center justify-center space-y-6">
+    <div className="z-10 flex min-h-[100vh] flex-col items-center justify-center space-y-6">
       {/* Profile Image */}
       <div className="relative h-60 w-60">
-        <div className="absolute h-full w-full rounded-full border-4 border-white/20 [box-shadow:0_0_20px_20px_rgba(0,165,255,0.5)]">
-          <Image
-            fill
-            alt="Profile"
-            className="rounded-full bg-black object-cover"
-            src="/assets/images/jeremie-no-bg.png"
-          />
+        <div className="absolute z-10 h-full w-full overflow-hidden rounded-full border-3 border-white/20 [box-shadow:0_0_20px_20px_rgba(0,165,255,0.5)]">
+          <div className="relative h-full w-full rounded-full bg-black">
+            <Image
+              fill
+              alt={`${ContactData.ProfilePicture} ${ContactData.ContactName}`}
+              // className="ml-3 object-cover object-top"
+              className="bg-gradient-to-b from-white/10 to-black object-cover object-top"
+              src={Jeremie2}
+            />
+          </div>
         </div>
       </div>
       {/* Name and Title */}
