@@ -75,16 +75,16 @@ export async function generateMetadata(props: {
   return {
     title: {
       default:
-        locale === "fr-CA"
+        locale === "fr"
           ? "Jérémie Pouliot | Développeur web junior"
           : "Jérémie Pouliot | Junior Web Developer",
       template:
-        locale === "fr-CA"
+        locale === "fr"
           ? "%s - Jérémie Pouliot | Développeur web junior"
           : "%s - Jérémie Pouliot | Junior Web Developer",
     },
     description:
-      locale === "fr-CA"
+      locale === "fr"
         ? "Portfolio présentant mon parcours, mes compétences et mes expériences en tant que développeur web"
         : "Portfolio showcasing my journey, skills, and experiences as a web developer",
     icons: {
@@ -93,16 +93,16 @@ export async function generateMetadata(props: {
     metadataBase: new URL("https://jeremiepouliot.vercel.app"),
     openGraph: {
       title:
-        locale === "fr-CA"
+        locale === "fr"
           ? "Jérémie Pouliot | Développeur web junior"
           : "Jérémie Pouliot | Junior Web Developer",
       description:
-        locale === "fr-CA"
+        locale === "fr"
           ? "Portfolio présentant mon parcours, mes compétences et mes expériences en tant que développeur web"
           : "Portfolio showcasing my journey, skills, and experiences as a web developer",
       url: "https://jeremiepouliot.vercel.app",
       siteName:
-        locale === "fr-CA"
+        locale === "fr"
           ? "Jérémie Pouliot | Développeur web junior"
           : "Jérémie Pouliot | Junior Web Developer",
       images: [
@@ -111,7 +111,7 @@ export async function generateMetadata(props: {
           width: 1200,
           height: 630,
           alt:
-            locale === "fr-CA"
+            locale === "fr"
               ? "Photo de profil de Jérémie Pouliot"
               : "Profile picture of Jérémie Pouliot",
         },
@@ -122,11 +122,11 @@ export async function generateMetadata(props: {
     twitter: {
       card: "summary_large_image",
       title:
-        locale === "fr-CA"
+        locale === "fr"
           ? "Jérémie Pouliot | Développeur web junior"
           : "Jérémie Pouliot | Junior Web Developer",
       description:
-        locale === "fr-CA"
+        locale === "fr"
           ? "Portfolio présentant mon parcours, mes compétences et mes expériences en tant que développeur web"
           : "Portfolio showcasing my journey, skills, and experiences as a web developer",
       images: ["https://jeremiepouliot.vercel.app/assets/favicons/Favicon.png"],
@@ -135,8 +135,8 @@ export async function generateMetadata(props: {
     alternates: {
       canonical: "https://jeremiepouliot.vercel.app",
       languages: {
-        "en-CA": "https://jeremiepouliot.vercel.app/en",
-        "fr-CA": "https://jeremiepouliot.vercel.app/fr",
+        en: "https://jeremiepouliot.vercel.app/en",
+        fr: "https://jeremiepouliot.vercel.app/fr",
       },
     },
   };
