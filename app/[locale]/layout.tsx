@@ -29,9 +29,9 @@ export async function generateMetadata(props: {
       template: `%s - ${dictionary.metadata.title}`,
     },
     description: dictionary.metadata.description,
-    // icons: {
-    //   icon: "/favicon.ico",
-    // },
+    icons: {
+      icon: "/favicon.ico",
+    },
   };
 }
 
