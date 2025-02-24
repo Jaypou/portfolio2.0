@@ -20,6 +20,7 @@
   "Skills": {
     "FrontEnd": {
       "title": "Développement Front-End",
+      "description": "Création d'interfaces utilisateur réactives et interactives avec des frameworks et bibliothèques modernes.",
       "skills": [
         "HTML, CSS, TypeScript, JavaScript",
         "React, Next.js",
@@ -30,6 +31,7 @@
     },
     "BackEnd": {
       "title": "Back-End & Infrastructure",
+      "description": "Construction d'applications côté serveur robustes et gestion d'infrastructures cloud pour des solutions évolutives.",
       "skills": [
         "PHP, Java, Node.js, Laravel",
         "API RESTful, GraphQL, Hygraph",
@@ -40,6 +42,7 @@
     },
     "AI": {
       "title": "Intelligence Artificielle & Assistants",
+      "description": "Utilisation d'outils d'IA et d'assistants pour améliorer le flux de développement et la productivité.",
       "skills": [
         "ChatGPT, Copilot, ClaudeAI",
         "GitHub Copilot",
@@ -48,6 +51,7 @@
     },
     "Professional": {
       "title": "Compétences Professionnelles",
+      "description": "Combinaison d'expertise technique et de compétences essentielles pour une collaboration efficace et le succès des projets.",
       "skills": [
         "Stratégie & Innovation",
         "Optimisation des performances",

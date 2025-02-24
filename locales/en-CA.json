@@ -20,16 +20,18 @@
   "Skills": {
     "FrontEnd": {
       "title": "Front-End Development",
+      "description": "Crafting responsive and interactive user interfaces with modern frameworks and libraries.",
       "skills": [
-        "HTML, CSS, TypeScript, JavaScript",
+        "HTML, CSS, JavaScript, TypeScript",
         "React, Next.js",
-        "TailwindCSS, GSAP, Framer Motion",
-        "HeroUI, HeroUI Pro, TailwindUI",
-        "MagicUI, AceternityUI, Bootstrap"
+        "TailwindCSS, Bootstrap",
+        "HeroUI, HeroUI Pro, TailwindUI, MagicUI, AceternityUI",
+        "GSAP, Framer Motion"
       ]
     },
     "BackEnd": {
       "title": "Back-End & Infrastructure",
+      "description": "Building robust server-side applications and managing cloud infrastructure for scalable solutions.",
       "skills": [
         "PHP, Java, Node.js, Laravel",
         "RESTful API, GraphQL, Hygraph",
@@ -40,6 +42,7 @@
     },
     "AI": {
       "title": "Artificial Intelligence & Assistants",
+      "description": "Leveraging AI tools and assistants to enhance development workflow and productivity.",
       "skills": [
         "ChatGPT, Copilot, ClaudeAI",
         "GitHub Copilot",
@@ -48,6 +51,7 @@
     },
     "Professional": {
       "title": "Professional Skills",
+      "description": "Combining technical expertise with essential soft skills for effective collaboration and project success.",
       "skills": [
         "Strategy & Innovation",
         "Performance Optimization",

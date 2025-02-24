@@ -12,6 +12,7 @@ interface SkillCardProps {
   icon: string;
   iconColor?: string;
   title: string;
+  description: string;
   skills: string[];
 }
 
@@ -20,6 +21,7 @@ export default function SkillCard({
   iconColor,
   title,
   skills,
+  description,
 }: SkillCardProps) {
   const titleRef = useRef(null);
   const skillsRef = useRef<(HTMLLIElement | null)[]>([]);
@@ -67,6 +69,10 @@ export default function SkillCard({
             {title}
           </h3>
         </div>
+
+        <p className="ml-4 text-sm font-light italic text-white/60 md:mt-2 md:text-base">
+          {description}
+        </p>
 
         <ul className="ml-12 flex list-disc flex-col items-start justify-center gap-4 text-sm text-white/80 marker:text-xs md:ml-8 md:text-base">
           {skills.map((skill, index) => (

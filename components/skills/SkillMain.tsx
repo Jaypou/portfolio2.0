@@ -53,9 +53,10 @@ export default function SkillMain() {
           {getSkillsUIData(dictionary).map((skill, index) => (
             <div
               key={index}
-              className={`skill-card-container py-8 first:pt-0 last:pb-0 md:py-0 ${index === getSkillsUIData(dictionary).length - 1 ? "xl:col-span-3" : ""}`}
+              className={`skill-card-container py-8 first:pt-0 last:pb-0 md:py-0 ${index === getSkillsUIData(dictionary).length - 1 ? "xl:col-start-2" : ""}`}
             >
               <SkillCard
+                description={skill.description}
                 icon={skill.icon}
                 iconColor={skill.iconColor}
                 skills={skill.skills}
