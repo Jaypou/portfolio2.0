@@ -22,9 +22,8 @@
       "title": "Front-End Development",
       "description": "Crafting responsive and interactive user interfaces with modern frameworks and libraries.",
       "skills": [
-        "HTML, CSS, JavaScript, TypeScript",
+        "HTML, CSS, JavaScript, TypeScript, TailwindCSS, Bootstrap",
         "React, Next.js",
-        "TailwindCSS, Bootstrap",
         "HeroUI, HeroUI Pro, TailwindUI, MagicUI, AceternityUI",
         "GSAP, Framer Motion"
       ]

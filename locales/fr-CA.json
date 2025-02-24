@@ -22,11 +22,10 @@
       "title": "Développement Front-End",
       "description": "Création d'interfaces utilisateur réactives et interactives avec des frameworks et bibliothèques modernes.",
       "skills": [
-        "HTML, CSS, TypeScript, JavaScript",
+        "HTML, CSS, JavaScript, TypeScript, TailwindCSS, Bootstrap",
         "React, Next.js",
-        "TailwindCSS, GSAP, Framer Motion",
-        "HeroUI, HeroUI Pro, TailwindUI",
-        "MagicUI, AceternityUI, Bootstrap"
+        "HeroUI, HeroUI Pro, TailwindUI, MagicUI, AceternityUI",
+        "GSAP, Framer Motion"
       ]
     },
     "BackEnd": {
