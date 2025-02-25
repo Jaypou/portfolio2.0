@@ -20,7 +20,7 @@ export default function TimelineCard({
     <article className="md:max-w-8xl group relative mx-auto w-full px-2 md:px-6">
       <div
         aria-labelledby={`timeline-title-${year}`}
-        className="shadow-white-20 min-h-[400px] rounded-xl bg-gradient-to-br from-zinc-800/90 to-zinc-950/100 p-4 shadow-lg transition-all duration-300 md:min-h-[250px] md:p-8"
+        className="min-h-[400px] rounded-xl bg-gradient-to-br from-zinc-800/90 to-zinc-950/100 p-4 shadow-lg shadow-white/20 transition-all duration-300 md:min-h-[250px] md:p-8"
         role="article"
       >
         <div className="flex flex-col gap-6">

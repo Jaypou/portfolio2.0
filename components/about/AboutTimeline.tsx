@@ -39,7 +39,7 @@ export default function AboutTimeline({ timelineData }: TimelineProps) {
     const newIndex =
       (currentIndex + newDirection + timelineData.length) % timelineData.length;
 
-    setPage([page + newDirection, newDirection]);
+    setPage([page + 1, newDirection]);
     setCurrentIndex(newIndex);
   };
 

@@ -9,7 +9,7 @@ export default function AboutMain() {
 
   return (
     <section aria-labelledby="about-title" className="w-full py-20">
-      <div className="container mx-auto flex flex-col items-center md:px-0">
+      <div className="container mx-auto flex flex-col items-center md:px-0 lg:max-w-5xl xl:max-w-6xl">
         <h1
           className="mb-16 text-center text-4xl font-bold text-white"
           id="about-title"

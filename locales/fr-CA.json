@@ -5,7 +5,7 @@
   },
   "ProgressNav": {
     "Contact": "Contact",
-    "About": "À Propos",
+    "About": "À propos",
     "Skills": "Compétences & expertises",
     "Experiences": "Expériences"
   },
@@ -30,7 +30,7 @@
     },
     "BackEnd": {
       "title": "Back-End & Infrastructure",
-      "description": "Construction d'applications côté serveur robustes et gestion d'infrastructures cloud pour des solutions évolutives.",
+      "description": "Conception d'applications back-end robustes et gestion d'infrastructures cloud pour des solutions évolutives.",
       "skills": [
         "PHP, Java, Node.js, Laravel",
         "API RESTful, GraphQL, Hygraph",
@@ -45,7 +45,7 @@
       "skills": [
         "ChatGPT, Copilot, ClaudeAI",
         "GitHub Copilot",
-        "Cline (Extension VS Code)"
+        "Cline (extension VS Code)"
       ]
     },
     "Professional": {
@@ -58,6 +58,34 @@
         "Adaptabilité & Apprentissage continu"
       ]
     }
+  },
+
+  "Experience": {
+    "ExpTitle": "Expériences professionnelles",
+    "ConstructionTitle": "DEP en Charpenterie-Menuiserie et Expérience sur Chantier",
+    "ConstructionDesc": "Cinq années d'expérience dans le domaine de la construction",
+    "ConstructionTasks": [
+      "Obtention d'un DEP en charpenterie-menuiserie, avec une formation spécialisée en construction résidentielle et commerciale",
+      "Acquisition d'une expérience pratique sur divers chantiers, développant de solides compétences en résolution de problèmes",
+      "Collaboration avec différentes équipes pour mener à bien des projets de construction complexes dans les délais impartis",
+      "Maîtrise des mesures précises, des protocoles de sécurité et des normes de contrôle qualité"
+    ],
+    "AECTitle": "AEC en Développement Web",
+    "AECDesc": "Programme intensif de 8 mois en développement web au Cégep de Sherbrooke",
+    "AECTasks": [
+      "Développement front-end avec HTML, CSS, JavaScript et PHP, incluant une introduction à WordPress, Laravel et Bootstrap.",
+      "Développement back-end avec PHP et gestion de bases de données avec SQL.",
+      "Gestion de projet web, versionnement avec Git et GitHub, et déploiement cloud sur Azure.",
+      "Intégration full-stack, optimisation des performances, meilleures pratiques en accessibilité et sécurité."
+    ],
+    "WebDevTitle": "Développeur Web Junior",
+    "WebDevDesc": "Développeur web junior chez Innovation Kapital-K, spécialisé dans le développement frontend",
+    "WebDevTasks": [
+      "Développement et maintenance d'interfaces utilisateur réactives et dynamiques avec Next.js, React, Tailwind CSS et TypeScript.",
+      "Intégration d'API et de services tiers pour améliorer les fonctionnalités et le traitement des données.",
+      "Mise en place de composants modulaires et réutilisables pour une structure de code efficace et évolutive.",
+      "Optimisation des performances, débogage et application des meilleures pratiques en accessibilité et sécurité."
+    ]
   },
 
   "About": {
@@ -81,37 +109,9 @@
     ],
 
     "SkillDevelopment": "Montée en compétences",
-    "SkillDevelopmentDesc": "En 2023, j'ai perfectionné mes compétences en React grâce à des formations en ligne, exploré Java et trouvé un emploi, ce qui m'a aidé à affiner mon orientation vers le développement frontend. Trouver un premier poste n'a pas été simple, mais chaque défi et chaque entretien m'ont apporté des enseignements précieux, renforçant ma motivation et mes compétences. J'ai occupé cet emploi jusqu'à la fin de l'année 2024, ce qui m'a permis d'acquérir une expérience significative et de consolider mes compétences en développement",
+    "SkillDevelopmentDesc": "En 2023, j'ai perfectionné mes aptitudes en React grâce à des formations en ligne, exploré Java et trouvé un emploi, ce qui m'a aidé à affiner mon orientation vers le développement frontend. Trouver un premier poste n'a pas été simple, mais chaque défi et chaque entretien m'ont apporté des enseignements précieux, renforçant ma motivation et mes habiletés. J'ai occupé cet emploi jusqu'à la fin de l'année 2024, ce qui m'a permis d'acquérir une expérience significative et de consolider mes compétences en développement",
 
     "ReadyForImpact": "Prêt à faire la différence",
-    "ReadyForImpactDesc": "Aujourd'hui, je suis disponible et prêt à mettre mes compétences techniques et mon esprit d'analyse au service de projets concrets, en contribuant à des solutions innovantes et impactantes!"
-  },
-
-  "Experience": {
-    "ExpTitle": "Expériences professionnelles",
-    "ConstructionTitle": "Étudiant en Menuiserie & Travailleur de la Construction",
-    "ConstructionDesc": "Formation en menuiserie et expérience professionnelle en construction",
-    "ConstructionTasks": [
-      "Completion d'un programme complet de formation en menuiserie axé sur la construction résidentielle et commerciale",
-      "Acquisition d'une expérience pratique dans divers projets de construction, développant de solides compétences en résolution de problèmes",
-      "Collaboration avec diverses équipes pour réaliser des tâches complexes de construction dans les délais impartis",
-      "Développement d'une expertise en mesures précises, protocoles de sécurité et normes de contrôle qualité"
-    ],
-    "AECTitle": "AEC en Développement Web",
-    "AECDesc": "Programme intensif de 8 mois en développement web au Cégep de Sherbrooke",
-    "AECTasks": [
-      "Développement front-end avec HTML, CSS, JavaScript, PHP et introduction à WordPress, Laravel et Bootstrap.",
-      "Développement back-end avec PHP et gestion de bases de données avec SQL.",
-      "Gestion de projet web, contrôle de version avec Git & GitHub, et déploiement sur le cloud (Azure).",
-      "Intégration full-stack, optimisation des performances, meilleures pratiques en accessibilité et sécurité."
-    ],
-    "WebDevTitle": "Développeur Web Junior",
-    "WebDevDesc": "Développeur web junior chez Innovation Kapital-K, spécialisé dans le développement frontend",
-    "WebDevTasks": [
-      "Développement et maintenance d'interfaces utilisateur réactives et dynamiques avec Next.js, React, Tailwind CSS et TypeScript.",
-      "Intégration d'API et de services tiers pour améliorer les fonctionnalités et le traitement des données.",
-      "Mise en place de composants modulaires et réutilisables pour une structure de code efficace et évolutive.",
-      "Optimisation des performances, débogage et application des meilleures pratiques en accessibilité et sécurité."
-    ]
+    "ReadyForImpactDesc": "Aujourd'hui, je suis disponible et prêt à mettre mon savoir-faire technique et mon esprit d'analyse au service de projets concrets, en contribuant à des solutions novatrices et impactantes !"
   }
 }

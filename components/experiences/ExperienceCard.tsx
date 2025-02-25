@@ -61,7 +61,7 @@ export default function ExperienceCard({
   }, []);
 
   return (
-    <div className="group relative mb-12 w-full items-start sm:mb-16 md:px-8">
+    <div className="group relative mb-12 w-full items-start sm:mb-16">
       {/* Content */}
       <div className="w-full">
         <div className="rounded-xl bg-gradient-to-br from-zinc-800/90 to-zinc-950/100 px-2 py-5 shadow-lg shadow-white/20 transition-all duration-300 group-hover:scale-105 sm:p-8 md:p-6">

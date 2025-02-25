@@ -11,7 +11,7 @@ export default function Page() {
     <div className="relative w-full">
       {/* Contact Section */}
       <section
-        className="flex min-h-screen w-full items-start justify-center md:pl-24 xl:pl-32"
+        className="flex min-h-screen w-full items-start justify-center md:pl-16 lg:pl-20"
         id="contact"
       >
         <ContactMain />
@@ -19,7 +19,7 @@ export default function Page() {
 
       {/* Skills Section */}
       <section
-        className="flex min-h-screen w-full items-start justify-center md:pl-24 xl:pl-32"
+        className="flex min-h-screen w-full items-start justify-center md:pl-16 lg:pl-20"
         id="skills"
       >
         <SkillMain />
@@ -27,7 +27,7 @@ export default function Page() {
 
       {/* Projects Section */}
       <section
-        className="flex min-h-screen w-full items-start justify-center md:pl-24 xl:pl-32"
+        className="flex min-h-screen w-full items-start justify-center md:pl-16 lg:pl-20"
         id="experiences"
       >
         <ExperienceMain />
@@ -35,7 +35,7 @@ export default function Page() {
 
       {/* About Section */}
       <section
-        className="flex min-h-screen w-full items-center justify-center md:pl-24 xl:pl-32"
+        className="items-centet flex min-h-screen w-full justify-center md:pl-16 lg:pl-20"
         id="about"
       >
         <AboutMain />

@@ -74,7 +74,7 @@ export default function ExperiencesMain() {
 
   return (
     <div className="w-full py-20">
-      <div className="container mx-auto flex flex-col items-center px-4 sm:px-8">
+      <div className="container mx-auto flex flex-col items-center px-4 sm:px-8 lg:max-w-5xl xl:max-w-6xl">
         <h1 className="mb-16 text-center text-4xl font-bold text-white">
           {dictionary.Experience.ExpTitle}
         </h1>

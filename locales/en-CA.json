@@ -60,6 +60,34 @@
     }
   },
 
+  "Experience": {
+    "ExpTitle": "Professional Experience",
+    "ConstructionTitle": "DEP in Carpentry and Site Experience",
+    "ConstructionDesc": "Five years of experience in the construction industry",
+    "ConstructionTasks": [
+      "Earned a DEP in carpentry, specializing in residential and commercial construction",
+      "Gained hands-on experience on various job sites, developing strong problem-solving skills",
+      "Collaborated with different teams to successfully complete complex construction projects on schedule",
+      "Mastered precise measurements, safety protocols, and quality control standards"
+    ],
+    "AECTitle": "ACS in Web Development",
+    "AECDesc": "8-month intensive web development program at Cegep de Sherbrooke",
+    "AECTasks": [
+      "Front-end development with HTML, CSS, JavaScript and PHP, including introduction to WordPress, Laravel and Bootstrap.",
+      "Back-end development with PHP, and database management with SQL.",
+      "Web project management, version control with Git & GitHub, and cloud deployment on Azure",
+      "Full-stack integration, performance optimization, best practices in accessibility and security"
+    ],
+    "WebDevTitle": "Junior Web Developer",
+    "WebDevDesc": "Junior web developer at Innovation Kapital-K, specialized in Front-end development",
+    "WebDevTasks": [
+      "Development and maintenance of responsive and dynamic user interfaces using Next.js, React, Tailwind CSS, and TypeScript.",
+      "Integration of APIs and third-party services to enhance functionality and data processing.",
+      "Implementation of modular and reusable components for efficient and scalable code structure.",
+      "Performance optimization, debugging, and ensuring best practices in accessibility and security."
+    ]
+  },
+
   "About": {
     "title": "My Journey",
     "BeginningCarpentry": "Professional Beginnings",
@@ -81,37 +109,9 @@
     ],
 
     "SkillDevelopment": "Skill Development",
-    "SkillDevelopmentDesc": "Throughout 2023, I refined my skills in React through online courses, explored Java, and secured a job, which helped me solidify my focus on frontend development. Finding my first position wasn't easy, but every challenge and interview provided valuable lessons that strengthened my motivation and skills. I held this job until the end of 2024, allowing me to gain significant experience and further develop my expertise in web development.",
+    "SkillDevelopmentDesc": "Throughout 2023, I refined my skills in React through online courses, explored Java, and secured a job, which helped me solidify my focus on Front-end development. Finding my first position wasn't easy, but every challenge and interview provided valuable lessons that strengthened my motivation and skills. I held this position until the end of 2024, gaining significant experience and further refining my expertise in web development.",
 
     "ReadyForImpact": "Ready for Impact",
     "ReadyForImpactDesc": "Now, I'm available and eager to apply my expertise and problem-solving mindset to meaningful projects, contributing to innovative and impactful development work!"
-  },
-
-  "Experience": {
-    "ExpTitle": "Professionnal Experiences",
-    "ConstructionTitle": "Carpentry Student & Construction Worker",
-    "ConstructionDesc": "Carpentry training and professional experience in construction",
-    "ConstructionTasks": [
-      "Completed comprehensive carpentry training program with focus on residential and commercial construction",
-      "Gained hands-on experience in various construction projects, developing strong problem-solving skills",
-      "Collaborated with diverse teams to complete complex construction tasks on schedule",
-      "Developed expertise in precise measurements, safety protocols, and quality control standards"
-    ],
-    "AECTitle": "ACS in Web Development",
-    "AECDesc": "8-month intensive web development program at Cegep de Sherbrooke",
-    "AECTasks": [
-      "Front-end development with HTML, CSS, JavaScript, PHP and introduction to Wordpress, Laravel and Bootstap.",
-      "Back-end development with PHP, and database management with SQL.",
-      "Web project management, version control with Git & Github, and cloud deployment (Azure)",
-      "Full-stack integration, performance optimization, best practices in accessibility and security"
-    ],
-    "WebDevTitle": "Junior Web Developer",
-    "WebDevDesc": "Junior web developer at Innovation Kapital-K, specialized in frontend development",
-    "WebDevTasks": [
-      "Development and maintenance of responsive and dynamic user interfaces using Next.js, React, Tailwind CSS, and TypeScript.",
-      "Integration of APIs and third-party services to enhance functionality and data processing.",
-      "Implementation of modular and reusable components for efficient and scalable code structure.",
-      "Performance optimization, debugging, and ensuring best practices in accessibility and security."
-    ]
   }
 }

@@ -48,7 +48,7 @@ export default function SkillMain() {
         </h1>
         <div
           ref={containerRef}
-          className="flex w-full flex-col divide-y divide-gray-700/50 md:grid md:grid-cols-2 md:gap-6 md:divide-y-0 xl:grid-cols-3"
+          className="grid w-full grid-cols-1 gap-6 divide-y divide-gray-700/50 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3"
         >
           {getSkillsUIData(dictionary).map((skill, index) => (
             <div
