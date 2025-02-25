@@ -62,7 +62,7 @@
 
   "Experience": {
     "ExpTitle": "Expériences professionnelles",
-    "ConstructionTitle": "DEP en Charpenterie-Menuiserie et Expérience sur Chantier",
+    "ConstructionTitle": "DEP en Charpenterie-Menuiserie et expérience sur chantier",
     "ConstructionDesc": "Cinq années d'expérience dans le domaine de la construction",
     "ConstructionTasks": [
       "Obtention d'un DEP en charpenterie-menuiserie, avec une formation spécialisée en construction résidentielle et commerciale",
@@ -70,7 +70,7 @@
       "Collaboration avec différentes équipes pour mener à bien des projets de construction complexes dans les délais impartis",
       "Maîtrise des mesures précises, des protocoles de sécurité et des normes de contrôle qualité"
     ],
-    "AECTitle": "AEC en Développement Web",
+    "AECTitle": "AEC en Développement web",
     "AECDesc": "Programme intensif de 8 mois en développement web au Cégep de Sherbrooke",
     "AECTasks": [
       "Développement front-end avec HTML, CSS, JavaScript et PHP, incluant une introduction à WordPress, Laravel et Bootstrap.",
@@ -78,7 +78,7 @@
       "Gestion de projet web, versionnement avec Git et GitHub, et déploiement cloud sur Azure.",
       "Intégration full-stack, optimisation des performances, meilleures pratiques en accessibilité et sécurité."
     ],
-    "WebDevTitle": "Développeur Web Junior",
+    "WebDevTitle": "Développeur Web junior",
     "WebDevDesc": "Développeur web junior chez Innovation Kapital-K, spécialisé dans le développement frontend",
     "WebDevTasks": [
       "Développement et maintenance d'interfaces utilisateur réactives et dynamiques avec Next.js, React, Tailwind CSS et TypeScript.",
