@@ -44,13 +44,13 @@ export default function ExperiencesMain() {
 
   const experienceData = [
     {
-      title: dictionary.Experience.ConstructionTitle,
-      description: dictionary.Experience.ConstructionDesc,
-      year: "2016 - 2021",
-      image: CarpentryLogo,
-      classnames: "bg-black p-0",
-      tasks: dictionary.Experience.ConstructionTasks,
-      // link: "",
+      title: dictionary.Experience.WebDevTitle,
+      description: dictionary.Experience.WebDevDesc,
+      year: "2023 - Fin 2024",
+      image: InnovationKKLogo,
+      classnames: "bg-black p-1",
+      tasks: dictionary.Experience.WebDevTasks,
+      link: "https://www.innovation-kk.ca/",
     },
     {
       title: dictionary.Experience.AECTitle,
@@ -62,13 +62,13 @@ export default function ExperiencesMain() {
       link: "https://cegepsherbrooke.qc.ca/formations/aec/developpement-web/",
     },
     {
-      title: dictionary.Experience.WebDevTitle,
-      description: dictionary.Experience.WebDevDesc,
-      year: "2023 - Fin 2024",
-      image: InnovationKKLogo,
-      classnames: "bg-black p-1",
-      tasks: dictionary.Experience.WebDevTasks,
-      link: "https://www.innovation-kk.ca/",
+      title: dictionary.Experience.ConstructionTitle,
+      description: dictionary.Experience.ConstructionDesc,
+      year: "2016 - 2021",
+      image: CarpentryLogo,
+      classnames: "bg-black p-0",
+      tasks: dictionary.Experience.ConstructionTasks,
+      // link: "",
     },
   ];
 
