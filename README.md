@@ -1,52 +1,55 @@
-# Next.js & HeroUI Template
+# Portfolio - Jérémie Pouliot
 
-This is a template for creating applications using Next.js 14 (app directory) and HeroUI (v2).
+Welcome to my personal portfolio! This project showcases my skills, experience, and work as a web developer.
 
-[Try it on CodeSandbox](https://githubbox.com/heroui-inc/heroui/next-app-template)
+## 🚀 Features
 
-## Technologies Used
+- Interactive and visually appealing UI/UX
+- Responsive design for mobile and desktop
+- Smooth animations using GSAP and Framer Motion
+- Optimized for performance and SEO
 
-- [Next.js 14](https://nextjs.org/docs/getting-started)
-- [HeroUI v2](https://heroui.com/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [Tailwind Variants](https://tailwind-variants.org)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Framer Motion](https://www.framer.com/motion/)
-- [next-themes](https://github.com/pacocoursey/next-themes)
+## 🛠️ Technologies Used
 
-## How to Use
+- **Framework**: Next.js
+- **Frontend**: React, JavaScript, TypeScript, Tailwind CSS
+- **Animations**: GSAP, Framer Motion, TailwindCSS
+- **Deployment**: Vercel
 
-### Use the template with create-next-app
+## 📂 Installation
 
-To create a new project based on this template using `create-next-app`, run the following command:
+To run the portfolio locally:
 
-```bash
-npx create-next-app -e https://github.com/heroui-inc/next-app-template
-```
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/portfolio.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd portfolio
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+4. Run the development server:
+   ```bash
+   npm run dev
+   ```
+5. Open `http://localhost:3000` in your browser.
 
-### Install dependencies
+## 📜 License & Copyright
 
-You can use one of them `npm`, `yarn`, `pnpm`, `bun`, Example using `npm`:
+**© 2024 Jérémie Pouliot**  
+This project and its content are protected under copyright law. All rights reserved.
 
-```bash
-npm install
-```
+You are free to explore the code and use it as inspiration, but **any unauthorized reproduction, distribution, or modification** without explicit permission is **strictly prohibited**.
 
-### Run the development server
+If you would like to use any part of this project, please contact me for permission.
 
-```bash
-npm run dev
-```
+---
 
-### Setup pnpm (optional)
-
-If you are using `pnpm`, you need to add the following code to your `.npmrc` file:
-
-```bash
-public-hoist-pattern[]=*@heroui/*
-```
-
-After modifying the `.npmrc` file, you need to run `pnpm install` again to ensure that the dependencies are installed correctly.
+⭐ Feel free to connect with me on [LinkedIn](https://ca.linkedin.com/in/j%C3%A9r%C3%A9mie-pouliot-51430a242/) or check out my other projects on [GitHub](https://github.com/jaypou).
 
 ## License
 
